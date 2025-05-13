@@ -94,7 +94,7 @@ Após isso, nosso código estará assim:
 #include <iostream>
 
 int main() {
-    sdt::cout << "Hello, world!\n";
+    std::cout << "Hello, world!\n";
 }
 ```
 
@@ -109,7 +109,7 @@ Então, faremos nosso último passo e escreveremos o seguinte após o código de
 #include <iostream>
 
 int main() {
-    sdt::cout << "Hello, world!\n";
+    std::cout << "Hello, world!\n";
     return 0;
 }
 ```
