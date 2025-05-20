@@ -18,7 +18,7 @@ Por exemplo, um objeto `Pessoa` pode conter atributos como `nome` e `idade`, e m
 
 ```cpp
 int x = 5;                          // Objeto do tipo primitivo
-std::string nome = "Alice";         // Objeto de uma classe Pessoa
+std::string nome = "Alice";         // Objeto da classe da biblioteca padrão (<string>)
 Pessoa pessoa1;                     // Objeto de classe definida pelo programador
 ```
 
