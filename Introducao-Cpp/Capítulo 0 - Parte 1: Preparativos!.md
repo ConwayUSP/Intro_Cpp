@@ -28,7 +28,7 @@ Então, iniciando:
 Começando, então, com um dos clássicos: o Dev-C++.
 
 Ele pode aparentar ser uma IDE feia, que passa a impressão de ser razoavelmente datada.
-Porém, ela tem o povo!
+Porém, ela tem o povo! (ou não...)
 Para uma pessoa a qual está iniciando com seus primeiros passos no mundo da programação
 com windows, especialmente utilizando C/C++, o Dev-C++ é a primeira referência.
 De acordo com o site oficial do software:
@@ -62,16 +62,16 @@ Site oficial para download (é gratuito!): https://code.visualstudio.com/
 
 Este é uma opção bem decente e leve para edição de texto.
 
-O Sublime é, com certeza, uma ferramenta muito poderosa, mesmo em sua versão gratuita.
+O Sublime é, com certeza, uma ferramenta muito poderosa.
 
 Ele possui, também, muitas extensões e pacotes para compor a sua programação, sem perda de
 desempenho como ocorre no VSCode. Ele é acessível, também, para múltiplos sistemas operacionais
-e não exige uma curva de aprendizado grande para aprender. Seus macros, também, são um diferencial
+e não exige uma curva de aprendizado grande. Seus macros, também, são um diferencial
 bem bacana.
 
-Um exemplo de desvantagem é que ele não possui, pelo menos em sua versão gratuita, um integração direta com
+Um exemplo de desvantagem é que ele não possui uma integração direta com
 nuvem (arquivos locais), nem um terminal integrado. Ou seja, a não ser que você encontre uma extensão que inclua de
-maneira decente um terminal no software, é necessário compilar externamente, com algum terminal instalado em sua máquina.
+maneira decente um terminal no software, é necessário compilar externamente, com algum instalado em sua máquina.
 Porém, esses detalhes podem ser contornados, se necessário, utilizando os pacotes. Basta pesquisar um pouco e ver
 a disponibilidade. É claro, caso você saiba utilizar seu terminal, nem será necessário buscar essas adições e
 o Sublime, possivelmente, será uma escolha maravilhosa para ti.
