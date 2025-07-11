@@ -8,18 +8,18 @@ apropriados para o desenvolvimento utilizando a nossa querida linguagem C++.
 Além disso, é claro, como estamos tratando de uma linguagem compilada, apresentaremos os principais
 compiladores voltados para ela.
 
-Por fim, na segunda parte, teremos a condificação do clássico "Hello World" e alguns detalhes envolvidos.
+Por fim, na segunda parte, teremos a codificação do clássico "Hello World" e alguns detalhes envolvidos.
 
 Sem mais delongas. Vamos iniciar:
 
 ## **IDEs recomendadas**
 
-Quando falamos de IDE, o que não falta é opção! Existe uma quantidade enorme de softwares editores
+Quando falamos de IDE, o que não falta é opção! Existe uma quantidade enorme de editores
 de texto que podem ser bem interessantes, cada um com suas vantagens e desvantagens.
 
 Vale ressaltar que, neste curso, não iremos nos apoiar numa IDE específica, isto é, se você
 tiver coragem, mesmo, e estiver com vontade de codificar utilizando o bloco de notas, será
-plenamente possível.
+plenamente possível (não recomendamos).
 
 Então, iniciando:
 
@@ -27,8 +27,8 @@ Então, iniciando:
 
 Começando, então, com um dos clássicos: o Dev-C++.
 
-Ele pode aparentar ser uma IDE feia, que passa a impressão de ser razoavelmente datada.
-Porém, ela tem o povo! (ou não...)
+Ele pode (aparentar) ser uma IDE feia, que passa a impressão de ser razoavelmente datada.
+Porém, ele tem o povo! (ou não...)
 Para uma pessoa a qual está iniciando com seus primeiros passos no mundo da programação
 com windows, especialmente utilizando C/C++, o Dev-C++ é a primeira referência.
 De acordo com o site oficial do software:
@@ -48,7 +48,7 @@ de software. Muito poderosa, cheia de pacotes e extensões. Além, é claro, de 
 linux e programação em nuvem, com integração ao GitHub, o que é muito útil de modo geral.
 
 Porém, um dos contras é que, dependendo do tamanho do projeto ou da quantidade de adições feitas
-na estrutura do software, ele pode perder BASTANTE desempenho, ainda mais se você estiver utilizando
+na estrutura do software, o editor pode perder BASTANTE desempenho, ainda mais se você estiver utilizando
 o famoso laptop da Xuxa. Existem opções que também são poderosas e não perdem desempenho dessa maneira.
 É válido ressaltar que estaremos trabalhando com desempenho em nossas implementações para computação
 gráfica, então alta peformance é sempre bem vinda.
@@ -74,7 +74,7 @@ nuvem (arquivos locais), nem um terminal integrado. Ou seja, a não ser que voc�
 maneira decente um terminal no software, é necessário compilar externamente, com algum instalado em sua máquina.
 Porém, esses detalhes podem ser contornados, se necessário, utilizando os pacotes. Basta pesquisar um pouco e ver
 a disponibilidade. É claro, caso você saiba utilizar seu terminal, nem será necessário buscar essas adições e
-o Sublime, possivelmente, será uma escolha maravilhosa para ti.
+o Sublime, possivelmente, será uma escolha maravilhosa.
 
 Site oficial para download (tem a versão gratuita e paga): https://www.sublimetext.com/
 
@@ -104,7 +104,7 @@ escrito nela para linguagem de máquina.
 
 ### GCC (GNU Compiler Collection)
 
-Uma das principais referências para compilar código em C/C++ é, justamente, o GCC.
+A principal referência para compilar código em C/C++ é, justamente, o GCC.
 
 Nem temos muito o que falar sobre este aqui. É, simplesmente, clássico e multiplataforma (funciona em Windows,
 Linux e MacOS).
