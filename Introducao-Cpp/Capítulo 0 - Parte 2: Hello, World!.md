@@ -34,6 +34,7 @@ começar a codificar!
 
 Começaremos, então, incluindo a **iostream**, que é uma abreviação para **"standard input-output stream"**.
 Ela é a biblioteca mais genérica do C++, análoga à stdio.h da linguagem C.
+
 À grosso modo, uma biblioteca é um "arsenal" de códigos/funcionalidades da linguagem. Para utilizar
 esses recursos, precisamos incluí-la no nosso código. Assim, vamos escrever na primeira linha:
 
