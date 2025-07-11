@@ -79,7 +79,7 @@ Prosseguindo, vamos digitar dentro das chaves da nossa função o seguinte:
 std::cout <<
 ```
 
-Que serve para mostrar uma imagem na tela. E, após os dois parênteses angulares, escreveremos
+Que serve para imprimir uma mensagem na tela. E, após os dois parênteses angulares, escreveremos
 nossa mensagem dentro de um par de aspas duplas:
 
 ```C++
@@ -102,6 +102,7 @@ int main() {
 Perceba que, antes do nome da nossa função, colocamos **int**, que representa o tipo de dados os quais
 serão retornados pela função. No caso, ela retornará um valor inteiro. Nos próximos capítulos, falaremos
 mais sobre os tipos de dados.
+
 Precisamos, então, definir um valor a ser retornado. Nesse caso, podemos colocá-la para retornar, por exemplo, **o valor 0**, que é o padrão para a função main.
 
 Então, faremos nosso último passo e escreveremos o seguinte após o código de impressão:
