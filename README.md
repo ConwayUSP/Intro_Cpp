@@ -4,7 +4,7 @@ Pensando em introduzir novas pessoas ao mundo da computação gráfica, nós pro
 
 ## Sobre este curso
 
-Este é um curso feito e oferecido pelo Conway: entidade de computação gráfica e desenvolvimento de jogos da USP-leste.
+Este é um curso feito e oferecido pelo Conway: entidade de computação gráfica e desenvolvimento de jogos da USP-Leste.
 
 Caso você tenha interesse em **mergulhar** no vasto mundo da computação gráfica, trabalhando com o desenvolvimento computacional de, por exemplo, simulações, animações e/ou, até mesmo, jogos, **este curso será seu primeiro passo!**
 
@@ -14,7 +14,7 @@ Tentaremos trazer os alicerces necessários, **de maneira mais acessível possí
 
 ## Requisitos
 
-É válido que você já tenha algum tipo de contato com alguma linguagem de programação, especialmente as compiladas como, por exemplo, a __linguagem C__. Porém, este curso é produzido visando, principalmente, quem __não sabe nada__ sobre o tema e deseja construir uma base.
+É válido que você já tenha algum tipo de contato com alguma linguagem de programação, especialmente as compiladas como, por exemplo, a __linguagem C__. 
 
 ## O que será ensinado?
 
