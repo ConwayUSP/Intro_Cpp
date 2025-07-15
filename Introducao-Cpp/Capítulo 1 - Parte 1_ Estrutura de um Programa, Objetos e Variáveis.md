@@ -68,21 +68,7 @@ O par de símbolos `/*` e `*/` denota um comentário multilinha. Tudo entre os s
 ```
 > Dica: use comentários para explicar **"porquês"** e não **"o quê"**. Código claro costuma dispensar comentários óbvios.
 
-## 1.3 Objetos
-
-Objetos em C++ são instâncias de tipos, seja um tipo pré-definido pela linguagem (como `int`, `double` ou `std::string`), seja um tipo definido pelo próprio programador (uma classe).
-
-Cada objeto agrupa dados — seus atributos — e pode também agrupar comportamentos — seus métodos. 
-
-Por exemplo, um objeto `Pessoa` pode conter atributos como `nome` e `idade`, e métodos como `falar()` ou `aniversariar()`. Exemplos:
-
-```cpp
-int x = 5;                          // Objeto do tipo primitivo
-std::string nome = "Alice";         // Objeto de uma classe Pessoa
-Pessoa pessoa1;                     // Objeto de classe definida pelo programador
-```
-
-## 1.4 Variáveis
+## 1.3 Variáveis
 
 Variáveis são nomes associados a locais de memória onde os dados desses objetos são armazenados. 
 
@@ -109,6 +95,20 @@ double preco = 9.99;  // Declara e inicializa em uma única linha
 Outra declaração aceita para tipos de dados é unir as palavras reservadas signed e unsigned ao tipo, declarações que aceitam valores com representação negativa **(signed)** ou tipos que não aceitam valores negativos **(unsigned)**.
 
 Recomendamos procurar mais sobre outros tipos de dados para se apronfundar e ter maior repertório.
+
+## 1.4 Objetos
+
+Objetos em C++ são instâncias de tipos, seja um tipo pré-definido pela linguagem (como `int`, `double` ou `std::string`), seja um tipo definido pelo próprio programador (uma classe).
+
+Cada objeto agrupa dados — seus atributos — e pode também agrupar comportamentos — seus métodos. 
+
+Por exemplo, um objeto `Pessoa` pode conter atributos como `nome` e `idade`, e métodos como `falar()` ou `aniversariar()`. Exemplos:
+
+```cpp
+int x = 5;                          // Objeto do tipo primitivo
+std::string nome = "Alice";         // Objeto de uma classe Pessoa
+Pessoa pessoa1;                     // Objeto de classe definida pelo programador
+```
 
 ## Conclusões
 
