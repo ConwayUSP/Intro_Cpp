@@ -100,6 +100,6 @@ Encerramos aqui nossa jornada do Capítulo 1 pelas expressões em C++, onde comb
 
 Você aprendeu a montar desde operações aritméticas simples até testes lógicos mais elaborados, sempre atento à precedência e associatividade para garantir resultados previsíveis.
 
-No próximo capítulo, será abordado mais sobre os tipos fundamentais de dados e contole de fluxo a partir do uso do `if`.
+No próximo capítulo, será abordado mais sobre os tipos fundamentais de dados e controle de fluxo a partir do uso do `if`.
 
 Aguardo você no capítulo 2!
