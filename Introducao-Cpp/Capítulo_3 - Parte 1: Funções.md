@@ -183,6 +183,6 @@ int maiorValor(int num1, int num2){
 Repare que, analisando separadamente da realização de instruções, podemos nos basear diretamente nos valores retornados por elas.
 Nitidamente, não temos que sempre estruturar uma função pensando unicamente em seu retorno. Para isso, geralmente utilizamos as funções **void**, onde não precisamos retornar um valor.
 
-Fica, como dever de casa, então, a implementação de uma função **void** para essa estrutura de programa a qual desenvolvemos neste capítulo!
+Fica, como dever de casa, então, a implementação de mais uma função, que seja **void**, para essa estrutura de programa a qual desenvolvemos neste capítulo!
 
 Não deixe de ver a próxima parte! Até breve!
