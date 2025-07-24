@@ -160,7 +160,7 @@ Vale mencionar que podemos, também, separar os arquivos em diferentes diretóri
 
 Para este exemplo, vamos criar um diretório chamado **functions**. Depois de mover os arquivos, vamos compilar.
 
-Para fazer isso, em terminal linux, basta digitar o caminho até o arquivo. Podemos fazer deste jeito:
+Para compilar, em terminal linux, basta digitar o caminho até o arquivo. Podemos fazer deste jeito:
 
 ```
 g++ main.cpp ./functions/myFunctions.cpp ./functions/myFunctions2.cpp -o nomeDoArquivoExecutavel
