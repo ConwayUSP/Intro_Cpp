@@ -4,7 +4,7 @@ Sejam bem-vindos ao Capítulo 3 do nosso curso!
 
 Aqui, abordaremos, na linguagem C++, uma introdução ao uso de funções, programas com múltiplos arquivos e headers.
 
-## 3.2 Introdução a programas com múltiplos arquivos e headers
+## 3.2 Introdução a programas com múltiplos arquivos
 
 Na primeira parte, aproveitamos o tópico de funções para tocar um pouco em conceitos mais básicos referentes à organização estrutural do nosso código. Por exemplo, o simples uso de declarações de cabeçalhos em nossa codificação de funções já é fator relevante à criação de um código legível.
 
