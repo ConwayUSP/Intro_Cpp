@@ -150,7 +150,6 @@ Ou, se todos os **.cpp** presentes no diretório atual forem unicamente do nosso
 ```
 g++ *.cpp -o nomeDoArquivoExecutavel
 ```
-(Essa representação diz respeito a todos o **.cpp** neste diretório)
 
 Faça a implementação e compilação, e veja o resultado.
 
