@@ -195,6 +195,45 @@ Para incluir os novos arquivos que criamos, usamos "".
 
 **(2) É uma boa prática realizar o include do header em todos os arquivos nos quais definimos nossas funções**
 
-Caso queira remover o include dos arquivos **myFunctions.cpp** e **myFunctions2.cpp**, fique à vontade. Você ainda conseguirá compilar utilizando o mesmo comando. Porém, de acordo com o capítulo sobre [Arquivos Header](https://www.learncpp.com/cpp-tutorial/header-files/), do [Learn C++](https://www.learncpp.com/),
+Caso queira remover o include dos arquivos **myFunctions.cpp** e **myFunctions2.cpp**, fique à vontade. Você ainda conseguirá compilar utilizando o mesmo comando.
+
+Porém, de acordo com o capítulo sobre [Arquivos Header](https://www.learncpp.com/cpp-tutorial/header-files/), do [Learn C++](https://www.learncpp.com/),
 
 "In C++, it is a best practice for code files to #include their paired header file (if one exists). This allows the compiler to catch certain kinds of errors at compile time instead of link time."
+
+"Em C++, é uma prática recomendada que os arquivos de código incluam o arquivo de cabeçalho correspondente (se houver). Isso permite que o compilador detecte certos tipos de erros em tempo de compilação, em vez de no momento de link."
+
+**(3) Quando uma header é incluído, os headers incluídos nele também são**
+
+Experimente, nosso projeto de exemplo, remover a **iostream** do **main.cpp** e declarar ela no **myFunctions.h**. Como a inclusão do myFunctions.h foi mantida, a **iostream** também será incluída recursivamente. O código poderá ser compilado sem problemas. Chamamos esse tipo de inclusão de "transitive includes" (inclusões transitivas).
+
+Não é positivo se apoiar nesse tipo de inclusão. Na realidade, é uma boa prática fazer com que todos os arquivos tenham inclusões explícitas dos headers necessários para seu funcionamento. Fica como exercício para o leitor a elaboração de uma justificativa para tal.
+
+**Para essas e outras informações mais detalhadas, visite o capítulo sobre [Arquivos Header](https://www.learncpp.com/cpp-tutorial/header-files/), do [Learn C++](https://www.learncpp.com/).**
+
+Agora, e se quisermos incluir headers advindos de algum outro diretório?
+
+**Exemplo 2: mova os arquivos myFunctions.h, myFunctions.cpp e myFunctions2.cpp de volta para o diretório functions anteriormente utilizado e faça o #include de maneira correta no arquivo main()**
+
+Para isso, após movermos os arquivos, podemos simplesmente incluir o caminho relativo até o header:
+
+```cpp
+#include <iostream>
+//Alteramos aqui, para utilizar o caminho relativo
+#include "functions/myFunctions.h"
+
+
+int main() {
+    int arg1 = entradaDeValores();
+    int arg2 = entradaDeValores();
+    std::cout << "Fatorial do maior valor: " << calculaFatorial(maiorValor(arg1, arg2)) << "\n";
+}
+```
+
+Porém, um jeito melhor de fazer isso pode ser comunicar ao seu compilador ou à sua IDE a presença dos headers em outro diretório.
+
+## Conclusões
+
+Nesta terceira parte do Capítulo 3, você teve um primeiro contato com programação em C++ utilizando arquivos header.
+
+Não deixe de conferir os próximos capítulos! Até mais!
