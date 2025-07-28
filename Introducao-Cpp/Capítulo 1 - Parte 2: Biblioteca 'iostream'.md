@@ -4,7 +4,7 @@ Nesta parte, falaremos mais sobre `std::cout`, que usamos em nosso programa Hell
 
 Também exploraremos como obter informações do usuário, o que usaremos para tornar nossos programas mais interativos.
 
-## 2.1 A Biblioteca "iostream" 
+## 1.5 A Biblioteca "iostream" 
 
 A biblioteca `<iostream>` permite interação básica com o usuário. 
 
