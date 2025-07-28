@@ -6,7 +6,7 @@ Nesta seção, vamos apresentar os literais — valores fixos que você escreve 
 
 Dominar literais e operadores é essencial para expressar lógica em qualquer programa, desde as operações mais simples até construções mais complexas. Vamos conhecer os principais tipos e como utilizá-los com eficiência!
 
-## 3.1 Literais
+## 1.6 Literais
 
 Um literal (também conhecido como constante literal) é um valor fixo que foi inserido diretamente no código-fonte. 
 
@@ -18,7 +18,7 @@ int x =5;
 ```
 "Hello world!" e "5" são literais. 
 
-## 3.2 Operadores
+## 1.7 Operadores
 
 Em C++, existem diferentes categorias de operadores: aritméticos, de atribuição, de comparação e lógicos. Cada grupo tem uma função específica, como somar números, comparar valores ou tomar decisões com base em condições.
 
@@ -33,7 +33,7 @@ Veja a seguinte tabela com alguns exemplos importantes de operadores:
 | Lógicos (OU)  | `\|\|`                   | `true \|\| false`   | Operador “OU” lógico              | `true`    |
 | Lógicos (NÃO) | `!`                      | `!true`             | Negação lógica                    | `false`   |
 
-## 3.3 Expressões
+## 1.8 Expressões
 
 Expressões não terminam em ponto e vírgula e não podem ser compiladas sozinhas. Por exemplo, se você tentasse compilar a expressão x = 5, seu compilador reclamaria (provavelmente sobre a falta de um ponto e vírgula). 
 
@@ -44,7 +44,7 @@ Por exemplo:
 int x{ 2 + 3 };       // 2 + 3 é uma expressão que não tem ponto e vírgula - o ponto e vírgula está no final da declaração que contém a expressão
 ```
 
-## 3.4 Precedência de Operadores
+## 1.9 Precedência de Operadores
 
 A precedência de operadores estabelece a hierarquia que determina em que ordem os operadores em uma expressão são avaliados quando não há parênteses explícitos. 
 
