@@ -18,7 +18,7 @@ Exemplo prático:
 
 ```cpp
 #include <iostream>
-using namespace std;    // utilizado para evitar de prefixar os nomes de classes, funções e objetos da biblioteca padrão (std::)
+using namespace std;   // permite o uso de elementos da biblioteca padrão sem precisar prefixá-los com "std::"
 
 // Função para somar dois inteiros
 int soma(int a, int b) {
