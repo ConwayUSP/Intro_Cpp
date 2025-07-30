@@ -641,7 +641,7 @@ int main(){
 }
 ```
 
-Perceba como a nossa função **main()** ficou limpa, muito bonita e com um grau de organização muito superior.
+Perceba como o nosso arquivo **Main.cpp** ficou limpo, muito bonito e com um grau de organização muito superior.
 
 Se exercutarmos, caso não tenha nada de incorreto, teremos o mesmo resultado da compilção/execução anterior.
 
