@@ -1,8 +1,8 @@
-# Capítulo 6: Scope, duration e linkage
+# Capítulo 6: Namespaces e variáveis locais estáticas
 
 Sejam bem-vindos ao Capítulo 6 do nosso curso!
 
-Quando falamos de organização de código, existem muitas ferramentas capazes de auxiliar a estruturação dele. Neste capítulo, abordaremos mais alguns pontos importantes para a criação de programas mais robustos. Começando por **namespaces**, definidos pelo programador.
+Quando falamos de organização de código, existem muitas ferramentas capazes de auxiliar a estruturação dele. Neste capítulo, abordaremos mais alguns pontos importantes para a criação de programas mais robustos. Começando por **namespaces**, definidos pelo programador. Em seguida, abordaremos um pouco a respeito de **Static**, no contexto de variáveis locais.
 
 ## 6.1 Namespaces:
 
