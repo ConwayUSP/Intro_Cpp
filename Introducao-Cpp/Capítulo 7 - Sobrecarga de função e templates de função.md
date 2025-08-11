@@ -141,6 +141,19 @@ E para executar:
 ./meu_programa
 ```
 
+## Questões
+
+1) Função de Soma Genérica com Sobrecarga Específica
+- Implemente um template de função somar que soma dois valores de qualquer tipo numérico.
+- Depois, crie uma sobrecarga não-template que recebe dois std::string e retorna uma string no formato: "<primeiro> e <segundo>".
+
+Teste com:
+
+```cpp
+somar(2, 3)            // 5
+somar(2.5, 3.1)        // 5.6
+somar("Ana", "João")   // "Ana e João"
+```
 ## Conclusões
 
 Este capítulo abordou sobrecarga de função (funções de mesmo nome com diferentes parâmetros), templates de função (código genérico para múltiplos tipos) e o uso de templates em múltiplos arquivos (definição em cabeçalhos para evitar erros).
