@@ -93,7 +93,27 @@ bool r8 = a && b || c;     // (a&&b) || c → false || true → true
 int r9 = a && b || c ? 100 : 200;
 //   (a&&b) → false; false||c → true; → r9 = 100
 ```
+## Questões complementares
 
+1) Escreva uma expressão booleana que seja verdadeira apenas se:
+- idade for maior que 18 **e**
+- idade for menor ou igual a 30
+
+2) Qual será o valor de x no código abaixo? Explique a ordem de avaliação:
+
+```cpp
+int x = (2 + 3) * 4 > 10 && 8 % 3 == 2 ? 100 : 200;
+```
+
+3) Crie um programa que:
+- Pergunte a nota final (double) e a frequência (int em %) de um aluno.
+- Use operadores lógicos para verificar se o aluno está aprovado:
+  
+Nota maior ou igual a 6.0
+
+Frequência maior ou igual a 75%
+- Mostre no console "Aprovado" ou "Reprovado", usando o operador ternário ?:
+  
 ## Conclusões
 
 Encerramos aqui nossa jornada do Capítulo 1 pelas expressões em C++, onde combinamos literais, variáveis e diversos operadores para produzir valores e tomar decisões. 
