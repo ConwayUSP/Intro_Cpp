@@ -84,7 +84,26 @@ int main()
     return 0;
 }
 ```
+## Questões complementares
 
+1) Dê um exemplo de código que imprime:
+```cpp
+A soma de 3 e 5 é 8
+```
+
+2) Escreva um programa que:
+- Pergunte ao usuário o seu nome.
+- Pergunte a idade.
+- Mostre uma mensagem: `"Olá <nome>, você tem <idade> anos!".`
+  
+3) Crie um programa em C++ que:
+- Pergunte ao usuário seu nome e idade.
+- Pergunte quantos anos ele quer avançar no tempo.
+- Calcule e mostre a idade que ele terá no futuro usando a frase:
+
+```cpp
+Olá <nome>, daqui a <anosFuturos> anos você terá <novaIdade> anos!
+```
 ## Conclusões
 
 Neste capítulo, aprendemos sobre o uso e a importância da biblioteca `<iostream>` para deixar os nossos programas mais interativos por meio do uso de `std::cout` (para saída de dados) e `std::cin` (para entrada de dados).
