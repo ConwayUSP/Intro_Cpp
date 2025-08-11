@@ -199,6 +199,29 @@ int main() {
     return 0;
 }
 ```
+## Questões
+
+1) Reescreva o código abaixo usando `for-each` no lugar do for tradicional:
+
+```cpp
+std::vector<int> numeros = {4, 5, 6};
+for (int i = 0; i < numeros.size(); i++) {
+    std::cout << numeros[i] << " ";
+}
+```
+2) Qual será a saída do código abaixo?
+```cpp
+std::vector<int> v = {1, 2, 3};
+v.insert(v.begin() + 1, 99);
+v.push_back(5);
+v.at(0) = 10;
+for (int x : v) std::cout << x << " ";
+```
+3) Crie um programa que:
+- Use um std::vector<std::string> para armazenar itens de compras.
+- Permita inserir itens no final com push_back() até o usuário digitar "fim".
+- Use um for-each para exibir todos os itens.
+- Mostre no final o número total de itens usando .size().
 
 ## Conclusões
 
