@@ -117,6 +117,18 @@ Há mais algumas funções membros que podem ser úteis no dia a dia:
 
 Lista com mais funções auxiliares para aprofundamento: https://www.codecademy.com/resources/docs/cpp/strings/append
 
+## Questões
+
+1) Leitura de nome completo
+- Peça ao usuário seu nome completo usando std::getline.
+- Mostre o nome na tela e diga quantos caracteres ele possui (use .length()).
+
+2) Misturando conceitos
+- Peça ao usuário um valor inteiro representando a idade.
+- Converta a idade para string (use std::to_string).
+- Concatene essa string em uma frase: "Você tem X anos" e exiba o resultado.
+- Explique por que a idade como string "20" é diferente do número inteiro 20.
+
 ## Conclusões
 
 Nessa parte do capítulo 4 você viu o que é e como utilizar de diversas maneiras a `std::string`. Espero que tenha gostado!
