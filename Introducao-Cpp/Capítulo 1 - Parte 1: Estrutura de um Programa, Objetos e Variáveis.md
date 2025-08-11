@@ -109,6 +109,27 @@ int x = 5;                          // Objeto do tipo primitivo
 std::string nome = "Alice";         // Objeto de uma classe Pessoa
 Pessoa pessoa1;                     // Objeto de classe definida pelo programador
 ```
+## Questões complementares
+
+Abaixo estão alguns exercícios para se colocar em prática o que foi dito. Recomendamos que você tente fazer sem ajuda externa, principalmente se esse for o seu primeiro contato com o assunto. 
+
+Qualquer dúvida, pode entrar em contato com qualquer um dos autores do curso. Bom aprendizado!
+
+1) Dado o exemplo:
+
+```cpp
+std::string cidade = "São Paulo";
+```
+Identifique:
+- O tipo do objeto.
+- O valor armazenado.
+- O nome (identificador) usado para acessá-lo.
+
+2) Crie um pequeno programa que:
+- Declare duas variáveis int para representar ano de nascimento e ano atual.
+- Calcule a idade.
+- Use std::cout para exibir o resultado com uma mensagem amigável.
+- Inclua comentários que expliquem o propósito de cada etapa.
 
 ## Conclusões
 
