@@ -78,6 +78,26 @@ Como as funções normalmente são executadas em tempo de execução, o valor de
 
 É por isso que 'cinco()' não é um valor de inicialização válido para constexpr int resultadoCinco.
 
+## Questões
+
+1) Crie um programa que:
+- Declare duas variáveis const representando:
+
+    O valor de π (3.14159)
+
+    A velocidade do som (343.2 m/s)
+- Peça ao usuário o raio de uma circunferência e calcule o perímetro usando a constante π.
+- Exiba o resultado.
+
+2) Crie um programa que peça ao usuário:
+   
+    O valor de um produto
+   
+    A porcentagem de desconto
+
+- Use uma constante const para armazenar a taxa de imposto (por exemplo, 5%).
+- Calcule o valor com desconto e o valor final com imposto
+- Explique por que não é possível armazenar o valor com desconto em uma variável constexpr.
 ## Conclusões
 
 Nessa primeira parte do capítulo 4 foram apresentados os usos de variáveis e expressões constantes em C++.
