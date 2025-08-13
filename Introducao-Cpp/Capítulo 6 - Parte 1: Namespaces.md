@@ -643,7 +643,44 @@ int main(){
 
 Perceba como o nosso arquivo **Main.cpp** ficou limpo, muito bonito e com um grau de organização muito superior.
 
-Se exercutarmos, caso não tenha nada de incorreto, teremos o mesmo resultado da compilção/execução anterior.
+Para finalizar, vamos mostrar o uso básico de **apelidos** para **namespaces**.
+
+Considere a nossa função **main** acima. Nela, podemos fazer as seguintes declarações:
+
+```cpp
+namespace Ativo1 = Mathematica::Circunferencia;
+namespace Ativo2 = Mathematica::Fatorial;
+```
+
+E, a partir disso, podemos alterar a nossa implementação da seguinte forma:
+
+```
+Main.cpp
+```
+
+```cpp
+#include <iostream>
+#include "Mathematica.h"
+
+int main(){
+
+    namespace Ativo1 = Mathematica::Circunferencia;
+    namespace Ativo2 = Mathematica::Fatorial;
+
+    Ativo1::mensagem();
+
+    /*De resto, nossa implementação pode assumir esta forma: */
+    double raio = Ativo1::entrada();
+    Ativo1::saida(raio, Ativo1::calcula(raio));
+
+    int valor = Ativo2::entrada();
+    Ativo2::saida(valor, Ativo2::calcula(valor));
+    return 0;
+}
+```
+
+Se exercutarmos, caso não tenha nada de incorreto, teremos o mesmo resultado da compilação/execução anterior.
+
 
 ## Conclusões
 
