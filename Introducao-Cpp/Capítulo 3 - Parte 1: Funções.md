@@ -52,12 +52,12 @@ int main() {
 }
 ```
 
-Temos, então, o começo da estrutura. Ora, colocamos ela acima da nossa **int main()**. Porém, para que nossa função principal não comece, com a inserção de mais e mais funções, a ficar isolada no final da nossa codificação, podemos utilizar os **cabeçalhos**. Observe:
+Temos, então, o começo da estrutura. Ora, colocamos ela acima da nossa **int main()**. Porém, para que nossa função principal não comece, com a inserção de mais e mais funções, a ficar isolada no final da nossa codificação, podemos utilizar as **declarações prévias**. Observe:
 
 ```cpp
 #include <iostream>
 
-//Cabeçalho
+//Declaração
 int calculaFatorial(int num);
 
 int main() {
@@ -125,7 +125,7 @@ int calculaFatorial(int num){
 
 **Exemplo 2: faça uma função que receba como argumento dois valores inteiros e retorne o maior entre eles**
 
-Vamos começar, diretamente, com o cabeçalho:
+Vamos começar, diretamente, com a declaração:
 
 ```cpp
 #include <iostream>
