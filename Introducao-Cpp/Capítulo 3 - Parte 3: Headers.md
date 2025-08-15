@@ -205,7 +205,7 @@ Porém, de acordo com o capítulo sobre [Arquivos Header](https://www.learncpp.c
 
 **(3) Quando uma header é incluído, os headers incluídos nele também são**
 
-Experimente, nosso projeto de exemplo, remover a **iostream** do **main.cpp** e declarar ela no **myFunctions.h**. Como a inclusão do myFunctions.h foi mantida, a **iostream** também será incluída recursivamente. O código poderá ser compilado sem problemas. Chamamos esse tipo de inclusão de "transitive includes" (inclusões transitivas).
+Experimente, no nosso projeto de exemplo, remover a **iostream** do **main.cpp** e declarar ela no **myFunctions.h**. Como a inclusão do myFunctions.h foi mantida, a **iostream** também será incluída recursivamente. O código poderá ser compilado sem problemas. Chamamos esse tipo de inclusão de "transitive includes" (inclusões transitivas).
 
 Não é positivo se apoiar nesse tipo de inclusão. Na realidade, é uma boa prática fazer com que todos os arquivos tenham inclusões explícitas dos headers necessários para seu funcionamento. Fica como exercício para o leitor a elaboração de uma justificativa para tal.
 
