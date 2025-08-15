@@ -22,7 +22,7 @@ O que acontece aqui é, basicamente, uma comunicação do programador com uma da
 
 Quando fazemos **#include** de um arquivo, o pré-processador "substitui" a diretiva com os conteúdos presentes no arquivo. No caso, teremos os conteúdos presentes no arquivo **iostream**. Eles também serão pré-processados, assim como o que for necessário no resto do nosso projeto.
 
-Ou seja, já estávamos utilizando headers deste o começo. Ora, vamos dar destaque aos pontos principais.
+Ou seja, já estávamos utilizando headers desde o começo. Ora, vamos dar destaque aos pontos principais.
 
 Caso você queira se aprofundar, recomendamos novamente o [Learn C++](https://www.learncpp.com/), mais especificamente a parte do [pré-processador](https://www.learncpp.com/cpp-tutorial/introduction-to-the-preprocessor/). Nos baseamos nesse capítulo para elaborar a explicação.
 
