@@ -1,14 +1,14 @@
-# Introdução ao OpenGL ⚡
+# Introdução ao C++ ⚡
 
-Pensando em introduzir novas pessoas ao mundo da computação gráfica, nós propomos, neste repositório, um curso introdutório ao OpenGL utilizando a linguagem C++!
+Pensando em introduzir novas pessoas no mundo da programação de baixo nível e de alto desempenho, nós propomos, neste reposiório, um curso introdutório à linguagem C++!
 
 ## Sobre este curso
 
 Este é um curso feito e oferecido pelo Conway: entidade de computação gráfica e desenvolvimento de jogos da USP-Leste.
 
-Caso você tenha interesse em **mergulhar** no vasto mundo da computação gráfica, trabalhando com o desenvolvimento computacional de, por exemplo, simulações, animações e/ou, até mesmo, jogos, **este curso será seu primeiro passo!**
+Caso você tenha interesse em **mergulhar** no vasto mundo da computação gráfica, trabalhando com o desenvolvimento computacional de, por exemplo, simulações, animações e/ou, até mesmo, jogos, **este curso poderá ser seu primeiro passo!** Ele servirá como pré-requisito para alguns outros cursos oferecidos pela Conway, tais como __Introdução ao OpenGL__ ou __RayTracing Básico__.
 
-Apresentamos, então, o curso de **Introdução ao OpenGL**, dedicado a abordar [__OpenGL__](https://learnopengl.com/), "uma API gráfica multiplataforma que define uma interface padrão para hardware de processamento gráfico 3D", utilizando uma das linguagens de maior referência no que diz respeito ao alto desempenho: [__C++__](https://isocpp.org/get-started).
+Apresentamos, então, o curso de **Introdução ao C++**, dedicado a abordar uma das linguagens de maior referência no que diz respeito ao alto desempenho: [__C++__](https://isocpp.org/get-started).
 
 Tentaremos trazer os alicerces necessários, **de maneira mais acessível possível**, para sua desenvoltura inicial enquanto programador nesta área.
 
@@ -18,11 +18,11 @@ Tentaremos trazer os alicerces necessários, **de maneira mais acessível possí
 
 ## O que será ensinado?
 
-Primeiramente, começaremos com __os conceitos principais__ da linguagem C+. Variávies e tipos, bem como especificidades da linguagem.
+Primeiramente, começaremos com __os conceitos principais__ da linguagem C++. Variávies e tipos, bem como especificidades da linguagem.
 
-Depois, prosseguiremos para o __OpenGL__, uma poderosa ferramente para desenvolvimento na computação gráfica. Tentaremos trazer os principais conceitos, bem como alguns detalhes importantes acerca de suas funcionalidades e estruturação.
+Depois, prosseguiremos para __Orientação a Objetos__, uma poderosa ferramenta para desenvolvimento de projetos em diferentes escalas. Tentaremos trazer os principais conceitos, bem como alguns detalhes importantes acerca de suas funcionalidades e estruturação.
 
-Por fim, encerraremos com a produção de uma aplicação, para demonstrar **os frutos de nosso aprendizado!**
+Por fim, encerraremos com a produção de uma aplicação, para demonstrar **os frutos de nosso aprendizado!** Além disso, teremos um apêndice para a utilização de uma linguagem paralela para a compilação de projetos: a __linguagem Zig__.
 
 ## Dúvidas e Ajuda
 
