@@ -1,6 +1,6 @@
 # Introdução ao C++ ⚡
 
-Pensando em introduzir novas pessoas no mundo da programação de baixo nível e de alto desempenho, nós propomos, neste reposiório, um curso introdutório à linguagem C++!
+Pensando em introduzir novas pessoas no mundo da programação de baixo nível e de alto desempenho, nós propomos, neste repositório, um curso introdutório à linguagem C++!
 
 ## Sobre este curso
 
