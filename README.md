@@ -1,6 +1,6 @@
 # Introdução ao C++ ⚡
 
-Pensando em introduzir novas pessoas no mundo da programação de baixo nível e de alto desempenho, nós propomos, neste reposiório, um curso introdutório à linguagem C++!
+Pensando em introduzir novas pessoas no mundo da programação de baixo nível e de alto desempenho, nós propomos, neste repositório, um curso introdutório à linguagem C++!
 
 ## Sobre este curso
 
@@ -33,3 +33,4 @@ Incentivamos que você nos procure atráves dos canais de comunicação. **Abra 
 ## Autores
 - [Lucas Neves Souza](https://github.com/fatorarpolinomio)
 - [Willian Jefferson Farias](https://github.com/willianjsf)
+- [Marianna Saltarelli Arvellos Pontes](https://github.com/annewithoutani)
