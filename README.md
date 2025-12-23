@@ -33,3 +33,4 @@ Incentivamos que você nos procure atráves dos canais de comunicação. **Abra 
 ## Autores
 - [Lucas Neves Souza](https://github.com/fatorarpolinomio)
 - [Willian Jefferson Farias](https://github.com/willianjsf)
+- [Marianna Saltarelli Arvellos Pontes](https://github.com/annewithoutani)
