@@ -76,6 +76,99 @@ int pegarValor() // parâmetros da função vazio é um void implícito
     return x;
 }
 ```
+
+## 2.5 - Tamanho de Objetos
+
+Como vimos na parte 1 deste capítulo, a memória em computadores modernos são normalmente organizadas em unidades de tamanho equivalente a um **byte**, com cada byte contendo um endereço único. Por enquanto, foi útil pensar na memória como várias caixas de correio onde podemos colocar e retirar informações, sendo as variáveis os nomes para o acesso à essas caixas. 
+
+No entanto, esta analogia não está totalmente correta, já que a maioria dos objetos ocupam mais do que 1 byte de memória. Um único objeto pode ocupar de 1, 2, 4, 8, ou até mais endereços de memória consecutivos, dependendo do tipo de dado armazenado.
+
+Como acessamos a memória através dos nomes das variáveis que criamos, o compilador esconde os detalhes de quantos bytes de memória um objeto usa de fato. Isto é útil para que em alto nível de programação não tenhamos que saber quantos bytes de dados devem ser acessados para manipular as variáveis que criamos. Mesmo assim, há muitas razões onde saber o quanto de memória um objeto usa se torna útil, isto porquê:
+
+### Quanto mais memória um objeto usa, mais informações ele consegue conter:
+
+Vejamos:                                               
+1 bit consegue armazenar 2 valores possíveis, sendo eles: 0 ou 1.                        
+2 bits conseguem armazenar 4 valores possíveis, sendo eles: 00, 01, 10 ou 11.                  
+3 bits conseguem armazenar 8 valores possíveis, sendo eles: 000, 001, 010, 011, 100, 101, 110 ou 111.
+
+Se generalizarmos, um objeto com **n** bits consegue armazenar **2<sup>n</sup>** valores únicos. Isto é, um objeto com o tamanho de 1 byte consegue armazenar 2<sup>8</sup> (256) valores diferentes. Um objeto com o tamanho de 2 bytes consegue armazenar 2<sup>16</sup> (65536) valores diferentes. E assim em diante!
+
+Então, o tamanho de um objeto coloca um limite na quantidade de valores únicos que ele consegue armazenar, e quanto mais bytes de memória, maior o número de valores únicos armazenados. Computadores tem um número finito de memória disponível, e sempre que definimos um objeto, uma pequena parte desta memória livre é usada enquanto o objeto existir. Como os computadores de hoje em dia possuem muita memória, geralmente o impacto disso é quase sempre imperceptível. Mas para programas que precisam de objetos e dados em grande quantidade, a diferença entre usar 1 byte e 8 bytes pode ser significativa!
+
+Sabendo disso, nos perguntamos: "Então quanto de memória os objetos de cada tipo de dado usam?". 
+Surpreendentemente, o C++ não define o tamanho exato em bits de nenhum dos tipos fundamentais.
+
+Ao invés disso, o padrão diz o seguinte:
+- Um objeto deve ocupar pelo menos 1 byte (para que cada objeto tenha um endereço de memória distinto);
+- Um byte deve ter pelo menos 8 bits;
+- Os tipos inteiros `char`,`short`,`ìnt`,`long`, e `long long` tem um tamanho mínimo de 8, 16, 16, 32 e 64 bits respectivamente;
+- `char` e `char8_t` tem exatamente 1 byte.
+
+>**Observação:** Quando falamos "tamanho de um tipo", queremos dizer o tamanho de um objeto instanciado daquele tipo.
+>
+>Se quiser saber mais sobre o padrão do C++ sobre o tamanho mínimo dos vários tipos de dados, considere dar uma lida [aqui](https://en.cppreference.com/w/cpp/language/types.html).
+
+## 2.6 - O operador sizeof
+
+Para determinar o tamanho dos tipos de dados em cada máquina específica, o C++ fornece um operador chamado `sizeof`. O **operador sizeof** é um operador **unário** (que só recebe uma entrada) que recebe um tipo ou variável, e retorna o tamaho de um objeto daquele tipo (em bytes).
+Por exemplo:
+
+```cpp
+#include <iostream>
+#include <climits> // para o CHAR_BIT
+
+int main()
+{
+    std::cout << "Um byte é " << CHAR_BIT << " bits\n\n";
+
+    std::cout << "bool: " << sizeof(bool) << " bytes\n";
+    std::cout << "char: " << sizeof(char) << " bytes\n";
+    std::cout << "short: " << sizeof(short) << " bytes\n";
+    std::cout << "int: " << sizeof(int) << " bytes\n";
+    std::cout << "long: " << sizeof(long) << " bytes\n";
+    std::cout << "long long: " << sizeof(long long) << " bytes\n";
+    std::cout << "float: " << sizeof(float) << " bytes\n";
+    std::cout << "double: " << sizeof(double) << " bytes\n";
+    std::cout << "long double: " << sizeof(long double) << " bytes\n";
+
+    return 0;
+}
+```
+Compilando e executando este código na máquina do autor deste capítulo, temos a seguinte saída:
+```
+Um byte é 8 bits
+
+bool: 1 bytes
+char: 1 bytes
+short: 2 bytes
+int: 4 bytes
+long: 8 bytes
+long long: 8 bytes
+float: 4 bytes
+double: 8 bytes
+long double: 16 bytes
+```
+O resultado vai depender do compilador, arquitetura de computador, sistema operacional, configurações da compilação (32-bits ou 64-bits), e etc.
+
+Também é possível usar o operador `sizeof` em um nome de variável, como em:
+```cpp
+#include <iostream>
+
+int main()
+{
+    int x{};
+    std::cout << "x é " << sizeof(x) << " bytes\n";
+
+    return 0;
+}
+```
+Recebemos a seguinte saída:
+```
+x é 4 bytes
+```
+>O operador `sizeof` não inclui memória alocada dinamicamente usada por um objeto. Memórica alocada dinamicamente será discutido em futururos capítulos! Fiquem de olho!
+
 ## Conclusões
 
 Agora você conhece um pouco mais dos tipos fundamentais de dados em C++ e em como é armazenada a memória do nosso queridinho computador!
