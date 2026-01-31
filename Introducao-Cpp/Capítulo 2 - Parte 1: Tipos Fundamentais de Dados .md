@@ -79,7 +79,7 @@ int pegarValor() // parâmetros da função vazio é um void implícito
 
 ## 2.5 - Tamanho de Objetos
 
-Como vimos na parte 1 deste capítulo, a memória em computadores modernos são normalmente organizadas em unidades de tamanho equivalente a um **byte**, com cada byte contendo um endereço único. Por enquanto, foi útil pensar na memória como várias caixas de correio onde podemos colocar e retirar informações, sendo as variáveis os nomes para o acesso à essas caixas. 
+Como vimos anteriormente, a memória em computadores modernos são normalmente organizadas em unidades de tamanho equivalente a um **byte**, com cada byte contendo um endereço único. Por enquanto, foi útil pensar na memória como várias caixas de correio onde podemos colocar e retirar informações, sendo as variáveis os nomes para o acesso à essas caixas. 
 
 No entanto, esta analogia não está totalmente correta, já que a maioria dos objetos ocupam mais do que 1 byte de memória. Um único objeto pode ocupar de 1, 2, 4, 8, ou até mais endereços de memória consecutivos, dependendo do tipo de dado armazenado.
 
