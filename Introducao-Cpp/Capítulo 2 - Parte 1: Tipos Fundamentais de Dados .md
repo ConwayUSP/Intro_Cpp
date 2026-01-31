@@ -8,7 +8,7 @@ Neste capítulo, conheceremos os tipos fundamentais de dados em C++ e um pouquin
 
 Na seção 1.3, comentamos brevemente em como variáveis são nomes associados a locais de memória que podem ser usados para guardar informações. Ou seja, quando uma variável é declarada em um programa, um pedaço da memória é separado para aquela variável.
 
-A menor unidade de memória é o **dígito binário** (ou chamado de **bit**), que pode ser um valor 0 ou 1. A memória é organizada em unidades sequenciais chamadas de **endereços de mémória** (ou apenas **endereços**), que nos permitem encontrar e acessar o conteúdo da memória de um local específico.
+A menor unidade de memória é o **dígito binário** (ou chamado de **bit**), que pode ser um valor 0 ou 1. A memória é organizada em unidades sequenciais chamadas de **endereços de memória** (ou apenas **endereços**), que nos permitem encontrar e acessar o conteúdo da memória de um local específico.
 
 Porém, nas arquiteturas de computador mais modernas, os bits não possuem mais um endereço único e exclusivo, pois o número de endereços de memória disponíveis são limitados e a necessidade de acessar os dados bit por bit se tornou rara. Ao invés disso, hoje em dia cada endereço de memória armazena 1 byte de dados. O **byte** é um grupo de bits que operam como uma unidade, composto por **8 bits sequenciais**.
 
@@ -32,7 +32,7 @@ Aqui está uma lista com os tipos fundamentais de dados, que alguns você já de
 | `short int`,`int`,`long int`,`long long int`     | Inteiro (Inteiro Padrão) | um número positivo ou negativo inteiro, incluindo zero | 64      |
 | `std::nullptr_t `                                | Ponteiro Nulo            | um ponteiro nulo                                       | nullptr |
 | `void`                                           | Void                     | sem tipo                                               | n/a     |
-> Você pode estar se perguntando: por quê os tipos **char** e **bool** estão na categoria 'Inteiro' ? Ótima pergunta!
+> Você pode estar se perguntando: por que os tipos **char** e **bool** estão na categoria 'Inteiro' ? Ótima pergunta!
 > 
 > Isto é porque estes tipos são armazenados internamente como números, porém são interpretados de forma distinta do tipo **int** que é um tipo inteiro padrão, adquirindo diferentes significados para cada um deles quando realizamos a E/S.
 
@@ -102,7 +102,7 @@ Surpreendentemente, o C++ não define o tamanho exato em bits de nenhum dos tipo
 Ao invés disso, o padrão diz o seguinte:
 - Um objeto deve ocupar pelo menos 1 byte (para que cada objeto tenha um endereço de memória distinto);
 - Um byte deve ter pelo menos 8 bits;
-- Os tipos inteiros `char`,`short`,`ìnt`,`long`, e `long long` tem um tamanho mínimo de 8, 16, 16, 32 e 64 bits respectivamente;
+- Os tipos inteiros `char`,`short`,`int`,`long`, e `long long` tem um tamanho mínimo de 8, 16, 16, 32 e 64 bits respectivamente;
 - `char` e `char8_t` tem exatamente 1 byte.
 
 >**Observação:** Quando falamos "tamanho de um tipo", queremos dizer o tamanho de um objeto instanciado daquele tipo.
@@ -167,10 +167,10 @@ Recebemos a seguinte saída:
 ```
 x é 4 bytes
 ```
->O operador `sizeof` não inclui memória alocada dinamicamente usada por um objeto. Memórica alocada dinamicamente será discutido em futururos capítulos! Fiquem de olho!
+>O operador `sizeof` não inclui memória alocada dinamicamente usada por um objeto. Memória alocada dinamicamente será discutido em futuros capítulos! Fiquem de olho!
 
 ## Conclusões
 
 Agora você conhece um pouco mais dos tipos fundamentais de dados em C++ e em como é armazenada a memória do nosso queridinho computador!
 
-Mas atenção! Aqui passamos apenas pelo básico, então ainda precisamos estudar um pouco dos chamados "tipos compostos de dados", como strings, matrizes, structs entre outros, tipos estes que já se tornaram padrão na biblioteca de C++ e que muitas vezes precisam ser declarados para uso! Felizmente, abordaremos muitos destes temas em futuros capítulos, espero você por lá!
+Mas atenção! Aqui passamos apenas pelo básico, então ainda precisamos estudar um pouco dos chamados "tipos compostos de dados", como strings, matrizes, structs entre outros, tipos estes que já se tornaram padrão na biblioteca de C++ e que muitas vezes precisam ser declarados para uso! Felizmente, abordaremos muitos destes temas em futuros capítulos, te espero lá!
