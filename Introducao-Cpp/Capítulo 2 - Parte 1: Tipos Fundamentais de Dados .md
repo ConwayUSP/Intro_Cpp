@@ -51,7 +51,7 @@ O tipo void é usado em diversos contextos, sendo o principal:
 ```cpp
 void escreveValor(int x) // void aqui significa que a função não retorna nenhum valor
 {
-    std::cout << "The value of x is: " << x << '\n';
+    std::cout << "O valor de x é: " << x << '\n';
     // não declara return, pois a função não retorna nada
 }
 ```
