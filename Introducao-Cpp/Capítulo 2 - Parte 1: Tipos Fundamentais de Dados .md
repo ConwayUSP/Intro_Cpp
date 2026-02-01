@@ -94,10 +94,10 @@ Vejamos:
 
 Se generalizarmos, um objeto com **n** bits consegue armazenar **2<sup>n</sup>** valores únicos. Isto é, um objeto com o tamanho de 1 byte consegue armazenar 2<sup>8</sup> (256) valores diferentes. Um objeto com o tamanho de 2 bytes consegue armazenar 2<sup>16</sup> (65536) valores diferentes. E assim em diante!
 
-Então, o tamanho de um objeto coloca um limite na quantidade de valores únicos que ele consegue armazenar, e quanto mais bytes de memória, maior o número de valores únicos armazenados. Computadores tem um número finito de memória disponível, e sempre que definimos um objeto, uma pequena parte desta memória livre é usada enquanto o objeto existir. Como os computadores de hoje em dia possuem muita memória, geralmente o impacto disso é quase sempre imperceptível. Mas para programas que precisam de objetos e dados em grande quantidade, a diferença entre usar 1 byte e 8 bytes pode ser significativa!
+Então, o tamanho de um objeto coloca um limite na quantidade de valores únicos que ele consegue armazenar, e quanto mais bytes de memória, maior o número de valores únicos armazenados. Tendo em vista que computadores tem um número finito de memória disponível, sempre que definimos um objeto, uma pequena parte desta memória livre é usada enquanto o objeto existir. Como os computadores de hoje em dia possuem muita memória, geralmente o impacto desse uso de memória é quase sempre imperceptível, mas para programas que precisam de objetos e dados em grande quantidade, a diferença entre usar 1 byte e 8 bytes pode ser significativa!
 
 Sabendo disso, nos perguntamos: "Então quanto de memória os objetos de cada tipo de dado usam?". 
-Surpreendentemente, o C++ não define o tamanho exato em bits de nenhum dos tipos fundamentais.
+Surpreendentemente, a resposta é que o C++ não define o tamanho exato em bits de nenhum dos tipos fundamentais.
 
 Ao invés disso, o padrão diz o seguinte:
 - Um objeto deve ocupar pelo menos 1 byte (para que cada objeto tenha um endereço de memória distinto);
@@ -167,7 +167,7 @@ Recebemos a seguinte saída:
 ```
 x é 4 bytes
 ```
->O operador `sizeof` não inclui memória alocada dinamicamente usada por um objeto. Memória alocada dinamicamente será discutido em futuros capítulos! Fiquem de olho!
+>O operador `sizeof` não inclui memória alocada dinamicamente usada por um objeto. A memória alocada dinamicamente será discutido em futuros capítulos! Fiquem de olho!
 
 ## Conclusões
 
