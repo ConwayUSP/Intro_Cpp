@@ -18,7 +18,7 @@ Visto que todos os dados em um computador são uma sequência de bits, usamos os
 
 Tudo o que você deve fazer é escolher o tipo de dado para o seu objeto que melhor atenda o uso desejado.
 
-## 2.3 Tipos Fundamentais de dados
+## 2.3 - Tipos Fundamentais de dados
 
 O C++ já possui diversos tipos de dados predeterminados disponíveis para uso, cujos mais básicos são chamados de **tipos fundamentais de dados** (ou, informalmente, de **tipos primitivos**).
 
@@ -111,7 +111,7 @@ Ao invés disso, o padrão diz o seguinte:
 
 ## 2.6 - O operador sizeof
 
-Para determinar o tamanho dos tipos de dados em cada máquina específica, o C++ fornece um operador chamado `sizeof`. O **operador sizeof** é um operador **unário** (que só recebe uma entrada) que recebe um tipo ou variável, e retorna o tamaho de um objeto daquele tipo (em bytes).
+Para determinar o tamanho dos tipos de dados em cada máquina específica, o C++ fornece um operador chamado `sizeof`. O **operador sizeof** é um operador **unário** (que só recebe uma entrada) que recebe um tipo ou variável, e retorna o tamanho de um objeto daquele tipo (em bytes).
 Por exemplo:
 
 ```cpp
