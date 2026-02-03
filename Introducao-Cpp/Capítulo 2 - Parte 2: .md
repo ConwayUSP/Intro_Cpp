@@ -75,7 +75,27 @@ double e { 0.0 }; // 0.0 é um double
 >**Observação:** Lembre-se de sempre verificar se os literais se adequam as variáveis que eles estão sendo atribuídos, pois senão uma conversão desnecessária será realizada, o que pode ocasionar em perda de precisão.
 
 ## 2.9 - Valores Booleanos
+Variáveis booleanas são mais simples, e possuem apenas dois valores possíveis, sendo eles: `true` ou `false` (verdadeiro ou falso). Estes valores são armazenados como valores inteiros 1 (para `true`) e 0 (para `false`), por isso fazem parte da categoria de tipos inteiros. 
 
+Para declarar uma variável booleana, usamos o termo `bool`.
+```cpp
+bool b;
+```
+E para inicializar ou atribuir algum dos dois valores possíveis à uma variável, fazemos da seguinte forma: 
+```cpp
+bool b1 { true };
+bool b2 { false };
+b1 = false;
+bool b3 {}; // inicializa como false por padrão
+```
+Pode-se também utilizar o operador lógico NOT (!) para tornar um valor `true` para `false`, e vice-versa.
+```cpp
+bool b1 { !true }; // b1 inicializa como false
+bool b2 { !false }; // b2 inicializa como true
+```
+Com muita frequência usamos valores booleanos como os valores de retorno para funções que checam se algo é verdadeiro ou não. Estas funções geralmente são nomeadas começando pelas palavras **é** ou **tem**, na maioria das vezes escritas em inglês **is** e **has**, como por exemplo nas funções `isEqual()` ou `hasCommonDivisor`.  
+
+## 2.10 - Introdução ao comando if
 
 
 
