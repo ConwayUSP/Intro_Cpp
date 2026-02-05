@@ -138,7 +138,7 @@ int main()
 
 ## 2.11 - Chars
 Até agora olhamos apenas para os tipos que armazenam números ou valores como `true`/`false`, mas e se quisermos armazenar letras? Utilizamos o tipo de dado chamado `char`, que consegue armazenar **apenas um** caractere, que pode ser uma letra, um número, um símbolo ou um espaço em branco. Como já explicamos, este tipo é armazenado como um número inteiro, porém neste caso o valor é interpretado através de uma tabela que traduz os números para caracteres.
->**Observação:** Há vários padrões de tabela bastante utilizados ao redor do mundo, como **ASCII** e **UTF-8**, porém abordaremos em detalhes neste curso. Caso tenha ficado curioso, recomendo a pesquisa!
+>**Observação:** A tabela padrão para a interpretação de caracteres é a tabela [**ASCII**](https://www.ime.usp.br/~kellyrb/mac2166_2015/tabela_ascii.html), também há outras como **UTF-8**, **UTF-16**, etc, porém não abordaremos nenhuma delas em detalhes neste curso. Caso tenha ficado curioso, recomendo a pesquisa!
 
 Para definir um char, utilizamos:
 ```cpp
@@ -224,6 +224,18 @@ int main()
 	return 0;
 }
 ```
+
+## Questões
+
+1) Crie um programa que peça ao usuário um número decimal (`double`) e mostre qual seria seu valor se convertido explicitamente para `int`.
+
+2) Crie um programa que peça ao usuário um número inteiro e use `if-else` para verificar se ele é positivo, negativo ou zero, mostrando mensagens adequadas para cada caso.
+
+3) Crie um programa que peça ao usuário um caractere e mostre seu valor numérico correspondente na tabela [ASCII](https://www.ime.usp.br/~kellyrb/mac2166_2015/tabela_ascii.html)
+   > Dica: Lembre-se que todo char é armazenado como inteiro!
+
+Boa sorte!
+
 # Conclusões
 Agora sim saímos deste capítulo com um montão de possibilidades! Estes conceitos são fundamentais para qualquer programa que iremos desenvolver em C++.
 
