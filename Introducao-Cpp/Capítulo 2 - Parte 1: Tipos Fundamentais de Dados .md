@@ -169,6 +169,28 @@ x é 4 bytes
 ```
 >O operador `sizeof` não inclui memória alocada dinamicamente usada por um objeto. A memória alocada dinamicamente será discutido em futuros capítulos! Fiquem de olho!
 
+## Questões
+
+1) Crie um programa que pegue o tamanho (em bytes) dos tipos `long long` e `long double`, calcule a soma destes tamanhos e imprima na tela o resultado.
+2) Crie um programa que calcule quantos valores diferentes podem ser armazenados em uma variável do tipo `char` e que imprima na tela o resultado (considere que 1 byte = 8 bits).
+   
+    **Orientações:**
+    - Utilize a função `pow()` da biblioteca `<cmath>` para calcular a potência
+    - A função `pow()` recebe dois parâmetros: `pow(base, expoente)`
+    
+    - Exemplo de como usar a função `pow()`:
+        ```cpp
+        #include <cmath>
+        
+        int main() {
+            // Calcula 2³ (2 elevado a 3)
+            int resultado = pow(2, 3); // resultado = 8
+            // ...
+        }
+        ```
+
+Boa sorte!
+
 ## Conclusões
 
 Agora você conhece um pouco mais dos tipos fundamentais de dados em C++ e em como é armazenada a memória do nosso queridinho computador!
