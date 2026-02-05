@@ -95,8 +95,132 @@ bool b2 { !false }; // b2 inicializa como true
 ```
 Com muita frequência usamos valores booleanos como os valores de retorno para funções que checam se algo é verdadeiro ou não. Estas funções geralmente são nomeadas começando pelas palavras **é** ou **tem**, na maioria das vezes escritas em inglês **is** e **has**, como por exemplo nas funções `isEqual()` ou `hasCommonDivisor`.  
 
-## 2.10 - Introdução ao comando if
+## 2.10 - Introdução aos comandos if e if-else
+Se você já estudou um pouco de C, também já deve estar familiarizado com a condicional `if` (ou **"se"**, traduzindo do inglês), que nos permite executar linhas de código caso alguma condição seja verdadeira. Uma **condição** (também chamada de **expressão condicional**) é uma expressão que verifica um valor booleano, elas são escritas a partir dos operadores lógicos e de comparação que estudamos no capítulo anterior (ex. expressão condicional: 1 == 2, resultado: false). Se esse valor for `true`, então o pedaço de código é executado, caso contrário, aquele pedaço de código é ignorado.  
 
+Aqui está um pequeno exemplo do uso de if:
+```cpp
+#include <iostream>
 
+int main()
+{
+    std::cout << "Escreva um inteiro: ";
+    int x {};
+    std::cin >> x;
 
+    if (x == 0)
+        std::cout << "O valor é zero\n";
+
+    return 0;
+}
+```
+Podemos incluir também o comando `else` após o `if`, produzindo o comando `if-else`. Basicamente, `if-else` implica que se a expressão condicional definida no `if` resultar em um valor negativo (como em: `if (1 == 2)`, então deve-se ignorar o pedaço de código no escopo do `if` e executar o pedaço de código alternativo definido no escopo do `else` (entenda como: "se não isto, então aquilo").
+
+Aqui está um pequeno exemplo do uso de if-else:
+```cpp
+#include <iostream>
+
+int main()
+{
+    std::cout << "Escreva um inteiro: ";
+    int x {};
+    std::cin >> x;
+
+    if (x == 0)
+        std::cout << "O valor é zero\n";
+    else
+        std::cout << "O valor não é zero\n";
+
+    return 0;
+}
+```
+
+## 2.11 - Chars
+Até agora olhamos apenas para os tipos que armazenam números ou valores como `true`/`false`, mas e se quisermos armazenar letras? Utilizamos o tipo de dado chamado `char`, que consegue armazenar **apenas um** caractere, que pode ser uma letra, um número, um símbolo ou um espaço em branco. Como já explicamos, este tipo é armazenado como um número inteiro, porém neste caso o valor é interpretado através de uma tabela que traduz os números para caracteres.
+>**Observação:** Há vários padrões de tabela bastante utilizados ao redor do mundo, como **ASCII** e **UTF-8**, porém abordaremos em detalhes neste curso. Caso tenha ficado curioso, recomendo a pesquisa!
+
+Para definir um char, utilizamos:
+```cpp
+char ch2{ 'a' }; //lembre-se de usar as aspas!
+```
+Também há algumas sequências de caracteres em C++ que têm um significado especial, essas sequências são chamadas de **sequências de escape**, que começam com um caractere de barra invertida `'\'`, e então um número ou letra. Provavelmente você já conhece a sequência mais comum: `'\n'`, que pode ser usada para fazer impressões em uma nova linha. 
+
+Aqui está uma lista das sequências de escape:
+
+| Nome | Símbolo | Significado |
+|------|---------|-------------|
+| **Alerta** | `\a` | Emite um alerta, como um bipe |
+| **Backspace** | `\b` | Move o cursor uma posição para trás |
+| **Formfeed** | `\f` | Move o cursor para a próxima página lógica |
+| **Nova linha** | `\n` | Move o cursor para a próxima linha |
+| **Retorno de carro** | `\r` | Move o cursor para o início da linha |
+| **Tabulação horizontal** | `\t` | Imprime uma tabulação horizontal |
+| **Tabulação vertical** | `\v` | Imprime uma tabulação vertical |
+| **Aspas simples** | `\'` | Imprime uma aspas simples |
+| **Aspas duplas** | `\"` | Imprime aspas duplas |
+| **Barra invertida** | `\\` | Imprime uma barra invertida |
+| **Ponto de interrogação** | `\?` | Imprime um ponto de interrogação |
+| **Número octal** | `\(número)` | Traduz para o caractere representado pelo número octal |
+| **Número hexadecimal** | `\x(número)` | Traduz para o caractere representado pelo número hexadecimal |
+
+>**Observação:** O escape `\?` **não é mais relevante** na maioria dos casos. Você pode usar pontos de interrogação sem escape em C++ moderno. E para `\(número)` e `\x(número)`, substitua `(número)` pelo valor real (ex: `\101` para octal 'A', `\x41` para hexadecimal 'A').
+
+## 2.12 - Conversão de Tipos e o static_cast
+
+Vejamos um exemplo:
+```cpp
+#include <iostream>
+
+void imprime(double x) // imprime() recebe um double
+{
+	std::cout << x << '\n';
+}
+
+int main()
+{
+	imprime(5); // o que acontece se passarmos um valor do tipo int?
+
+	return 0;
+}
+```
+Na maioria dos casos, o C++ permite a conversão entre valores de um tipo fundamental para outro tipo fundamental, este processo é chamado de **conversão de tipo**. No exemplo acima, o valor inteiro `5` será convertido para o valor double `5.0`, e então copiado como parâmetro para a função `imprime()`. Como foi o compilador que realizou esta conversão no nosso lugar, o que aconteceu foi uma **conversão implícita de tipo**, que muitas vezes funciona, porém precisamos tomar cuidado. Vejamos:
+```cpp
+#include <iostream>
+
+void imprime(int x) // imprime() agora recebe um int como parâmetro
+{
+	std::cout << x << '\n';
+}
+
+int main()
+{
+	imprime(5.5); // cuidado! estamos passando um valor double como parâmetro
+
+	return 0;
+}
+```
+Neste caso, provavelmente seu compilador gerará algum aviso de perda de dados ou até abortará a execução do programa, então tenha cuidado!
+
+No entando, muitas vezes queremos que a conversão aconteça mesmo que ocorra perda de dados, e é nesses momentos que utlizamos a **conversão explícita de tipo**. Essa conversão nos permite dizer explicitamente ao compilador para converter um valor de um tipo para outro, e que assumimos a responsabilidade dos resultados desta conversão.
+Para realizar  uma conversão de tipo explícita, utilizamos geralmente o operador `static_cast`, cuja sintaxe é a seguinte:
+```cpp
+static_cast<novo_tipo>(expressão)
+```
+O `static_cast` recebe o valor de uma expressão como entrada e retorna o valor convertido no tipo especificado em `<novo_tipo>` (ex. `int`, `bool`, `char`, `double`).
+Vejamos como nosso código anterior ficaria:
+```cpp
+#include <iostream>
+
+void imprime(int x)
+{
+	std::cout << x << '\n';
+}
+
+int main()
+{
+	imprime( static_cast<int>(5.5) ); // converte explicitamente o valor double 5.5 em um int
+
+	return 0;
+}
+```
 # Conclusões
