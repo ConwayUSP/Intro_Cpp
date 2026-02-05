@@ -1,6 +1,5 @@
-# Capítulo 2 - Parte 2: 
-
-Neste parte, conheceremos... (continuar)
+# Capítulo 2 - Parte 2: Trabalhando com os Tipos de Dados
+Na segunda parte do Capítulo 2, vamos nos aprofundar nos tipos de dados que aprendemos brevemente. Conheceremos um pouco dos inteiros com e sem sinal (signed/unsigned), números de ponto flutuante, tipo bool e os comandos if e else, e alguns outros conceitos! Vamos lá?
 
 ## 2.7 - Números Inteiros com Sinal (Signed Integers)
 
@@ -224,3 +223,4 @@ int main()
 }
 ```
 # Conclusões
+Agora sim saímos deste capítulo com um montão de possibilidades! Na próxima etapa, expandiremos ainda mais seus conhecimentos em C++, estudando funções, headers e muito mais. Te encontro lá!
