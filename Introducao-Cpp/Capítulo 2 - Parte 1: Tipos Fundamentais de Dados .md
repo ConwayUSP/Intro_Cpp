@@ -173,4 +173,6 @@ x é 4 bytes
 
 Agora você conhece um pouco mais dos tipos fundamentais de dados em C++ e em como é armazenada a memória do nosso queridinho computador!
 
-Mas atenção! Aqui passamos apenas pelo básico, então ainda precisamos estudar um pouco dos chamados "tipos compostos de dados", como strings, matrizes, structs entre outros, tipos estes que já se tornaram padrão na biblioteca de C++ e que muitas vezes precisam ser declarados para uso! Felizmente, abordaremos muitos destes temas em futuros capítulos, te espero lá!
+Na próxima parte deste capítulo, veremos de uma forma um pouco mais aprofundada como trabalhar com os tipos de dados que aprendemos hoje. Estes conceitos são fundamentais para seu desenvolvimento em C++.
+
+Aguardo você na parte 2!
