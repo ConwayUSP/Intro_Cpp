@@ -5,7 +5,7 @@ Vamos lá?
 
 ## 2.7 - Números Inteiros com Sinal (Signed Integers)
 
-Um inteiro (`int`) é um tipo que pode representar números positivos e negativos, incluindo 0. Como vimos anteriormente, o C++ tem tem 4 tipos de inteiro disponíveis para uso: `short int`, `int`, `long int` e `long long int`. A diferença entre estes vários tipos de inteiro é o tamanho que eles ocupam, sendo os maiores os que conseguem armazenar maiores números (como o `long long int`, por exemplo).
+Um inteiro (`int`) é um tipo que pode representar números positivos e negativos, incluindo 0. Como vimos anteriormente, o C++ tem 4 tipos de inteiro disponíveis para uso: `short int`, `int`, `long int` e `long long int`. A diferença entre estes vários tipos de inteiro é o tamanho que eles ocupam, sendo os maiores os que conseguem armazenar maiores números (como o `long long int`, por exemplo).
 
 |Tipo|Tamanho Mínimo|
 |----|--------------|
@@ -36,7 +36,7 @@ signed int si;
 signed long sl;
 signed long long sll;
 ```
-No entando, esse modificador não deve ser usado pois é redundante, já que os inteiros já são `signed` (com sinal) por padrão.
+No entanto, esse modificador não deve ser usado pois é redundante, já que os inteiros já são `signed` (com sinal) por padrão.
 
 O C++ também possui inteiros **sem sinal** (ou **unsigned**, em inglês), que são inteiros que só podem ser números não-negativos. Definimos os inteiros sem sinal de forma semelhante ao `signed`, porém substituindo pelo modificador `unsigned`:
 ```cpp
@@ -45,11 +45,11 @@ unsigned int ui;
 unsigned long ul;
 unsigned long long ull;
 ```
-De forma geral programadores mais experientes recomendam evitar o uso do modificador `unsigned`, já que muitas vezes podemos manipular os números de forma equivada, causando um overflow no nosso código. Para dar um exemplo, com muita frequência iteramos em loops subtraindo uma variável repetidamente por 1, se nossa variável for não-negativa e o código tentar subtrai-la para um número negativo, isso causará problemas! Também podem acontecer comportamentos inesperados se tentarmos misturar o uso de números `signed` e `unsigned`, então use com grande cuidado, sabedoria e apenas quando necessário!
+De forma geral programadores mais experientes recomendam evitar o uso do modificador `unsigned`, já que muitas vezes podemos manipular os números de forma equivocada, causando um overflow no nosso código. Para dar um exemplo, com muita frequência iteramos em loops subtraindo uma variável repetidamente por 1, se nossa variável for não-negativa e o código tentar subtraí-la para um número negativo, isso causará problemas! Também podem acontecer comportamentos inesperados se tentarmos misturar o uso de números `signed` e `unsigned`, então use com grande cuidado, sabedoria e apenas quando necessário!
 
 ## 2.8 - Números de Ponto Flutuante
 
-Inteiros são muito bons para contar números, mas as vezes precisamos guardar números **realmente** grandes, ou números decimais. Uma váriavel de  tipo **ponto flutuante** é uma variável que consegue armazenar um número decimal, como 25.33, 34445.0, -50.2 e assim em diante. A parte flutuante se refere ao fato de que o ponto decimal pode "flutuar", isto é, ele abarca um número variável de dígitos antes e depois do ponto decimal. Os tipos de dado de ponto flutuante são sempre `signed`. 
+Inteiros são muito bons para contar números, mas as vezes precisamos guardar números **realmente** grandes, ou números decimais. Uma variável de  tipo **ponto flutuante** é uma variável que consegue armazenar um número decimal, como 25.33, 34445.0, -50.2 e assim em diante. A parte flutuante se refere ao fato de que o ponto decimal pode "flutuar", isto é, ele abarca um número variável de dígitos antes e depois do ponto decimal. Os tipos de dado de ponto flutuante são sempre `signed`. 
 
 O C++ tem três tipos de dado de ponto flutuante disponíveis para uso: `float`, `double` e `long double`. Novamente, a diferença entre eles é o tamanho da memória que ocupam, sendo os tipos maiores mais precisos (isto é, oferecem mais dígitos decimais).
 |Tipo|Tamanho Típico|
@@ -68,7 +68,7 @@ Quando estiver usando literais de ponto flutuante, inclua pelo menos um espaço 
 ```cpp
 int a { 5 };      // 5 significa inteiro
 double b { 5.0 }; // 5.0 é um literal de ponto flutuante (sem sufixo significa double por padrão)
-float c { 5.0f }; // 5.0 é um literal de ponto flutuantel, o sufixo f significa tipo float
+float c { 5.0f }; // 5.0 é um literal de ponto flutuante, o sufixo f significa tipo float
 
 int d { 0 };      // 0 é um inteiro
 double e { 0.0 }; // 0.0 é um double
@@ -202,8 +202,8 @@ int main()
 ```
 Neste caso, provavelmente seu compilador gerará algum aviso de perda de dados ou até abortará a execução do programa, então tenha cuidado!
 
-No entando, muitas vezes queremos que a conversão aconteça mesmo que ocorra perda de dados, e é nesses momentos que utlizamos a **conversão explícita de tipo**. Essa conversão nos permite dizer explicitamente ao compilador para converter um valor de um tipo para outro, e que assumimos a responsabilidade dos resultados desta conversão.
-Para realizar  uma conversão de tipo explícita, utilizamos geralmente o operador `static_cast`, cuja sintaxe é a seguinte:
+No entanto, muitas vezes queremos que a conversão aconteça mesmo que ocorra perda de dados, e é nesses momentos que utilizamos a **conversão explícita de tipo**. Essa conversão nos permite dizer explicitamente ao compilador para converter um valor de um tipo para outro, e que assumimos a responsabilidade dos resultados desta conversão.
+Para realizar uma conversão de tipo explícita, utilizamos geralmente o operador `static_cast`, cuja sintaxe é a seguinte:
 ```cpp
 static_cast<novo_tipo>(expressão)
 ```
