@@ -227,11 +227,11 @@ int main()
 
 ## Questões
 
-1) Crie um programa que peça ao usuário um número decimal (`double`) e mostre qual seria seu valor se convertido explicitamente para `int`.
+1) Crie um programa que peça ao usuário um número decimal (`double`) e imprima qual seria seu valor se convertido explicitamente para `int`.
 
-2) Crie um programa que peça ao usuário um número inteiro e use `if-else` para verificar se ele é positivo, negativo ou zero, mostrando mensagens adequadas para cada caso.
+2) Crie um programa que peça ao usuário um número inteiro e use `if-else` para verificar se ele é positivo, negativo ou zero, imprimindo mensagens adequadas para cada caso.
 
-3) Crie um programa que peça ao usuário um caractere e mostre seu valor numérico correspondente na tabela [ASCII](https://www.ime.usp.br/~kellyrb/mac2166_2015/tabela_ascii.html)
+3) Crie um programa que peça ao usuário um caractere e imprima seu valor numérico correspondente na tabela [ASCII](https://www.ime.usp.br/~kellyrb/mac2166_2015/tabela_ascii.html)
    > Dica: Lembre-se que todo char é armazenado como inteiro!
 
 Boa sorte!
