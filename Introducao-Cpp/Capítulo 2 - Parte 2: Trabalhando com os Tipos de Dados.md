@@ -1,5 +1,7 @@
 # Capítulo 2 - Parte 2: Trabalhando com os Tipos de Dados
-Na segunda parte do Capítulo 2, vamos nos aprofundar nos tipos de dados que aprendemos brevemente. Conheceremos um pouco dos inteiros com e sem sinal (signed/unsigned), números de ponto flutuante, tipo bool e os comandos if e else, e alguns outros conceitos! Vamos lá?
+Na segunda parte do Capítulo 2, vamos nos aprofundar nos tipos de dados que aprendemos brevemente. Conheceremos um pouco dos inteiros com e sem sinal (signed/unsigned), números de ponto flutuante, tipo bool e os comandos if e else, e alguns outros conceitos! 
+
+Vamos lá?
 
 ## 2.7 - Números Inteiros com Sinal (Signed Integers)
 
