@@ -223,4 +223,8 @@ int main()
 }
 ```
 # Conclusões
-Agora sim saímos deste capítulo com um montão de possibilidades! Na próxima etapa, expandiremos ainda mais seus conhecimentos em C++, estudando funções, headers e muito mais. Te encontro lá!
+Agora sim saímos deste capítulo com um montão de possibilidades! Estes conceitos são fundamentais para qualquer programa que iremos desenvolver em C++.
+
+Mas atenção! Aqui passamos apenas pelo básico, então ainda precisamos estudar um pouco dos chamados "tipos compostos de dados", como strings, matrizes, structs entre outros, tipos estes que já se tornaram padrão na biblioteca de C++ e que muitas vezes precisam ser declarados para uso! Felizmente, abordaremos muitos destes temas em futuros capítulos.
+
+Aguardo você no Capítulo 3! 
