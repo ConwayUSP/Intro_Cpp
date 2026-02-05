@@ -115,7 +115,7 @@ int main()
     return 0;
 }
 ```
-Podemos incluir também o comando `else` após o `if`, produzindo o comando `if-else`. Basicamente, `if-else` implica que se a expressão condicional definida no `if` resultar em um valor negativo (como em: `if (1 == 2)`, então deve-se ignorar o pedaço de código no escopo do `if` e executar o pedaço de código alternativo definido no escopo do `else` (entenda como: "se não isto, então aquilo").
+Podemos incluir também o comando `else` após o `if`, produzindo o comando `if-else`. Basicamente, `if-else` implica que se a expressão condicional definida no `if` resultar em um valor negativo (como em: `if (1 == 2)`), então deve-se ignorar o pedaço de código no escopo do `if` e executar o pedaço de código alternativo definido no escopo do `else` (entenda como: "se não isto, então aquilo").
 
 Aqui está um pequeno exemplo do uso de if-else:
 ```cpp
