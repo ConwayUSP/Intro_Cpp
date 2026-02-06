@@ -8,9 +8,9 @@ Nesta parte do curso iremos falar sobre alocação dinâmica e suas propriedades
 
 Pense em um cenário onde podemos querer usar uma string para armazenar o nome de alguém, mas não sabemos o comprimento do nome até que a pessoa o digite. Ou podemos estar criando um jogo com um número variável de monstros (que muda ao longo do tempo à medida que alguns monstros morrem e outros surgem) tentando matar o jogador.
 
-Nesses tipos de situações, uma possível solução seria estimar e alocar o tamanho máximo das variáveis ​​de que precisaremos e torcer para que seja suficiente.
+Nesses tipos de situações, uma possível solução seria estimar e alocar o tamanho máximo das variáveis ​​de que precisaremos e torcer para que sejam suficientes.
 
-Entretanto, essa seria uma solução inadequada, uma vez que isso levaria ao desperdício de memória se as variáveis ​​não forem realmente usadas. Por exemplo, se alocarmos 25 caracteres para cada nome, mas os nomes em média têm apenas 12 caracteres, estaremos usando mais que o dobro do que realmente precisamos.
+Entretanto, essa seria uma solução inadequada, uma vez que isso levaria ao desperdício de memória se as variáveis ​​não forem realmente usadas. Por exemplo, se alocarmos 25 caracteres para cada nome, mas os nomes em média têm apenas 12 caracteres, estaremos usando mais do que o dobro do que realmente precisamos.
 
 Então, para resolver esses tipos de problemas nós utilizamos a **alocação dinâmica de memória**:
 
@@ -53,7 +53,7 @@ Note que após usar `delete ptr;`, o ponteiro `ptr` ainda guarda o endereço ant
 
 Além de alocar valores individuais dinamicamente, também podemos alocar arrays de variáveis ​​dinamicamente. 
 
-Ao contrário de um array fixo, cujo tamanho deve ser definido em tempo de compilação, a alocação dinâmica de um array permite escolher seu comprimento em tempo de execução (ou seja, o comprimento não precisa ser uma constante de tempo em compilação).
+Ao contrário de um array fixo, cujo tamanho deve ser definido em tempo de compilação, a alocação dinâmica de um array permite escolher seu comprimento em tempo de execução (ou seja, o comprimento não precisa ser uma constante de tempo de compilação).
 
 Para alocar um array dinamicamente, usamos a forma de array de new e delete (frequentemente chamadas de `new[]` e `delete[]`):
 
