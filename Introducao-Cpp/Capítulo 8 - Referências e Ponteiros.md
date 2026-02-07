@@ -172,4 +172,4 @@ Basicamente, um _dangling pointer_ é um ponteiro que guarda o endereço de um o
 
 Agora, você possui uma noção básica a respeito dos dois operadores os quais são utilizados para interagir com endereços, além do próprio conceito de ponteiros.
 
-Na próxima parte, falaremos sobre ponteiros nulos e inteligentes. Vejo você lá!
+No próximo capítulo, falaremos sobre estruturas. Vejo você lá!
