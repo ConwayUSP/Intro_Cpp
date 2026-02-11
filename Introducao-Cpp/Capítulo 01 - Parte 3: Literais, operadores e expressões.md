@@ -1,4 +1,4 @@
-# Capítulo 1 - Parte 3: Introdução a literais, operadores e expressões
+# Capítulo 01 - Parte 3: Introdução a literais, operadores e expressões
 
 Agora que você já sabe como declarar variáveis e entende a estrutura básica de um programa em C++, é hora de aprender a trabalhar com valores e operações.
 
