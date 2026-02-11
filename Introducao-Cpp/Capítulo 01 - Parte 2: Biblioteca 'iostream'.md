@@ -1,4 +1,4 @@
-# Capítulo 1 - Parte 2: Introdução à biblioteca "iostream"
+# Capítulo 01 - Parte 2: Introdução à biblioteca "iostream"
 
 Nesta parte, falaremos mais sobre `std::cout`, que usamos em nosso programa Hello world! para enviar o texto "*Hello world!*" para o console (programa de interface que possui comandos para imprimir e ler texto). 
 
