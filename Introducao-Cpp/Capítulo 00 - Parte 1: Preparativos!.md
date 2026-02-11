@@ -1,4 +1,4 @@
-# Capítulo 0 - Parte 1: Preparativos!
+# Capítulo 00 - Parte 1: Preparativos!
 
 Sejam bem vindos ao Capítulo 0 do nosso curso!
 
