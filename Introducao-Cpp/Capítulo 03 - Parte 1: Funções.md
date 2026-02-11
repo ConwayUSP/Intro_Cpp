@@ -1,4 +1,4 @@
-# Capítulo 3: Funções e Arquivos
+# Capítulo 03: Funções e Arquivos
 
 Sejam bem-vindos ao Capítulo 3 do nosso curso!
 
