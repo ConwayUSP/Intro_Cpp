@@ -1,4 +1,4 @@
-# Capítulo 9: Structs e Enums
+# Capítulo 09: Structs e Enums
 
 Sejam bem-vindos ao capítulo 9 do nosso curso!
 
