@@ -1,4 +1,4 @@
-# Capítulo 6: Namespaces e variáveis locais estáticas
+# Capítulo 06: Namespaces e variáveis locais estáticas
 
 Sejam bem-vindos ao Capítulo 6 do nosso curso!
 
