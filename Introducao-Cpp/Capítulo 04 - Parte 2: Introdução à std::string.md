@@ -1,4 +1,4 @@
-# Capítulo 4 - Parte 2: Introdução à std::string
+# Capítulo 04 - Parte 2: Introdução à std::string
 
 Bem vindos ao Capítulo 4, parte 2!
 
