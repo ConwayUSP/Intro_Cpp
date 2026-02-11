@@ -1,4 +1,4 @@
-# Capítulo 2 - Parte 1: Tipos Fundamentais de Dados
+# Capítulo 02 - Parte 1: Tipos Fundamentais de Dados
 
 Sejam bem-vindos ao Capítulo 2 da nossa trilha!
 
