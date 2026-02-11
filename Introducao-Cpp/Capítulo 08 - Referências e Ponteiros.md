@@ -1,4 +1,4 @@
-# Capítulo 8 - Referências e Ponteiros
+# Capítulo 08 - Referências e Ponteiros
 
 Sejam bem-vindos ao Capítulo 8 do nosso curso!
 
