@@ -104,7 +104,7 @@ Recomenda-se usar `constexpr if` sempre que estiver trabalhando com condicinais 
 
 ### Declaração Switch
 
-Mesmo que seja possível declarar vários `if-else` em sequência, fazer desta forma é difícil de ler e acaba sendo ineficiente. Vejamos:
+Mesmo que seja possível declarar vários `if-else` em sequência, fazer isso torna o código difícil de ler e em alguns casos acaba sendo ineficiente. Vejamos:
 ```cpp
 #include <iostream>
 
@@ -159,3 +159,9 @@ int main()
     return 0;
 }
 ```
+Portanto, a ideia por traz de uma declaração `switch` é bem simples: uma expressão (também chamada de condição) é avaliada para produzir um valor. Nesse sentido, sempre ocorrerá uma entre três destas possibilidades:
+- Se o valor da expressão for equivalente ao valor de algum dos casos, o bloco de código daquele caso é executado;
+- Se o valor da expressão não for equivalente a nenhum caso e um rótulo padrão existir, o bloco de código do rótulo padrão é executado;
+- Se o valor da expressão não for equivalente a nenhum caso e não há rótulo padrão, ignora-se o `switch`.
+
+Recomenda-se usar a declaração `switch` quando há apenas uma expressão (com um valor não-booleano inteiro ou um tipo enumerável) que queremos comparar com um grupo de números para encontrar equivalência.
