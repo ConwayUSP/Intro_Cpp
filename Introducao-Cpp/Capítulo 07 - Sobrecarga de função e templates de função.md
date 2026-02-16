@@ -1,4 +1,4 @@
-# Capítulo 7 - Sobrecarga de função e templates de função
+# Capítulo 07 - Sobrecarga de função e templates de função
 
 Sejam bem-vindos ao Capítulo 7 do nosso curso!
 

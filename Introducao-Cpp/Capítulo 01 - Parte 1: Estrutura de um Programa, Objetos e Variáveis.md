@@ -1,4 +1,4 @@
-# Capítulo 1 - Parte 1: Estrutura de um Programa, Objetos e Variáveis
+# Capítulo 01 - Parte 1: Estrutura de um Programa, Objetos e Variáveis
 
 Sejam bem-vindos ao Capítulo 1 do nosso curso!
 

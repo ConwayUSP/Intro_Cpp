@@ -1,4 +1,4 @@
-# Capítulo 0 - Parte 2: Hello, world!
+# Capítulo 00 - Parte 2: Hello, world!
 
 Olá! Sejam bem vindos à segunda parte do Capítulo 0 do nosso curso!
 
