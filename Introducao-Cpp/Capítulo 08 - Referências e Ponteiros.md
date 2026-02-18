@@ -179,7 +179,7 @@ Basicamente, um _dangling pointer_ é um ponteiro que guarda o endereço de um o
 
 ## Questões
 
-1) Escreva um programa que:
+### 1) Escreva um programa que:
 
 Declare uma variável inteira chamada numero com o valor 100
 
@@ -189,7 +189,7 @@ Declare um ponteiro para inteiro chamado ptr e o inicialize com o endereço de n
 
 Imprima no terminal o valor que está armazenado dentro do ponteiro ptr (que deve ser igual ao endereço impresso no passo 2)
 
-2) Escreva um programa que:
+### 2) Escreva um programa que:
 
 Declare uma variável pontuacao iniciando com 0.
 
@@ -203,7 +203,7 @@ Em seguida, altere o valor novamente via ponteiro, agora multiplicando o valor a
 
 Imprima o valor final.
 
-3) Escreva um programa que:
+### 3) Escreva um programa que:
 
 Declare um ponteiro para inteiro chamado ptrSeguro e o inicialize imediatamente com nullptr.
 
