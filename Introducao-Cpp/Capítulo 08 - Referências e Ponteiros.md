@@ -168,7 +168,56 @@ Por fim, falando brevemente sobre os _dangling pointers_, ou ponteiros pendentes
 
 Basicamente, um _dangling pointer_ é um ponteiro que guarda o endereço de um objeto o qual não é mais válido. Desreferenciar um _dangling pointer_ fomentará um comportamento indefinido do nosso programa, visto que você está tentando acessar um objeto inválido.
 
-# Conclusões
+## Resumo
+| Conceito | Sintaxe / Exemplo | Descrição |
+| :--- | :--- | :--- |
+| **Declaração** | `tipo* nome; `<br>`int* ptr;` | Cria uma variável que armazenará um **endereço de memória** de um tipo específico (ex: um inteiro). |
+| **Operador de Endereço (`&`)** | `ptr = &variavel;` | Obtém o endereço de memória onde `variavel` está armazenada e o atribui ao ponteiro. |
+| **Desreferência (`*`)** | `int valor = *ptr; `<br>`*ptr = 10;` | Acessa ou modifica o **valor** armazenado no endereço para o qual o ponteiro aponta. |
+| **Ponteiro Nulo** | `ptr = nullptr;` | Indica que o ponteiro não aponta para nenhum objeto válido. Em C++ moderno, use `nullptr` em vez de `NULL`. |
+| **Ponteiro para Ponteiro** | `int** pptr;` | Um ponteiro que armazena o endereço de outro ponteiro. Usado em matrizes dinâmicas ou modificação de ponteiros em funções. |
+
+## Questões
+
+1) Escreva um programa que:
+
+Declare uma variável inteira chamada numero com o valor 100
+
+Imprima no terminal o endereço de memória onde numero está guardado (usando o operador &)
+
+Declare um ponteiro para inteiro chamado ptr e o inicialize com o endereço de numero
+
+Imprima no terminal o valor que está armazenado dentro do ponteiro ptr (que deve ser igual ao endereço impresso no passo 2)
+
+2) Escreva um programa que:
+
+Declare uma variável pontuacao iniciando com 0.
+
+Declare um ponteiro ptrScore que aponte para pontuacao.
+
+Usando apenas o ponteiro ptrScore (não use a variável pontuacao diretamente), altere o valor para 50.
+
+Imprima o valor da variável original pontuacao para provar que ela foi modificada.
+
+Em seguida, altere o valor novamente via ponteiro, agora multiplicando o valor atual por 2 (dica: *ptrScore = *ptrScore * 2).
+
+Imprima o valor final.
+
+3) Escreva um programa que:
+
+Declare um ponteiro para inteiro chamado ptrSeguro e o inicialize imediatamente com nullptr.
+
+Crie uma variável valor com o número 42.
+
+Faça um if que verifique se o ponteiro é nulo.
+
+Se for nulo, imprima "O ponteiro está vazio".
+
+Após o if, atribua o endereço de valor ao ptrSeguro.
+
+Imprima o valor apontado por ptrSeguro usando a desreferência.
+
+## Conclusões
 
 Agora, você possui uma noção básica a respeito dos dois operadores os quais são utilizados para interagir com endereços, além do próprio conceito de ponteiros.
 
