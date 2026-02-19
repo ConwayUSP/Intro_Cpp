@@ -36,7 +36,7 @@ Laços (Loops) | Executa repetidamente uma sequência de código zero ou mais ve
 Interrupções (Halts) | Termina o programa. | `std::exit()`, `std::abort()`
 Exceções | Um tipo especial de estrutura de controle de fluxo projetada para tratamento de erros. | `try`, `throw`, `catch`
 
-## 5.2 - Declarações Condicionais
+## 5.2 - Tópicos Especiais sobre if
 
 ### Blocos Implícitos
 
@@ -102,7 +102,7 @@ int main()
 ```
 Recomenda-se usar `constexpr if` sempre que estiver trabalhando com condicinais que são constantes.
 
-### Declaração Switch
+## 5.3 - Declaração Switch
 
 Mesmo que seja possível declarar vários `if-else` em sequência, fazer isso torna o código difícil de ler e em alguns casos acaba sendo ineficiente. Vejamos:
 ```cpp
@@ -165,3 +165,45 @@ Portanto, a ideia por traz de uma declaração `switch` é bem simples: uma expr
 - Se o valor da expressão não for equivalente a nenhum caso e não há rótulo padrão, ignora-se o `switch`.
 
 Recomenda-se usar a declaração `switch` quando há apenas uma expressão (com um valor não-booleano inteiro ou um tipo enumerável) que queremos comparar com um grupo de números para encontrar equivalência.
+
+Até agora usamos a declaração `return` para terminar a execução das instruções após o rótulo, porém esta forma fará com que a função toda termine. Caso queiramos que nossa função continue executando após o `switch`, devemos usar a declaração `break`, que diz ao compilador que terminamos de executar as instruções dentro do switch, e que deve-se continuar a execução a partir do fim do bloco. Vejamos agora o programa anterior, porém usando o `break` ao invès de `return`:
+
+```cpp
+#include <iostream>
+
+void imprimeDigito(int x)
+{
+    switch (x) // x armazena o valor 3
+    {
+    case 1:
+        std::cout << "Um";
+        break;
+    case 2:
+        std::cout << "Dois";
+        break;
+    case 3:
+        std::cout << "Três"; // a execução começa aqui
+        break; // pula para o fim do bloco switch
+    default:
+        std::cout << "Dígito Desconhecido";
+        break;
+    }
+
+    // a execução continua aqui
+    std::cout << " Ah-Ah-Ah!";
+}
+
+int main()
+{
+    imprimeDigito(3);
+    std::cout << '\n';
+
+    return 0;
+}
+```
+
+### Cascata (Fallthrough)
+
+Ainda explora
+
+
