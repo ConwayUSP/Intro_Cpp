@@ -6,7 +6,7 @@ Aqui, trabalharemos pela primeira vez de maneira diretamente orientada a endere�
 
 Ponteiros são conhecidos por serem o terror da programação em linguagens de nível mais baixo. Porém, veremos a seguir que não é nada extraordinariamente difícil, apesar de ser necessária uma revisão de vez em quando.
 
-## O operador "Endereço de" (&)
+## 8.1 O operador "Endereço de" (&)
 
 Quando declaramos uma variável, atribuindo ou não um valor, um pedaço da memória RAM será associado a ela. Provavelmente, eventualmente o nosso programa vai interagir de alguma maneira com aquela variável. Quando isso acontece, o programa tentará, justamente, acessar o endereço dela para recuperar, alterar, etc, a informação ali presente.
 
@@ -40,7 +40,7 @@ Sequencialmente, nós utilizamos o operador "&" para recuperar o endeço de "x" 
 No caso, endereços de memória são tipicamente printados na forma de valores em hexadecimal.
 
 
-## O operador de "desreferência" (*)
+## 8.2 O operador de "desreferência" (*)
 
 Agora, e se eu tiver um endereço de memória e quiser acessar o valor ali presente? Simplesmente, o operador "*" retorna o valor de um dado endereço. Perceba:
 
@@ -76,7 +76,7 @@ Neste exemplo, o fato de chegarmos novamente no valor 7 é um bom sinal (você p
 Isso pareceu, talvez, um pouco inútil caso você nunca tenha tido contato com esse tipo de coisa. Mas, com esses dois operadores "&" e "*", podemos começar a falar sobre ponteiros.
 
 
-## Ponteiros
+## 8.3 Ponteiros
 
 Basicamente, um ponteiro é um objeto no qual armazenamos endereços de memória enquanto seu valor. Normalmente, armazenamos de outras variáveis/objetos para usarmos depois.
 
