@@ -232,6 +232,15 @@ int main() {
 
 Porém, um jeito melhor de fazer isso pode ser comunicar ao seu compilador ou à sua IDE a presença dos headers em outro diretório.
 
+## Questões
+
+### 1) Escreva um programa que:
+
+1. Tenha código completo para um arquivo header chamado matematica.h contendo as declarações dessas duas funções.
+2. Escreva o início do arquivo main.cpp, demonstrando a sintaxe correta em C++ para incluir a biblioteca padrão de entrada e saída e, logo abaixo, o seu novo arquivo header matematica.h.
+
+### 2) Responda à pergunta deixada como exercício no material: por que é considerado uma má prática que um suposto arquivo processamento.cpp confie apenas na inclusão transitiva que vem do processamento.h, em vez de ter o seu próprio #include <iostream> declarado explicitamente?
+
 ## Conclusões
 
 Nesta terceira parte do Capítulo 3, você teve um primeiro contato com programação em C++ utilizando arquivos header.

@@ -422,6 +422,46 @@ int main(){
 
 Para mais detalhes aprofundados, recomendamos os capítulos [13.13](https://www.learncpp.com/cpp-tutorial/class-templates/) e [13.14](https://www.learncpp.com/cpp-tutorial/class-template-argument-deduction-ctad-and-deduction-guides/) do [Learn C++](https://www.learncpp.com/).
 
+## Questões
+
+### 1) Escreva um programa que:
+
+(i) Defina uma struct chamada Produto que contenha: um nome (std::string), um preço (double) e uma quantidade em estoque (int).
+
+(ii) No main, declare duas variáveis desse tipo
+
+(iii) Inicialize a primeira utilizando a sintaxe de ponto (ex: p1.preco = ...) e a segunda utilizando a inicialização por chaves (ex: Produto p2 {...})
+
+(iv) Crie uma função void exibirProduto(Produto p) que imprima os dados de forma organizada
+
+_(Objetivo: Praticar as duas formas de inicialização e a passagem de estruturas como argumento de função.)_
+
+### 2) Escreva um programa que:
+
+(i) Atualize a ideia da struct para representar uma Musica, contendo: título, artista e um ponteiro para a próxima música (Musica* proxima).
+
+(ii) Crie uma função que aloque dinamicamente uma nova música usando new e retorne o ponteiro
+
+(iii) No main, crie três músicas e conecte-as manualmente (ex: m1->proxima = m2)
+
+(iv)Utilize um laço for para percorrer a "playlist", imprimindo o título de cada música através do ponteiro proxima
+
+_(Importante: Não esqueça de usar delete para liberar a memória de cada música ao final)_
+
+_(Objetivo: Compreender a desreferência implícita com -> e a estrutura básica de uma lista ligada.)_
+
+### 3) Escreva um programa que:
+
+(i) Crie um template de struct chamado Ponto que possua duas variáveis, x e y, de um tipo genérico T.
+
+(ii) No main, instancie um Ponto<int> para representar coordenadas em pixels de uma tela
+
+(iii) Instancie um Ponto<double> para representar coordenadas geográficas precisas
+
+(iv) Implemente uma função genérica (template) que receba um Ponto<T> e imprima suas coordenadas
+
+_(Objetivo: Aplicar o conceito de Class Templates para lidar com diferentes tipos de dados em uma mesma estrutura lógica.)_
+
 ## Conclusões
 
 Nesta primeira parte do Capítulo 9, você teve um vislumbre de como funcionam as **Structs** em C++.

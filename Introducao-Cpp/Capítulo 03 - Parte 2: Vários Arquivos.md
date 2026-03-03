@@ -173,6 +173,23 @@ g++ main.cpp ./functions/*.cpp -o nomeDoArquivoExecutavel
 
 O resultado deverá ser o mesmo da compilação do Exemplo 2.
 
+## Questões
+
+### 1) Escreva um programa que:
+
+Tenha um código para um arquivo main.cpp que contenha a declaração da função int atualizaLP(int lpAtual, int dano); e a chame dentro da main(). 
+Escreva o código para um arquivo secundário chamado logicaDuelo.cpp que contenha apenas o corpo dessa função (a função deve retornar a subtração de lpAtual por dano). 
+Escreva o comando de terminal exato para compilar esses dois arquivos juntos em um executável chamado duelo.
+
+### 2) Escreva um programa que:
+
+Tenha um código para um arquivo chamado registroLiga.cpp contendo uma função int coletaHoras(). Essa função deve pedir ao usuário para digitar uma quantidade de horas (inteiro) e retornar esse valor.
+Mostre como ficaria a declaração dessa função no seu main.cpp.
+Escreva o comando de compilação utilizando o curinga *.cpp para compilar todos os arquivos do diretório atual em um executável chamado sistemaLiga. 
+
+### 3) Escreva um programa que:
+
+Escreva o comando de compilação utilizando o g++ para compilar o seu main.cpp junto com todos os arquivos .cpp que estão dentro de um suposto subdiretório "vetores", gerando um único arquivo executável chamado resolveAlgebra. Lembre-se de utilizar a sintaxe de atalho com o asterisco (*) ensinada no material para englobar todos os arquivos da pasta secundária de uma só vez.
 
 ## Conclusões
 

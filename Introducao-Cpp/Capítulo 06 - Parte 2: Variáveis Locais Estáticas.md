@@ -156,6 +156,46 @@ Agora a nossa variável está unicamente associada àquela função em específi
 
 Simples assim. Essa é a principal utilidade das variáveis locais estáticas.
 
+## Questões
+
+### 1) Escreva um programa que:
+
+(i) Crie uma função chamada gerarID().
+
+(ii) Dentro dela, declare uma variável local estática inicializada em 0.
+
+(iii) Toda vez que a função for chamada, ela deve incrementar esse valor e retorná-lo.
+
+(iv) No main, chame a função dentro de um laço (for ou while) e imprima mensagens como: "Processando tarefa ID: 1", "Processando tarefa ID: 2", etc.
+
+_Objetivo: Demonstrar que a variável mantém seu valor entre as chamadas da função_
+
+### 2) Escreva um programa que:
+
+(i) Implemente a função adicionarAoTotal(int valor).
+
+(ii) Use uma variável local estática para armazenar a soma total acumulada.
+
+(iii) A função deve imprimir o subtotal atualizado a cada nova inserção.
+
+(iv) No main, peça ao usuário para digitar números repetidamente (por exemplo, 5 vezes) e passe esses valores para a função.
+
+_Objetivo: Praticar a inicialização única da variável estática (que ocorre apenas na primeira execução da função)_
+
+### 3) Escreva um programa que:
+
+(i) Crie uma função chamada tentarAcesso().
+
+(ii) Utilize uma variável estática para contar quantas vezes a função foi invocada.
+
+(iii) Se o contador for menor ou igual a 3, a função deve imprimir "Acesso permitido".
+
+(iv) Se o contador for maior que 3, a função deve imprimir "Acesso bloqueado: Limite atingido".
+
+(v) Teste a função no main chamando-a 5 vezes seguidas para verificar a mudança de comportamento.
+
+_Objetivo: Entender como variáveis estáticas podem controlar o fluxo de lógica baseado no histórico de execuções_
+
 ## Conclusões
 
 Nesta segunda parte do Capítulo 6, você teve um primeiro contato com programação em C++ utilizando **variáveis locais estáticas**.

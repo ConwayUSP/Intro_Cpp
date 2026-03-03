@@ -185,6 +185,22 @@ Nitidamente, não temos que sempre estruturar uma função pensando unicamente e
 
 Fica, como dever de casa, então, a implementação de mais uma função, que seja **void**, para essa estrutura de programa a qual desenvolvemos neste capítulo! Use sua criatividade.
 
+## Questões
+
+### 1) Escreva um programa que:
+
+Com uma função chamada calculaSoma(int num) que receba um número inteiro positivo e retorne a soma de todos os números de 1 até esse número de forma recursiva (exemplo: se o input for 4, a lógica deve somar 4 + 3 + 2 + 1).
+
+### 2) Escreva um programa que:
+
+Utilizando o mesmo princípio lógico, crie uma função chamada menorValor(int num1, int num2) que receba dois valores inteiros como argumentos e retorne o menor entre eles.
+
+### 3) Escreva um programa que:
+
+Crie uma função void exibeResultado(int valor) que receba um número inteiro e utilize std::cout para imprimir esse número na tela.
+
+## Conclusões
+
 Agora, você possui uma noção melhor a respeito do uso e da estruturação mais básica de funções em C++!
 
 Não deixe de ver a próxima parte! Até breve!

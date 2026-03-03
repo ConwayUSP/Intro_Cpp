@@ -334,6 +334,44 @@ Equipamento equipado = 3; // Você terá um erro de compilação
 
 Agora, com a ferramenta **enum**, você é capaz de organizar melhor sua codificação.
 
+## Questões
+
+### 1) Escreva um programa que:
+
+(i) Defina uma enum chamada StatusPedido com os seguintes enumeradores: Pendente, Processando, Enviado e Entregue.
+
+(ii) No main, declare uma variável do tipo StatusPedido e inicialize-a com o valor Pendente
+
+(iii) Crie uma função void imprimirStatus(StatusPedido status) que utilize uma estrutura switch para imprimir uma mensagem personalizada para cada estado (ex: "Seu pedido está sendo processado")
+
+_Objetivo: Substituir o uso de inteiros puros por nomes semânticos que tornam o código mais legível._
+
+### 2) Escreva um programa que:
+
+(i) Crie uma enum chamada DiaSemana.
+
+(ii) Atribua explicitamente o valor 1 ao primeiro dia (Segunda), de modo que os dias subsequentes sigam a ordem numérica natural até 7
+
+(iii) No main, peça ao usuário para digitar um número de 1 a 7
+
+(iv) Converta o número digitado para o tipo DiaSemana utilizando static_cast<DiaSemana>(numero)
+
+(v) Use um switch para verificar se o dia escolhido é um dia útil ou final de semana
+
+_Objetivo: Entender a relação entre os enumeradores e seus valores inteiros subjacentes, além de praticar a conversão de tipos._
+
+### 3) Escreva um programa que:
+
+(i) Defina uma enum chamada Clima onde o primeiro valor seja Desconhecido = 0.
+
+(ii) Adicione outros estados como Ensolarado, Chuvoso e Nevando
+
+(iii) Declare uma variável Clima hoje{}; (usando inicialização por chaves) e verifique qual valor ela assume por padrão
+
+(iv) Implemente uma lógica que imprima "Alerta: Clima não definido" caso o valor seja o padrão (Desconhecido)
+
+_Objetivo: Praticar a inicialização segura de enums para evitar comportamentos inesperados (como lixo de memória)._
+
 ## Conclusões
 
 Nesta segunda parte do Capítulo 9, você foi introduzido à utilização básica e enumerações em seu código na linguagem **C++**. Novamente, caso queira se aprofundar, recomendamos o [Learn C++](https://www.learncpp.com/), mais especificamente os Capítulos [13.1](https://www.learncpp.com/cpp-tutorial/introduction-to-program-defined-user-defined-types/), [13.2](https://www.learncpp.com/cpp-tutorial/unscoped-enumerations/), [13.3](https://www.learncpp.com/cpp-tutorial/unscoped-enumerator-integral-conversions/) e [13.4](https://www.learncpp.com/cpp-tutorial/converting-an-enumeration-to-and-from-a-string/), que foi onde nos inspiramos para formular esta explicação.
