@@ -1,7 +1,5 @@
 # Capítulo 10
 
-## Parte 1
-
 ### Exercício 1: Refatoração para for-each
 
 ```cpp
