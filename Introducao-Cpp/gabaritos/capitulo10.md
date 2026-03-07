@@ -2,7 +2,7 @@
 
 ## Parte 1
 
-### Exercício 1: Vetores Dinâmicos e Iteração Moderna
+### Exercício 1: Refatoração para for-each
 
 ```cpp
 std::vector<int> numeros = {4, 5, 6};
