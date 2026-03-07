@@ -1,7 +1,5 @@
 # Capítulo 07
 
-## Parte 1
-
 ### Exercício 1: Função de Soma Genérica e Sobrecarga
 
 ```cpp
