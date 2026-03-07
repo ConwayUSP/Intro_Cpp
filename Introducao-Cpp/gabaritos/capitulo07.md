@@ -2,7 +2,7 @@
 
 ## Parte 1
 
-### Exercício 1: Constantes e Circunferência
+### Exercício 1: Função de Soma Genérica e Sobrecarga
 
 ```cpp
 #include <iostream>
