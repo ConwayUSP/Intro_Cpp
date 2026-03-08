@@ -121,6 +121,9 @@ No caso, cada plataforma tem sua própria sintaxe para o '-target'. Segue, entã
 
 Se o seu projeto tem vários arquivos e dependências, em vez de scripts bash complexos ou Makefiles, você pode usar o sistema de build do próprio Zig.
 
+> ⚠️ Atenção: Mudanças na API do Zig
+Como o Zig está em desenvolvimento contínuo (em direção à versão 1.0), sua API de compilação sofre atualizações. Os exemplos abaixo utilizam a sintaxe mais recente e recomendada das versões modernas (0.14.0+), que utilizam Módulos Raiz (root_module) e a função b.path() para gerenciar caminhos de forma segura.
+
 Crie um arquivo chamado build.zig na raiz e utilize o seguinte código como exemplo:
 
 ```zig
@@ -130,18 +133,25 @@ pub fn build(b: *std.Build) void {
     const target = b.standardTargetOptions(.{});
     const optimize = b.standardOptimizeOption(.{});
 
+    // 1. Cria o executável e define seu Módulo Raiz
     const exe = b.addExecutable(.{
         .name = "meu_projeto",
-        .target = target,
-        .optimize = optimize,
+        .root_module = b.createModule(.{
+            .target = target,
+            .optimize = optimize,
+        }),
     });
 
-    // Adiciona os arquivos C++
-    exe.addCSourceFile(.{ .file = .{ .path = "src/main.cpp" }, .flags = &[_][]const u8{"-std=c++17"} });
+    // 2. Adiciona os arquivos C++
+    exe.root_module.addCSourceFile(.{ 
+        .file = b.path("src/main.cpp"), 
+        .flags = &[_][]const u8{"-std=c++17"} 
+    });
     
-    // Linka com a biblioteca padrão do C++
+    // 3. Linka com a biblioteca padrão do C++
     exe.linkLibCpp();
 
+    // 4. Instala o executável
     b.installArtifact(exe);
 }
 ```
@@ -152,7 +162,7 @@ De qualquer maneira, vamos desmembrar o exemplo acima para que você não se sin
 
 O código começa com a importação do módulo `std` do Zig. É semelhante a `#include <stdio.h>` em C, ou `#include <iostream>` em C++.
 
-Em seguida, definimos uma função `build` que recebe um ponteiro para um objeto `std.Build`. Dentro dessa função, configuramos o target e as opções de otimização padrão do projeto. Além disso, acionamos o método addExecutable para adicionar um executável ao projeto. Depois, adicionamos os arquivos C++ ao executável usando o método addCSourceFile. Por fim, linkamos com a biblioteca padrão do C++ usando o método linkLibCpp e instalamos o executável usando o método installArtifact.
+Em seguida, definimos uma função build que recebe um ponteiro para um objeto std.Build. Dentro dessa função, configuramos o target e as opções de otimização padrão do projeto. Além disso, acionamos o método addExecutable para adicionar um executável ao projeto, passando para ele um root_module que concentra as configurações. Depois, adicionamos os arquivos C++ ao módulo do executável usando o método addCSourceFile e a função b.path(). Por fim, linkamos com a biblioteca padrão do C++ usando o método linkLibCpp e instalamos o executável usando o método installArtifact.
 
 E se eu quiser compilar múltiplos arquivos? 
 
@@ -178,15 +188,15 @@ exe.addCSourceFiles(.{
 });
 ```
 
-No caso, criamos um array com os caminhos dos arquivos e passamos para addCSourceFiles. O root é opcional e, se omitido, os caminhos são relativos ao diretório atual.
+No caso, criamos um array com os caminhos dos arquivos e passamos para addCSourceFiles.
 
 #### 2. Usando uma Pasta Raiz (root)
 
 Se todos os seus arquivos estão dentro de uma pasta src, você pode definir um root para não precisar repetir o caminho em cada string. O Zig resolverá os caminhos relativos a essa pasta.
 
 ```zig
-exe.addCSourceFiles(.{
-    .root = .{ .path = "src" }, // Pasta raiz onde estão os arquivos
+exe.root_module.addCSourceFiles(.{
+    .root = b.path("src"), // Pasta raiz onde estão os arquivos
     .files = &[_][]const u8{
         "main.cpp",
         "renderer.cpp",
@@ -203,10 +213,60 @@ No caso, definimos `src` como root e os caminhos são relativos a ele.
 Por fim, para lidar com arquivos de cabeçalho (.hpp / .h), é necessário adicionar o caminho da pasta onde eles estão. Suponha que você tenha uma pasta "include" que contenha essa parte do seu projeto. Veja:
 
 ```zig
-exe.addIncludePath(.{ .path = "include" });
+exe.root_module.addIncludePath(b.path("include"));
 ```
 
+O que o código acima faz é adicionar o caminho "include" à lista de caminhos de inclusão do executável, permitindo que os arquivos `.hpp` e `.h` sejam encontrados corretamente.
+
 Simples assim!
+
+#### 4. Exemplo completo
+
+Vamos supor que você está fazendo um jogo e precisa compilar vários arquivos fonte. Veja um exemplo completo:
+
+```zig
+const std = @import("std");
+
+pub fn build(b: *std.Build) void {
+    const target = b.standardTargetOptions(.{});
+    const optimize = b.standardOptimizeOption(.{});
+
+    const exe = b.addExecutable(.{
+        .name = "meu_jogo",
+        .root_module = b.createModule(.{
+            .target = target,
+            .optimize = optimize,
+        }),
+    });
+
+    // 1. Onde estão os seus arquivos .hpp ou .h
+    exe.root_module.addIncludePath(b.path("include"));
+
+    // 2. Adicionando os arquivos fonte
+    exe.root_module.addCSourceFiles(.{
+        .root = b.path("src"),
+        .files = &[_][]const u8{
+            "main.cpp",
+            "game.cpp",
+            "graphics.cpp",
+        },
+        .flags = &[_][]const u8{ "-std=c++17", "-O3" },
+    });
+
+    // 3. OBRIGATÓRIO para C++
+    exe.linkLibCpp();
+
+    b.installArtifact(exe);
+    
+    // Bônus: Comando para executar o programa diretamente
+    const run_cmd = b.addRunArtifact(exe);
+    run_cmd.step.dependOn(b.getInstallStep());
+    const run_step = b.step("run", "Executa o jogo");
+    run_step.dependOn(&run_cmd.step);
+}
+```
+
+O código acima combina a adição de caminhos de inclusão, arquivos fonte e bibliotecas C++ em um único executável. É um combo dos pontos que tocamos anteriormente. Um bom exercício para você é explicar mentalmente como cada linha do código contribui para a compilação final.
 
 Para compilar, use o comando:
 
@@ -214,9 +274,58 @@ Para compilar, use o comando:
 zig build
 ```
 
+Para compilar e já executar o projeto automaticamente, use o comando:
+
+```sh
+zig build run
+```
+
 Você obterá um executável instalado em `zig-out/bin/`.
 
 O zig c++ pode ser ligeiramente mais lento que o Clang nativo na primeira execução porque ele precisa "preparar" as bibliotecas padrão para o target escolhido, mas o cache subsequente é muito eficiente.
+
+## Exercício
+
+Construa a seguinte estrutura de diretórios para o seu projeto:
+
+```
+projeto_ziggy/
+├── build.zig
+├── include/
+│   └── space_utils.hpp
+└── src/
+    ├── main.cpp
+    └── space_utils.cpp
+```
+
+No cabeçalho, faça a declaração da seguinte função:
+
+```cpp
+void tocarGuitarra();
+```
+
+Em seguida, implemente a função no arquivo `space_utils.cpp`:
+
+```cpp
+#include "space_utils.hpp"
+
+void tocarGuitarra() {
+    std::cout << "Ziggy played guitar, jamming good with Weird and Gilly!" << std::endl;
+}
+```
+
+Por fim, chame a função no arquivo `main.cpp`:
+
+```cpp
+#include "space_utils.hpp"
+
+int main() {
+    tocarGuitarra();
+    return 0;
+}
+```
+
+O desafio é construir a build.zig para compilar o projeto! Revise o que for necessário e use sua intuição!
 
 ## Conclusões
 
