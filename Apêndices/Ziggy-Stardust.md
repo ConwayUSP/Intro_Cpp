@@ -6,19 +6,19 @@ Aqui, neste diretório, você encontrará markdowns com informações variáveis
 
 Começaremos utilizando o compilador Zig para compilar nossos programas em C++.
 
-> 🎵 🎶 Now Ziggy played guitar
+> 🎵 🎶 Now Ziggy played guitar 🎵 🎶
 
-> Jamming good with Weird and Gilly
+> 🎵 🎶 Jamming good with Weird and Gilly 🎵 🎶
 
-> And The Spiders from Mars
+> 🎵 🎶 And The Spiders from Mars 🎵 🎶
 
-> He played it left hand
+> 🎵 🎶 He played it left hand 🎵 🎶
 
-> But made it too far
+> 🎵 🎶 But made it too far 🎵 🎶
 
-> Became the special man
+> 🎵 🎶 Became the special man 🎵 🎶
 
-> Then we were Ziggy's band 🎵 🎶
+> 🎵 🎶 Then we were Ziggy's band 🎵 🎶
 
 ## O que diabos é Zig?
 
