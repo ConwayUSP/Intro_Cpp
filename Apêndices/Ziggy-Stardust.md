@@ -105,7 +105,7 @@ zig c++ main.cpp -o programa -f
 Para compilar para uma plataforma diferente da sua, use o `-target`. Por exemplo, se você está no Linux e quer gerar um executável para Windows (.exe):
 
 ```sh
-zig c++ main.cpp -o programa -target x86_64-pc-linux-gnu
+zig c++ main.cpp -o programa -target x86_64-windows-gnu
 ```
 
 No caso, cada plataforma tem sua própria sintaxe para o '-target'. Segue, então, uma tabelinha para você consultar sempre que necessário:
@@ -153,6 +153,60 @@ De qualquer maneira, vamos desmembrar o exemplo acima para que você não se sin
 O código começa com a importação do módulo `std` do Zig. É semelhante a `#include <stdio.h>` em C, ou `#include <iostream>` em C++.
 
 Em seguida, definimos uma função `build` que recebe um ponteiro para um objeto `std.Build`. Dentro dessa função, configuramos o target e as opções de otimização padrão do projeto. Além disso, acionamos o método addExecutable para adicionar um executável ao projeto. Depois, adicionamos os arquivos C++ ao executável usando o método addCSourceFile. Por fim, linkamos com a biblioteca padrão do C++ usando o método linkLibCpp e instalamos o executável usando o método installArtifact.
+
+E se eu quiser compilar múltiplos arquivos? 
+
+Para compilar múltiplos arquivos com o sistema de build do Zig, você tem dois caminhos "principais", dependendo de quão organizado (ou preguiçoso) você quer ser.
+
+#### 1. Lista Manual (addCSourceFiles)
+
+Esta é a forma mais comum. Em vez de chamar a função para cada arquivo, você passa um array de strings. É ideal para quando você quer ter controle total sobre o que entra. Em vez de addCSourceFile (singular), use addCSourceFiles (plural).
+
+Olhe o exemplo abaixo:
+
+```zig
+const cpp_files = [_][]const u8{
+    "src/main.cpp",
+    "src/engine.cpp",
+    "src/physics/collision.cpp",
+    "src/utils/logger.cpp",
+};
+
+exe.addCSourceFiles(.{
+    .files = &cpp_files,
+    .flags = &[_][]const u8{ "-std=c++17", "-Wall" },
+});
+```
+
+No caso, criamos um array com os caminhos dos arquivos e passamos para addCSourceFiles. O root é opcional e, se omitido, os caminhos são relativos ao diretório atual.
+
+#### 2. Usando uma Pasta Raiz (root)
+
+Se todos os seus arquivos estão dentro de uma pasta src, você pode definir um root para não precisar repetir o caminho em cada string. O Zig resolverá os caminhos relativos a essa pasta.
+
+```zig
+exe.addCSourceFiles(.{
+    .root = .{ .path = "src" }, // Pasta raiz onde estão os arquivos
+    .files = &[_][]const u8{
+        "main.cpp",
+        "renderer.cpp",
+        "input.cpp",
+    },
+    .flags = &[_][]const u8{"-std=c++20"},
+});
+```
+
+No caso, definimos `src` como root e os caminhos são relativos a ele.
+
+#### 3. Lidando com Arquivos de Cabeçalho
+
+Por fim, para lidar com arquivos de cabeçalho (.hpp / .h), é necessário adicionar o caminho da pasta onde eles estão. Suponha que você tenha uma pasta "include" que contenha essa parte do seu projeto. Veja:
+
+```zig
+exe.addIncludePath(.{ .path = "include" });
+```
+
+Simples assim!
 
 Para compilar, use o comando:
 
