@@ -76,7 +76,7 @@ Aqui vão alguns exemplos de como atribuir um valor aos atributos de um objeto. 
 
 A seguir, um esquema visual para ajudar a entender a relação entre classes e seus objetos:
 
-![Esquema visual representando três objetos da classe Gato. Cada objeto tem o mesmo número de patas (determinado pela classe), mas nome, idade e raça diferentes.](Intro_Cpp/OOP-Cpp/imagens/cap000\ -\ img1.png "Relaçao Classe-Obj")
+![Esquema visual representando três objetos da classe Gato. Cada objeto tem o mesmo número de patas (determinado pela classe), mas nome, idade e raça diferentes.](./imagens/cap000\ -\ img1.png "Relaçao Classe-Obj")
    
 ## Conclusões
 
