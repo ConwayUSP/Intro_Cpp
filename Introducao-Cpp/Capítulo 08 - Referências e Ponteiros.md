@@ -168,6 +168,59 @@ Por fim, falando brevemente sobre os _dangling pointers_, ou ponteiros pendentes
 
 Basicamente, um _dangling pointer_ é um ponteiro que guarda o endereço de um objeto o qual não é mais válido. Desreferenciar um _dangling pointer_ fomentará um comportamento indefinido do nosso programa, visto que você está tentando acessar um objeto inválido.
 
+## 8.4 Ponteiros Nulos (nullptr)
+
+Quando declaramos um ponteiro sem inicializá-lo imediatamente com um endereço válido, ele apontará para um local aleatório da memória (o famoso "lixo de memória"), da mesma forma que ocorre com variáveis normais. Tentar desreferenciar um ponteiro não inicializado causará um comportamento indefinido e, muito provavelmente, o travamento do seu programa.
+
+Para evitar isso, é uma excelente prática inicializar qualquer ponteiro que não tenha um destino imediato com um valor "vazio". Em C++ moderno (a partir da revisão C++11), utilizamos a palavra-chave nullptr para isso.
+
+```cpp
+#include <iostream>
+
+int main(){
+    int* ptr{ nullptr }; // ptr é explicitamente um ponteiro nulo
+
+    std::cout << "O valor do ponteiro e: " << ptr << '\n';
+
+    return 0;
+}
+```
+
+Ao compilar e rodar, a saída será algo como 0 ou 0x0, indicando de forma segura que ele não aponta para endereço nenhum.
+
+### Verificando Ponteiros Nulos
+
+Uma das grandes vantagens de inicializar seus ponteiros com nullptr é que podemos (e devemos!) usar estruturas condicionais para verificar se um ponteiro é seguro antes de tentar acessá-lo. Observe:
+
+```cpp
+#include <iostream>
+
+int main(){
+    int* ptr{ nullptr };
+    int x{ 42 };
+
+    // Verificando se o ponteiro é seguro para uso
+    if (ptr != nullptr) {
+        std::cout << *ptr << '\n'; 
+    } else {
+        std::cout << "O ponteiro esta vazio! Nao podemos desreferenciar." << '\n';
+    }
+
+    // Atribuindo um endereço válido
+    ptr = &x;
+
+    if (ptr != nullptr) {
+        std::cout << "Agora o acesso e seguro: " << *ptr << '\n';
+    }
+
+    return 0;
+}
+```
+
+O código acima imprimirá primeiro o aviso de que o ponteiro está vazio e, após receber o endereço de x, imprimirá o valor 42.
+
+> Uma breve nota histórica: Em códigos mais antigos de C ou C++ pré-2011, você frequentemente encontrará a macro NULL ou simplesmente o número 0 sendo usados para inicializar ponteiros nulos. Embora funcionem na maioria dos casos, nullptr é a forma moderna e própria da linguagem (ele possui seu próprio tipo, std::nullptr_t), o que evita ambiguidades e bugs sutis durante a fase de compilação. Portanto, como boa prática, sempre prefira nullptr.
+
 ## Resumo
 | Conceito | Sintaxe / Exemplo | Descrição |
 | :--- | :--- | :--- |
