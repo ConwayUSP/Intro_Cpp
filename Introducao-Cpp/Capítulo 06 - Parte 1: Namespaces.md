@@ -681,7 +681,48 @@ int main(){
 
 Se exercutarmos, caso não tenha nada de incorreto, teremos o mesmo resultado da compilação/execução anterior.
 
+## Questões
 
+### 1) Escreva um programa que:
+
+Organize diferentes tipos de conversões matemáticas em namespaces distintos para evitar colisões de nomes.
+
+(i) Crie um namespace chamado ConversorPeso. Dentro dele, implemente uma função converte que recebe um valor em quilogramas (double) e retorna o equivalente em libras (libras=kg×2.204).
+
+(ii) Crie um namespace chamado ConversorTemperatura. Dentro dele, implemente uma função converte que recebe um valor em Celsius (double) e retorna o equivalente em Fahrenheit (F=C×1.8+32).
+
+(iii) No main, utilize o operador de resolução de escopo (::) para chamar ambas as funções e exibir os resultados.
+
+### 2) Escreva um programa que:
+
+(i) Crie um namespace pai chamado Geometria.
+
+(ii) Dentro de Geometria, crie dois namespaces aninhados: Area e Volume.
+
+(iii) No namespace Area, declare e defina uma função para calcular a área de um quadrado (lado×lado).
+
+(iv) No namespace Volume, declare e defina uma função para calcular o volume de um cubo (lado×lado×lado).
+
+(v) No main, realize as chamadas utilizando o caminho completo (ex: Geometria::Area::...).
+
+(vi) Desafio Extra: Tente realizar uma nova definição para o namespace Volume em um bloco de código separado (fora do bloco inicial de Geometria), utilizando a sintaxe namespace Geometria::Volume.
+
+### 3) Escreva um programa que:
+
+(i) Implemente uma função global (fora de qualquer namespace) chamada exibirVersao() que apenas imprime "Versão Global 1.0".
+
+(ii) Crie uma estrutura de namespaces longa: Sistema::Logistica::Inventario.
+
+(iii) Dentro de Inventario, implemente uma função exibirVersao() que imprime "Versão do Sistema de Inventário 2.4".
+
+(iv) No main:
+
+  Crie um apelido (alias) para o namespace Sistema::Logistica::Inventario chamado Inv.
+
+  Use o apelido para chamar a função exibirVersao() do namespace.
+
+  Use o operador de resolução de escopo global (::exibirVersao()) para chamar a função que está fora dos namespaces.
+  
 ## Conclusões
 
 Nesta primeira parte do Capítulo 6, você teve um primeiro contato com programação em C++ utilizando **namespaces**.

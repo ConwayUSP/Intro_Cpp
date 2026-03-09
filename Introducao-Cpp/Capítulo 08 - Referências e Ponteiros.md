@@ -6,7 +6,7 @@ Aqui, trabalharemos pela primeira vez de maneira diretamente orientada a endere�
 
 Ponteiros são conhecidos por serem o terror da programação em linguagens de nível mais baixo. Porém, veremos a seguir que não é nada extraordinariamente difícil, apesar de ser necessária uma revisão de vez em quando.
 
-## O operador "Endereço de" (&)
+## 8.1 O operador "Endereço de" (&)
 
 Quando declaramos uma variável, atribuindo ou não um valor, um pedaço da memória RAM será associado a ela. Provavelmente, eventualmente o nosso programa vai interagir de alguma maneira com aquela variável. Quando isso acontece, o programa tentará, justamente, acessar o endereço dela para recuperar, alterar, etc, a informação ali presente.
 
@@ -40,7 +40,7 @@ Sequencialmente, nós utilizamos o operador "&" para recuperar o endeço de "x" 
 No caso, endereços de memória são tipicamente printados na forma de valores em hexadecimal.
 
 
-## O operador de "desreferência" (*)
+## 8.2 O operador de "desreferência" (*)
 
 Agora, e se eu tiver um endereço de memória e quiser acessar o valor ali presente? Simplesmente, o operador "*" retorna o valor de um dado endereço. Perceba:
 
@@ -76,7 +76,7 @@ Neste exemplo, o fato de chegarmos novamente no valor 7 é um bom sinal (você p
 Isso pareceu, talvez, um pouco inútil caso você nunca tenha tido contato com esse tipo de coisa. Mas, com esses dois operadores "&" e "*", podemos começar a falar sobre ponteiros.
 
 
-## Ponteiros
+## 8.3 Ponteiros
 
 Basicamente, um ponteiro é um objeto no qual armazenamos endereços de memória enquanto seu valor. Normalmente, armazenamos de outras variáveis/objetos para usarmos depois.
 
@@ -168,7 +168,109 @@ Por fim, falando brevemente sobre os _dangling pointers_, ou ponteiros pendentes
 
 Basicamente, um _dangling pointer_ é um ponteiro que guarda o endereço de um objeto o qual não é mais válido. Desreferenciar um _dangling pointer_ fomentará um comportamento indefinido do nosso programa, visto que você está tentando acessar um objeto inválido.
 
-# Conclusões
+## 8.4 Ponteiros Nulos (nullptr)
+
+Quando declaramos um ponteiro sem inicializá-lo imediatamente com um endereço válido, ele apontará para um local aleatório da memória (o famoso "lixo de memória"), da mesma forma que ocorre com variáveis normais. Tentar desreferenciar um ponteiro não inicializado causará um comportamento indefinido e, muito provavelmente, o travamento do seu programa.
+
+Para evitar isso, é uma excelente prática inicializar qualquer ponteiro que não tenha um destino imediato com um valor "vazio". Em C++ moderno (a partir da revisão C++11), utilizamos a palavra-chave nullptr para isso.
+
+```cpp
+#include <iostream>
+
+int main(){
+    int* ptr{ nullptr }; // ptr é explicitamente um ponteiro nulo
+
+    std::cout << "O valor do ponteiro e: " << ptr << '\n';
+
+    return 0;
+}
+```
+
+Ao compilar e rodar, a saída será algo como 0 ou 0x0, indicando de forma segura que ele não aponta para endereço nenhum.
+
+### Verificando Ponteiros Nulos
+
+Uma das grandes vantagens de inicializar seus ponteiros com nullptr é que podemos (e devemos!) usar estruturas condicionais para verificar se um ponteiro é seguro antes de tentar acessá-lo. Observe:
+
+```cpp
+#include <iostream>
+
+int main(){
+    int* ptr{ nullptr };
+    int x{ 42 };
+
+    // Verificando se o ponteiro é seguro para uso
+    if (ptr != nullptr) {
+        std::cout << *ptr << '\n'; 
+    } else {
+        std::cout << "O ponteiro esta vazio! Nao podemos desreferenciar." << '\n';
+    }
+
+    // Atribuindo um endereço válido
+    ptr = &x;
+
+    if (ptr != nullptr) {
+        std::cout << "Agora o acesso e seguro: " << *ptr << '\n';
+    }
+
+    return 0;
+}
+```
+
+O código acima imprimirá primeiro o aviso de que o ponteiro está vazio e, após receber o endereço de x, imprimirá o valor 42.
+
+> Uma breve nota histórica: Em códigos mais antigos de C ou C++ pré-2011, você frequentemente encontrará a macro NULL ou simplesmente o número 0 sendo usados para inicializar ponteiros nulos. Embora funcionem na maioria dos casos, nullptr é a forma moderna e própria da linguagem (ele possui seu próprio tipo, std::nullptr_t), o que evita ambiguidades e bugs sutis durante a fase de compilação. Portanto, como boa prática, sempre prefira nullptr.
+
+## Resumo
+| Conceito | Sintaxe / Exemplo | Descrição |
+| :--- | :--- | :--- |
+| **Declaração** | `tipo* nome; `<br>`int* ptr;` | Cria uma variável que armazenará um **endereço de memória** de um tipo específico (ex: um inteiro). |
+| **Operador de Endereço (`&`)** | `ptr = &variavel;` | Obtém o endereço de memória onde `variavel` está armazenada e o atribui ao ponteiro. |
+| **Desreferência (`*`)** | `int valor = *ptr; `<br>`*ptr = 10;` | Acessa ou modifica o **valor** armazenado no endereço para o qual o ponteiro aponta. |
+| **Ponteiro Nulo** | `ptr = nullptr;` | Indica que o ponteiro não aponta para nenhum objeto válido. Em C++ moderno, use `nullptr` em vez de `NULL`. |
+| **Ponteiro para Ponteiro** | `int** pptr;` | Um ponteiro que armazena o endereço de outro ponteiro. Usado em matrizes dinâmicas ou modificação de ponteiros em funções. |
+
+## Questões
+
+### 1) Escreva um programa que:
+
+Declare uma variável inteira chamada numero com o valor 100
+
+Imprima no terminal o endereço de memória onde numero está guardado (usando o operador &)
+
+Declare um ponteiro para inteiro chamado ptr e o inicialize com o endereço de numero
+
+Imprima no terminal o valor que está armazenado dentro do ponteiro ptr (que deve ser igual ao endereço impresso no passo 2)
+
+### 2) Escreva um programa que:
+
+Declare uma variável pontuacao iniciando com 0.
+
+Declare um ponteiro ptrScore que aponte para pontuacao.
+
+Usando apenas o ponteiro ptrScore (não use a variável pontuacao diretamente), altere o valor para 50.
+
+Imprima o valor da variável original pontuacao para provar que ela foi modificada.
+
+Em seguida, altere o valor novamente via ponteiro, agora multiplicando o valor atual por 2 (dica: *ptrScore = *ptrScore * 2).
+
+Imprima o valor final.
+
+### 3) Escreva um programa que:
+
+Declare um ponteiro para inteiro chamado ptrSeguro e o inicialize imediatamente com nullptr.
+
+Crie uma variável valor com o número 42.
+
+Faça um if que verifique se o ponteiro é nulo.
+
+Se for nulo, imprima "O ponteiro está vazio".
+
+Após o if, atribua o endereço de valor ao ptrSeguro.
+
+Imprima o valor apontado por ptrSeguro usando a desreferência.
+
+## Conclusões
 
 Agora, você possui uma noção básica a respeito dos dois operadores os quais são utilizados para interagir com endereços, além do próprio conceito de ponteiros.
 

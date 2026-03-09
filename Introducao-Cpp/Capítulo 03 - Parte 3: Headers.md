@@ -232,6 +232,60 @@ int main() {
 
 Porém, um jeito melhor de fazer isso pode ser comunicar ao seu compilador ou à sua IDE a presença dos headers em outro diretório.
 
+### Header Guards (Protetores de Cabeçalho)
+
+Conforme o nosso projeto cresce e a quantidade de arquivos aumenta, é muito provável que um arquivo de cabeçalho acabe sendo incluído, direta ou indiretamente, mais de uma vez em um mesmo arquivo .cpp.
+
+Imagine a seguinte situação: você tem um main.cpp que inclui um geometria.h e um matematica.h. Porém, para implementar as funções geométricas, o próprio geometria.h também precisou incluir o matematica.h. O que o pré-processador fará na hora de compilar o main.cpp? Ele vai copiar o conteúdo de matematica.h duas vezes para dentro do mesmo arquivo!
+
+Isso fará com que o compilador encontre a declaração das mesmas funções múltiplas vezes, gerando um erro clássico de compilação conhecido como redefinição (violação da regra de definição única da linguagem).
+
+Para evitar que o conteúdo de um header seja processado mais de uma vez no mesmo arquivo, utilizamos os chamados Header Guards (Protetores de Cabeçalho). Eles funcionam através de diretivas de pré-processamento condicionais.
+
+Observe como podemos proteger o nosso myFunctions.h do exemplo anterior:
+
+```cpp
+/* Verificamos se a macro MYFUNCTIONS_H NÃO está definida */
+#ifndef MYFUNCTIONS_H
+/* Como não está, nós a definimos agora */
+#define MYFUNCTIONS_H
+
+// O conteúdo real do seu header vem aqui dentro
+int calculaFatorial(int num);
+int maiorValor(int num1, int num2);
+int entradaDeValores();
+
+/* Fim do bloco de proteção */
+#endif
+```
+
+Como isso funciona na prática?
+
+#ifndef MYFUNCTIONS_H: Esta linha verifica se a macro MYFUNCTIONS_H não foi definida (if not defined).
+
+Na primeira vez que o pré-processador lê o arquivo, a macro ainda não existe. Então, ele entra no bloco e executa a próxima linha: #define MYFUNCTIONS_H. A partir deste exato momento, a macro passa a existir para o compilador.
+
+Em seguida, ele lê normalmente as declarações das suas funções.
+
+#endif: Marca o fim do bloco condicional do nosso header guard.
+
+Se, por algum motivo, esse mesmo header for incluído novamente durante a compilação do mesmo arquivo, o pré-processador vai bater novamente no #ifndef MYFUNCTIONS_H. Porém, como a macro já foi definida na primeira leitura, a condição será falsa. O pré-processador simplesmente ignorará todo o código até chegar no #endif, prevenindo o erro de cópia duplicada.
+
+### Boas Práticas:
+
+Por convenção, o nome da macro utilizada no header guard deve refletir o nome do arquivo em letras maiúsculas, substituindo o ponto da extensão por um underline (_). Por exemplo: calculadora.h se torna CALCULADORA_H.
+
+> Nota: Muitos compiladores modernos suportam a diretiva #pragma once escrita na primeira linha do arquivo, que realiza exatamente a mesma proteção de forma mais enxuta. Contudo, o uso de #ifndef é o padrão histórico da linguagem C++ e funciona em absolutamente 100% dos compiladores, sendo fundamental que todo programador saiba reconhecê-lo e utilizá-lo
+
+## Questões
+
+### 1) Escreva um programa que:
+
+1. Tenha código completo para um arquivo header chamado matematica.h contendo as declarações dessas duas funções.
+2. Escreva o início do arquivo main.cpp, demonstrando a sintaxe correta em C++ para incluir a biblioteca padrão de entrada e saída e, logo abaixo, o seu novo arquivo header matematica.h.
+
+### 2) Por que é má prática confiar que um .cpp receberá o <iostream> apenas porque o seu .h correspondente já o inclui?
+
 ## Conclusões
 
 Nesta terceira parte do Capítulo 3, você teve um primeiro contato com programação em C++ utilizando arquivos header.
