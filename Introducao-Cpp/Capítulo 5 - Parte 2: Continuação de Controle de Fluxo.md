@@ -1,8 +1,6 @@
 # Capítulo 5 - Parte 2: Continuação de Controle de Fluxo
 
-Olá novamente! 
-
-Na segunda parte do Capítulo 5, você vai conhecer mais algumas ferramentas importantes para manipular o fluxo de execução do nosso código!
+Olá novamente! Na segunda parte do Capítulo 5, você vai conhecer mais algumas ferramentas importantes para manipular o fluxo de execução do nosso código!
 
 Vamos lá?
 
