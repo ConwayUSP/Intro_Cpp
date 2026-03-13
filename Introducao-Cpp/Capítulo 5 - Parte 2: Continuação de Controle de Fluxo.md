@@ -1,3 +1,5 @@
+# Capítulo 5 - Parte 2: Continuação de Controle de Fluxo
+
 ## 5.5 – Declaração Goto
 
 O próximo tipo de declaração de controle de fluxo que veremos é o **salto incondicional**. Um salto incondicional faz com que a execução salte para outro ponto do código. O termo "incondicional" significa que o salto sempre acontece (diferente de um `if` ou `switch`, onde o salto ocorre apenas condicionalmente com base no resultado de uma expressão).
@@ -470,3 +472,7 @@ Este programa imprime todos os números de 0 a 9 que não são divisíveis por 4
 Uma instrução `continue` funciona fazendo com que o ponto atual de execução salte para o final do laço atual.
 
 No caso de um laço `for`, a expressão-final do laço `for` (no exemplo acima, `++contador`) ainda é executada após um `continue` (já que isso acontece após o final do corpo do laço).
+
+## Questões
+
+# Conclusões
