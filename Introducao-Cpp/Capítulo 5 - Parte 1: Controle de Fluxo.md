@@ -247,4 +247,6 @@ Este programa produz a seguinte saída:
 ```
 Provavelmente não era isso que queríamos! Quando a execução flui das instruções de um rótulo para as instruções de um rótulo seguinte, chamamos isso de cascata (fallthrough). Como a cascata raramente é desejada ou intencional, muitos compiladores e ferramentas de análise de código sinalizarão a cascata como um aviso (warning).
 
+## Questões
 
+# Conclusões
