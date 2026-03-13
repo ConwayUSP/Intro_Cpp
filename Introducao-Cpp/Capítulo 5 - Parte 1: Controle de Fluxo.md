@@ -1,5 +1,11 @@
 # Capítulo 5 - Parte 1: Controle de Fluxo
 
+Sejam bem-vindos à primeira parte do Capítulo 5 da nossa trilha!
+
+Até agora, nossos programas seguiam um caminho previsível: início, execução linha a linha, fim. Mas e quando precisamos tomar decisões? E se quisermos que o programa reaja de forma diferente dependendo da entrada do usuário? É exatamente isso que vamos começar a explorar agora!
+
+Nesta primeira parte, vamos mergulhar no universo do controle de fluxo condicional. Prepare-se para dar os primeiros passos além da linha reta!
+
 ## 5.1 - Introdução ao Controle de Fluxo
 
 Aprendemos que a CPU do nosso computador inicia a execução pelo topo da função `main()`, executa as instruções do nosso código em ordem sequencial, e então termina no fim da função `main()`. Chamamos esta sequência que a CPU percorre de **caminho de execução** (ou apenas **caminho**).
@@ -250,3 +256,10 @@ Provavelmente não era isso que queríamos! Quando a execução flui das instru�
 ## Questões
 
 # Conclusões
+
+Chegamos ao final da primeira parte do Capítulo 5!
+
+Agora você descobriu muitos recursos novos úteis para nós programadores! Mas isso é só o começo! Na segunda parte deste capítulo, vamos dar um passo além e aprender a repetir ações com os laços (loops), além de conhecer as instruções goto, break e continue.
+
+Te espero lá!
+
