@@ -255,6 +255,11 @@ Provavelmente não era isso que queríamos! Quando a execução flui das instru�
 
 ## Questões
 
+1. Escreva um programa que peça ao usuário um número inteiro de 1 a 7 e use uma declaração switch para imprimir o dia da semana correspondente. Se o número digitado estiver fora desse intervalo, o programa deve exibir a mensagem "Dia inválido!" utilizando o rótulo default.
+2. Crie um programa que solicite ao usuário uma letra (caractere) e utilize uma declaração switch para determinar se ela é uma vogal. O programa deve considerar tanto minúsculas quanto maiúsculas. Use o conceito de fallthrough para agrupar todos os casos de vogais em um único bloco de código.
+    - Se for vogal, imprima "É uma vogal!".
+    - Caso contrário, imprima "É uma consoante ou outro caractere!".
+
 # Conclusões
 
 Chegamos ao final da primeira parte do Capítulo 5!
