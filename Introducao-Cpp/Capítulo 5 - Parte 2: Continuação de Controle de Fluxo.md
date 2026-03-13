@@ -1,5 +1,11 @@
 # Capítulo 5 - Parte 2: Continuação de Controle de Fluxo
 
+Olá novamente! 
+
+Na segunda parte do Capítulo 5, você vai conhecer mais algumas ferramentas importantes para manipular o fluxo de execução do nosso código!
+
+Vamos lá?
+
 ## 5.5 – Declaração Goto
 
 O próximo tipo de declaração de controle de fluxo que veremos é o **salto incondicional**. Um salto incondicional faz com que a execução salte para outro ponto do código. O termo "incondicional" significa que o salto sempre acontece (diferente de um `if` ou `switch`, onde o salto ocorre apenas condicionalmente com base no resultado de uma expressão).
@@ -476,3 +482,9 @@ No caso de um laço `for`, a expressão-final do laço `for` (no exemplo acima, 
 ## Questões
 
 # Conclusões
+
+Parabéns! Você acaba de concluir a segunda parte do Capítulo 5 e, com ela, todo o estudo sobre controle de fluxo em C++.
+
+Agora você tem em mãos um conjunto completo de ferramentas para controlar o fluxo dos seus programas: decisões com if e switch, repetições com while, do-while e for, e ajustes finos com break e continue. Isso é a base para construir programas verdadeiramente dinâmicos e inteligentes!
+
+Nos vemos no próximo capítulo!
