@@ -204,6 +204,47 @@ int main()
 
 ### Cascata (Fallthrough)
 
-Ainda explora
+Quando uma expressão `switch` corresponde a um rótulo `case` ou ao rótulo opcional `default`, a execução começa na primeira instrução após o rótulo correspondente. A execução então continua sequencialmente até que uma das seguintes condições de término aconteça:
+
+-    O final do bloco `switch` seja alcançado.
+
+-   Outra instrução de controle de fluxo (geralmente `break` ou `return`) faça com que o bloco `switch` ou a função termine.
+
+-  Algo mais interrompa o fluxo normal do programa (por exemplo, o sistema operacional finalize o programa, o universo imploda, etc.).
+
+Observe que a presença de outro rótulo case não é uma dessas condições de término – portanto, sem um `break` ou `return`, a execução continuará para os casos subsequentes. Esse comportamento é chamado de cascata (fallthrough).
+
+Aqui está um programa que exibe esse comportamento:
+```cpp
+#include <iostream>
+
+int main()
+{
+    switch (2)
+    {
+    case 1: // Não corresponde
+        std::cout << 1 << '\n'; // Ignorado
+    case 2: // Correspondeu!
+        std::cout << 2 << '\n'; // A execução começa aqui
+    case 3:
+        std::cout << 3 << '\n'; // Isto também é executado
+    case 4:
+        std::cout << 4 << '\n'; // Isto também é executado
+    default:
+        std::cout << 5 << '\n'; // Isto também é executado
+    }
+
+    return 0;
+}
+```
+
+Este programa produz a seguinte saída:
+```text
+2
+3
+4
+5
+```
+Provavelmente não era isso que queríamos! Quando a execução flui das instruções de um rótulo para as instruções de um rótulo seguinte, chamamos isso de cascata (fallthrough). Como a cascata raramente é desejada ou intencional, muitos compiladores e ferramentas de análise de código sinalizarão a cascata como um aviso (warning).
 
 
