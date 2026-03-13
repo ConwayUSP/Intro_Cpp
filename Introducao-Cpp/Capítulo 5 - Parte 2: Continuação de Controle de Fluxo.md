@@ -479,6 +479,23 @@ No caso de um laço `for`, a expressão-final do laço `for` (no exemplo acima, 
 
 ## Questões
 
+1. Escreva um programa que leia números inteiros fornecidos pelo usuário continuamente, utilizando um laço while. O programa deve somar apenas os números positivos e parar quando o usuário digitar um número negativo. Ao final, exiba a soma total dos números positivos digitados.
+
+2. Crie um programa que exiba um menu com as seguintes opções:
+    ```text
+    1. Opção 1
+    2. Opção 2
+    3. Opção 3
+    4. Sair
+    ```
+    Utilize um laço do-while para garantir que o menu seja exibido pelo menos uma vez. O programa deve ler a opção do usuário e, caso seja inválida (diferente de 1, 2, 3 ou 4), exibir a mensagem "Opção inválida!" e repetir o menu. Quando o usuário escolher a opção 4, o programa deve imprimir "Encerrando..." e terminar. Para as opções 1, 2 e 3, basta exibir "Opção X selecionada.". Fique à vontade para incrementar também com funcionalidades para cada opção se desejar!
+
+3. Elabore um programa que utilize um laço for para percorrer os números de 1 a 20. Dentro do laço, use a instrução continue para pular a impressão dos números que são múltiplos de 3. Ao final, o programa deve exibir todos os números de 1 a 20 que não são múltiplos de 3, separados por espaço.
+    
+    Saída esperada:
+    ```text
+    1 2 4 5 7 8 10 11 13 14 16 17 19 20
+    ```
 # Conclusões
 
 Parabéns! Você acaba de concluir a segunda parte do Capítulo 5 e, com ela, todo o estudo sobre controle de fluxo em C++.
