@@ -189,7 +189,6 @@ public:
     // Cada classe filha OBRIGATORIAMENTE deve implementar sua versão
     virtual void atacar() = 0;
 
-    virtual ~Personagem() {}
 };
 
 class Guerreiro : public Personagem {
