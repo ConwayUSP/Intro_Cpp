@@ -4,7 +4,7 @@ Sejam bem-vindos ao projeto final da nossa trilha!
 
 Se você chegou até aqui, significa que todos os capítulos foram lidos, ou que você acha de **tens o que é necessário** para garantir a sua certificação sem passar pelos nossos ensinamentos diretamente (nós respeitamos isso, sinceramente).
 
-
+https://github.com/user-attachments/assets/6d4a8ca2-edf8-402d-988d-d9fa45a141f5
 > Link para o perfil com o vídeo: https://www.tiktok.com/@techroastshow/video/7311866672929852714
 
 No caso, se você for `um membro da Conway`, a submissão do projeto final e sua eventual aprovação resultará no ganho do seu **certificado oficial de conclusão desta trilha**, fornecido pela nossa liga acadêmica!
