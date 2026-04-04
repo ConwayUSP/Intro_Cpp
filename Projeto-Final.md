@@ -16,7 +16,7 @@ Sem mais delongas, vamos lá:
 
 # Projeto de RPG 
 
-![RPG!](../Media/imagemRPG.jpg)
+![RPG](/Media/imagemRPG.jpg)
 
 Certamente, você já deve ter pelo menos ouvido falar a respeito de como funciona um [`Role-Playing Game (RPG)`](https://brasilescola.uol.com.br/curiosidades/rpg.htm). Existem vários exemplos por aí, desde os mais clássicos, como [`Dungeons & Dragons`](https://en-wikipedia-org.translate.goog/wiki/Dungeons_%26_Dragons?_x_tr_sl=en&_x_tr_tl=pt&_x_tr_hl=pt&_x_tr_pto=tc), até os que tiveram uma retomada de popularidade razoavelmente recente, como o [`Cyberpunk`](https://en-wikipedia-org.translate.goog/wiki/Cyberpunk_(role-playing_game)?_x_tr_sl=en&_x_tr_tl=pt&_x_tr_hl=pt&_x_tr_pto=tc). Caso você viva debaixo de uma pedra, recomendamos dar uma olhada, porque é bem bacana.
 
