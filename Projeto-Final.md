@@ -54,7 +54,7 @@ Eventualmente, é provável que ocorram combates no seu jogo. Por isso, é neces
 
 Por se tratar de um RPG, **o fator sorte** deverá estar incluso. É necessário, assim, simular a rolagem de dados, que podem ter **diferentes quantidades de lados** dependendo da sua abordagem.
 
-Recomendamos utilizar a biblioteca [`ctime`](cplusplus.com/reference/ctime/) para brincar com a "aleatoriedade" no seu programa. Utilize, preferencialmente, **o sistema de turnos**.
+Recomendamos utilizar a biblioteca [`ctime`](https://cplusplus.com/reference/ctime/) para brincar com a "aleatoriedade" no seu programa. Utilize, preferencialmente, **o sistema de turnos**.
 
 ## 4. Compilação
 
