@@ -14,11 +14,11 @@ Então, você terá um documento que **provará suas habilidades** com a nossa q
 
 Sem mais delongas, vamos lá:
 
-# Projeto de RPG 
+# Projeto de RPG
 
 ![RPG](/Media/imagemRPG.jpg)
 
-Certamente, você já deve ter pelo menos ouvido falar a respeito de como funciona um [`Role-Playing Game (RPG)`](https://brasilescola.uol.com.br/curiosidades/rpg.htm). Existem vários exemplos por aí, desde os mais clássicos, como [`Dungeons & Dragons`](https://en-wikipedia-org.translate.goog/wiki/Dungeons_%26_Dragons?_x_tr_sl=en&_x_tr_tl=pt&_x_tr_hl=pt&_x_tr_pto=tc), até os que tiveram uma retomada de popularidade razoavelmente recente, como o [`Cyberpunk`](https://en-wikipedia-org.translate.goog/wiki/Cyberpunk_(role-playing_game)?_x_tr_sl=en&_x_tr_tl=pt&_x_tr_hl=pt&_x_tr_pto=tc). Caso você viva debaixo de uma pedra, recomendamos dar uma olhada, porque é bem bacana.
+Certamente, você já deve ter pelo menos ouvido falar a respeito de como funciona um [`Role-Playing Game (RPG)`](https://brasilescola.uol.com.br/curiosidades/rpg.htm). Existem vários exemplos por aí, desde os mais clássicos, como [`Dungeons & Dragons`](https://en-wikipedia-org.translate.goog/wiki/Dungeons_%26_Dragons?_x_tr_sl=en&_x_tr_tl=pt&_x_tr_hl=pt&_x_tr_pto=tc), até os que tiveram uma retomada de popularidade razoavelmente recente, como o [`Cyberpunk`](<https://en-wikipedia-org.translate.goog/wiki/Cyberpunk_(role-playing_game)?_x_tr_sl=en&_x_tr_tl=pt&_x_tr_hl=pt&_x_tr_pto=tc>). Caso você viva debaixo de uma pedra, recomendamos dar uma olhada, porque é bem bacana.
 
 Aqui, para a nossa trilha, pensamos em estabelecer o projeto de conclusão baseado nisso. Então, a proposta é:
 
@@ -38,7 +38,7 @@ Siga seu coração na hora de definir esse sistema. Não é necessário um padr�
 
 ## 2. Construindo Narrativa
 
-A narrativa não precisa ser um **calhamaço gigantesco**. Caso você tenha tido tempo para produzir algo nesse sentido, recomendamos que procure publicar seu próprio livro! 
+A narrativa não precisa ser um **calhamaço gigantesco**. Caso você tenha tido tempo para produzir algo nesse sentido, recomendamos que procure publicar seu próprio livro!
 
 (Ok, chega de piadas, por favor)
 
@@ -54,11 +54,11 @@ Eventualmente, é provável que ocorram combates no seu jogo. Por isso, é neces
 
 Por se tratar de um RPG, **o fator sorte** deverá estar incluso. É necessário, assim, simular a rolagem de dados, que podem ter **diferentes quantidades de lados** dependendo da sua abordagem.
 
-Recomendamos utilizar a biblioteca [`<ctime>`](cplusplus.com/reference/ctime/) para brincar com a "aleatoriedade" no seu programa. Utilize, preferencialmente, **o sistema de turnos**.
+Recomendamos utilizar a biblioteca [`ctime`](cplusplus.com/reference/ctime/) para brincar com a "aleatoriedade" no seu programa. Utilize, preferencialmente, **o sistema de turnos**.
 
 ## 4. Compilação
 
-Seu projeto certamente (e esperamos que sim, pelo menos) estará contido em uma **organização com múltiplos arquivos e diferentes diretórios**. O método de compilação a ser escolhido por você deve ser documentado corretamente em um `README`, para que o avaliador consiga rodar sem ter que quebrar muito a cabeça. 
+Seu projeto certamente (e esperamos que sim, pelo menos) estará contido em uma **organização com múltiplos arquivos e diferentes diretórios**. O método de compilação a ser escolhido por você deve ser documentado corretamente em um `README`, para que o avaliador consiga rodar sem ter que quebrar muito a cabeça.
 
 Como ensinamos diferentes maneiras de **compilar código C++**, isso também será parte da sua avaliação.
 
