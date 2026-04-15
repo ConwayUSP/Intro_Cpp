@@ -28,9 +28,11 @@ Aqui, para a nossa trilha, pensamos em estabelecer o projeto de conclusão basea
 
 A construção de fichas é parte crucial para qualquer RPG. É aqui que você vai **nomear seu personagem**, definir sua **classe (guerreiro, mago, bardo, etc)**, seus **atributos** e afins.
 
-A programação em C++ aqui possui um sentido bem nítido a ser seguido e é perfeito para aplicar orientação a objetos. Recomendamos que você faça isso corretamente, com **getters e setters** e organizando a partir do paradigma de **POO**.
+A programação em C++ aqui possui um sentido bem nítido a ser seguido e é perfeito para aplicar orientação a objetos.
 
-Caso você queira utilizar uma abordagem diferente, com **estruturas** por exemplo, fique à vontade. Aqui, vamos avaliar a qualidade da sua implementação de modo geral.
+Entretanto, como até o momento da produção deste projeto final não foi finalizado o material de **POO** em C++, **não é obrigatório** a aplicação de paradigmas baseados em objetos.
+
+Então, caso você queira utilizar uma abordagem diferente, com **estruturas** por exemplo, fique à vontade. Aqui, vamos avaliar a qualidade da sua implementação de modo geral.
 
 Obviamente, o objetivo é que o usuário consiga interagir com o terminal de modo que seja possível construir diferentes personagens.
 
