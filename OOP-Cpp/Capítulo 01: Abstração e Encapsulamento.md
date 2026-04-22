@@ -112,7 +112,9 @@ class Lobo : public Canidae {
 };
 ```
 
-O que fizemos de diferente? Aqui, não temos apenas declarações de variáveis/estruturas. Aqui, definimos classes novas, que seguem o mesmo "molde" da classe pai: Canidae. No caso, **Raposa, Cachorro e Lobo** são classes independentes entre si, que possuem em comum todas as implementações, diferindo apenas na programação do método abstrato.
+O que fizemos de diferente? Aqui, não temos apenas declarações de variáveis/estruturas. Aqui, definimos classes novas, que seguem o mesmo "molde" da classe pai: Canidae. Aquela sintaxe nova de definição `"class Raposa/Cachorro/Lobo : public Canidae"` indica justamente isso.
+
+No caso, **Raposa, Cachorro e Lobo** são classes independentes entre si, que possuem em comum todas as implementações, diferindo apenas na programação do método abstrato.
 
 No caso, todos possuem os atributos `std::string nome;` e `int idade;`, além dos métodos. Porém, em `executa()`, temos uma abertura para implementações individuais no corpo desse método. Isso permite com que façamos diferentes retornos, tal como foi demonstrado acima.
 
@@ -200,14 +202,20 @@ Enfatizamos aqui que as implementações poderiam ser qualquer coisa, não neces
 
 Em suma: a classe `Canidae` funciona como um template de implementação, isso melhora a permanência/mantimento de código e mudanças internas podem ser realizadas sem afetar a parte externa do todo.
 
-## 1.2 Como escolher o que abstrair
+A escolha a respeito do que iremos abstrair no código varia de implementação para implementação. Podemos ficar muito tempo aqui debatendo diferentes filosofias de vida, etc.
 
-## 1.3 O que é encapsulamento?
+Entretanto, indo direto ao ponto, e sendo até um pouco repetitivos, indicamos seguir basicamente o que fizemos no exemplo anterior!
 
-## 1.4 Modificadores de acesso
+Vamos programar várias classes com características em comum, variando apenas em alguns métodos em específico? Seria bacana manter o mesmo nome para alguns métodos, mesmo que eles acabem variando na implementação?
 
-## 1.5 Como escolher o que expor na sua classe
+É viável, simplesmente, arquitetar uma classe mãe/pai que será utilizada como template para as demais e determinar esses métodos como sendo abstratos.
 
-## 1.6 Getters e Setters
+## 1.2 O que é encapsulamento?
 
-## 1.7 Como criar uma boa interface (API) para sua classe
+## 1.3 Modificadores de acesso
+
+## 1.4 Como escolher o que expor na sua classe
+
+## 1.5 Getters e Setters
+
+## 1.6 Como criar uma boa interface (API) para sua classe
