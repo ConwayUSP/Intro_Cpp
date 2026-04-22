@@ -136,4 +136,6 @@ como aquele presente, por exemplo, no VSCode, é sempre uma opção (contanto qu
 Prosseguiremos, na próxima parte deste capítulo, com o famoso "Hello World" e alguns detalhes referentes à
 estruturação desse código.
 
+Inclusive, um detalhe: em alguns dos capítulos deste material, existem alguns exemplos/exercícios combinados com a explicação. Caso você se sinta mais a vontade no C++ e queira apenas revisar e/ou gosta de tentar colocar a mão na massa antes de ver qualquer explicação, sugerimos fazer os exemplos e apenas passar o olho rapidamente na explicação que ocorre em seguida!
+
 Obrigado por ter chegado até aqui e até a próxima parte!
