@@ -1,4 +1,4 @@
-# Capítulo 01: Abstração e Encapsulamento
+# Capítulo 01: Encapsulamento e Abstração
 
 ## 1.1 Modificadores de acesso
 
@@ -204,6 +204,8 @@ Utilizamos como exemplo um atributo, mas o mesmo vale para métodos. Fique livre
 
 O especificador `private` faz com que atributos/métodos da classe sejam acessíveis apenas dentro da própria classe em si. Frequentemente, isso é utilizado para ocultar dados da parte externa.
 
+Inclusive, todos os membros de uma classe são privados caso nenhuma especificador seja mencionado.
+
 Vamos adicionar um atributo privado na nossa classe `Banda`:
 
 ```
@@ -283,216 +285,203 @@ Pera, **encapsulamento**???
 
 ## 1.2 O que é encapsulamento?
 
+No contexto de orientação a objetos, é basicamente unir os dados (atributos) e os métodos que manipulam esses dados em uma classe e restringir o acesso direto aos detalhes internos do objeto. O estado interno do objeto estará protegido.
+
+O mundo exterior não sabe e, na verdade, não precisa saber dos pormenores a respeito de como aquela classe faz o que faz, apenas o que ele faz através da sua [API](https://pt.wikipedia.org/wiki/Interface_de_programa%C3%A7%C3%A3o_de_aplica%C3%A7%C3%B5es) pública.
+
+Por isso, a analogia com cápsulas!
+
+Mas, como, então, acessar esses atributos privados, por exemplo?
+
 ## 1.3 Getters e Setters
 
-## 1.4 O que é abstração?
+Para isso, vamos construir a nossa própria API através de `Getters` e `Setters`! Ambos serão métodos bem simples, porém muito eficientes na hora de encapsular a nossa classe.
 
-No decorrer da nossa programação, muitas vezes podemos ter múltiplas classes que implementam os mesmos métodos. Porém, alguns deles, em específico, podem diferir a partir das características do que estamos projetando no nosso código.
+Os nomes são intuitivos:
 
-Como podemos estruturar isso sem apelar para uma redundância _HardCoded_?
+(i) Getters: servem para que possamos recuperar o conteúdo de um atributo em específico;
 
-Em um código sem orientação a objetos, existem maneiras de realizar isso. Entretanto, muito provavelmente haveria a existência de um bloco de código externo àquilo que modelamos, tornando a nossa estruturação interdependente, prejudicando a escalabilidade e separação de responsabilidades no que diz respeito ao desenvolvimento.
+(ii) Setters: servem para que possamos redefinir o conteúdo de um atributo em específico.
 
-Vamos pensar juntos.
+Cada atributo terá um `Getter/Setter` próprio. Isso é uma boa prática e um passo fundamental para um bom encapsulamento: deixe tudo privado, a não ser que haja um motivo específico para expor!
 
-E se quiséssemos, por algum motivo, programar diferentes animais caninos, com comportamentos em comum, mas que variassem em alguma coisa?
+**Exemplo: Adapte o código anterior para uma versão encapsulada, com getters e setters**
 
-Em um código `main.cpp`, poderíamos fazer o seguinte:
-
-```cpp
-#include <iostream>
-#include <string>
-
-struct Canidae {
-    std::string nome;
-    int idade;
-  // Imagine aqui algumas outras funções e variáveis que
-  // são comuns a todos eles
-  //  (...)
-    std::string nome_acao;
-    void executa() { std::cout << nome_acao << std::endl; }
-};
-
-Canidae Raposa = {"A Raposa ROUBA"};
-Canidae Cachorro = {"O Cachorro TOMA"};
-Canidae Lobo = {"O Lobo PEDE"};
-
-int main() {
-  Raposa.executa();
-  Cachorro.executa();
-  Lobo.executa();
-  return 0;
-}
-```
-
-No código acima, utilizamos uma estrutura e evitamos a redundância. Porém, tivemos que fazer a definição logo em seguida de cada um, de modo que a Raposa, o Cachorro e o Lobo são apenas declarações baseadas na nossa struct, e o print deles não é _inerentemente ligado a eles_.
-
-Poderíamos atribuir qualquer _string_, não apenas o que está de acordo com a _realidade_, tal como fizemos acima. Isso expõe uma certa vulnerabilidade na programação e não torna os nossos caninos verdadeiramente autônomos.
-
-Além disso, estamos aqui em um exemplo bem básico, onde utilizamos um simples _print_. E se quiséssemos que cada um tivesse um bloco de código único para a parte de `executa()`?
-
-Enfim, poderíamos ficar um bom tempo criticando o código acima. Obviamente, ele não é a melhor implementação do mundo. Mas, aqui podemos introduzir um recurso da _Orientação a Objetos_, que é a _Abstração_.
-
-Vamos direto para o código.
-
-**Exemplo 1: Adapte o código anterior para uma versão com Orientação a Objetos, focando em Abstração**
-
-Podemos começar criando a nossa classe Canidae, com seus atributos essenciais:
+Então, pelo que programamos anteriormente, precisamos mudar a maioria dos atributos para `private`. Então:
 
 ```cpp
-class Canidae {
+class Banda {
 private:
-    std::string nome;
-    int idade;
+  std::string id;
+  std::string genero;
+  std::string nome;
+  int anoFundacao;
+  std::vector<std::string> listaDeMusicas;
 };
 ```
 
-Perceba que adicionamos o `private` ali. Em breve, explicaremos o porquê.
+Agora, como mencionamos anteriormente, para criar uma boa API, vamos definir `Getters/Setters` públicos! Isso aqui vai adicionar uma boa quantidade de linhas, mas a ideia é bem simples:
 
-Agora, vamos colocar o nosso método `executa()`. A graça é que, ao declarar ele enquanto método abstrato, não precisaremos estruturar a parte interna da função.
+(i) Os métodos `Getters` retornaram os valores guardados. Literalmente, é apenas um return com o tipo do atributo:
 
 ```cpp
-class Canidae {
+class Banda {
 private:
-    std::string nome;
-    int idade;
+  std::string id;
+  std::string genero;
+  std::string nome;
+  int anoFundacao;
+  std::vector<std::string> listaDeMusicas;
+
 public:
-    // Método puramente abstrato ou Virtual Puro
-    virtual std::string executa() = 0;
+  Banda(std::string id, std::string nome, int anoFundacao,
+        std::vector<std::string> listaDeMusicas, std::string genero) {
+    this->id = id;
+    this->nome = nome;
+    this->anoFundacao = anoFundacao;
+    this->listaDeMusicas = listaDeMusicas;
+    this->genero = genero;
+  }
 
-    // Métodos Concretos
-    std::string getNome(){
-        return nome;
-    }
+  // Getters
+  std::string getId() { return id; }
 
-    void setNome(std::string novoNome){
-        nome = novoNome;
-    }
+  std::string getGenero() { return genero; }
+
+  std::string getNome() { return nome; }
+
+  int getAnoFundacao() { return anoFundacao; }
+
+  std::vector<std::string> getListaDeMusicas() { return listaDeMusicas; }
+
 };
 ```
 
-Perceba que retiramos a variável `"std::string nome_acao"`. Não vamos precisar dela!
-
-Para fins de fazer um código mais limpo, vamos colocar para a função retornar uma `std::string`.
-
-Na definição, colocamos o termo `virtual` antes e igualamos o método a zero. É assim que definimos _um método puramente abstrato_ ou _virtual puro_.
-
-Além disso, temos abaixo alguns exemplos de _métodos concretos_.
-
-Agora, o que faremos com aquela definição abstrata?
-
-Vambora:
+(ii) Os métodos `Setters` atribuirão valores aos nossos atributos privados. Literalmente, é apenas uma atribuição em cada método:
 
 ```cpp
-class Raposa : public Canidae {
-  std::string executa() override { return "A RAPOSA ROUBA"; }
-};
+class Banda {
+private:
+  std::string id;
+  std::string genero;
+  std::string nome;
+  int anoFundacao;
+  std::vector<std::string> listaDeMusicas;
 
-class Cachorro : public Canidae {
-  std::string executa() override { return "O CACHORRO TOMA"; }
-};
+public:
+  Banda(std::string id, std::string nome, int anoFundacao,
+        std::vector<std::string> listaDeMusicas, std::string genero) {
+    this->id = id;
+    this->nome = nome;
+    this->anoFundacao = anoFundacao;
+    this->listaDeMusicas = listaDeMusicas;
+    this->genero = genero;
+  }
 
-class Lobo : public Canidae {
-  std::string executa() override { return "O LOBO PEDE"; }
+  // Getters
+  std::string getId() { return id; }
+
+  std::string getGenero() { return genero; }
+
+  std::string getNome() { return nome; }
+
+  int getAnoFundacao() { return anoFundacao; }
+
+  std::vector<std::string> getListaDeMusicas() { return listaDeMusicas; }
+
+  //Setters
+  void setId(std::string id) { this->id = id; }
+
+  void setGenero(std::string genero) { this->genero = genero; }
+
+  void setNome(std::string nome) { this->nome = nome; }
+
+  void setAnoFundacao(int anoFundacao) { this->anoFundacao = anoFundacao; }
+
+  void setListaDeMusicas(std::vector<std::string> listaDeMusicas) {
+    this->listaDeMusicas = listaDeMusicas;
+  }
 };
 ```
 
-O que fizemos de diferente? Aqui, não temos apenas declarações de variáveis/estruturas. Aqui, definimos classes novas, que seguem o mesmo "molde" da classe pai: Canidae. Aquela sintaxe nova de definição `"class Raposa/Cachorro/Lobo : public Canidae"` indica justamente isso.
-
-No caso, **Raposa, Cachorro e Lobo** são classes independentes entre si, que possuem em comum todas as implementações, diferindo apenas na programação do método abstrato.
-
-No caso, todos possuem os atributos `std::string nome;` e `int idade;`, além dos métodos. Porém, em `executa()`, temos uma abertura para implementações individuais no corpo desse método. Isso permite com que façamos diferentes retornos, tal como foi demonstrado acima.
-
-Isso permite maior limpeza, independência e escalabilidade no código.
-
-Como ficaria a nossa `main()`?
+Então, precisamos atualizar o nosso método que imprime a lista de músicas, já aplicando o uso de `Getters`:
 
 ```cpp
-int main() {
-  Canidae *kyubi = new Raposa();
-  Canidae *snoopy = new Cachorro();
-  Canidae *pidao = new Lobo();
+class Banda {
+private:
+  std::string id;
+  std::string genero;
+  std::string nome;
+  int anoFundacao;
+  std::vector<std::string> listaDeMusicas;
 
-  std::cout << kyubi->executa() << std::endl;
-  std::cout << snoopy->executa() << std::endl;
-  std::cout << pidao->executa() << std::endl;
+public:
+  Banda(std::string id, std::string nome, int anoFundacao,
+        std::vector<std::string> listaDeMusicas, std::string genero) {
+    this->id = id;
+    this->nome = nome;
+    this->anoFundacao = anoFundacao;
+    this->listaDeMusicas = listaDeMusicas;
+    this->genero = genero;
+  }
 
-  return 0;
+  // Getters
+  std::string getId() { return id; }
+
+  std::string getGenero() { return genero; }
+
+  std::string getNome() { return nome; }
+
+  int getAnoFundacao() { return anoFundacao; }
+
+  std::vector<std::string> getListaDeMusicas() { return listaDeMusicas; }
+
+  //Setters
+  void setId(std::string id) { this->id = id; }
+
+  void setGenero(std::string genero) { this->genero = genero; }
+
+  void setNome(std::string nome) { this->nome = nome; }
+
+  void setAnoFundacao(int anoFundacao) { this->anoFundacao = anoFundacao; }
+
+  void setListaDeMusicas(std::vector<std::string> listaDeMusicas) {
+    this->listaDeMusicas = listaDeMusicas;
+  }
+
+  // Método antigo atualizado
+  void imprimeListaDeMusicas() {
+    for (int i = 0; i < listaDeMusicas.size(); i++) {
+      std::cout << getListaDeMusicas()[i] << std::endl;
+    }
+  }
+};
+```
+
+E, voilá! Temos a nossa API bonitinha e funcional! Agora, sempre que quisermos alterar alguma coisa dos atributos, basta utilizar os nossos métodos novos.
+
+Para finalizar, vamos refatorar a nossa classe filha:
+
+```cpp
+class Metal : public Banda {
+public:
+  Metal(std::string id, std::string nome, int anoFundacao,
+        std::vector<std::string> listaDeMusicas, std::string genero)
+      : Banda(id, nome, anoFundacao, listaDeMusicas, "METAL") {}
+
+  void info() {
+    std::cout << this->getNome() << std::endl;
+    std::cout << this->getAnoFundacao() << std::endl;
+    std::cout << this->getGenero() << std::endl;
+    std::cout << this->getId() << std::endl;
+  }
 }
 ```
 
-Nas nossas novas declarações, colocamos poteiros para `Canidae`, os quais atribuimos alocações das novas classes com implementações do método abstrato.
+Pode parecer um pouco bobo, caso você esteja no seu primeiro contato com as ideias aqui apresentadas, mas a utilização dessa API e do encapsulamento é de suma importância para a construção de códigos mais robustos, escaláveis e limpos. Um bom projeto orientado a objetos leva esses pontos em consideração!
 
-Depois, apenas realizamos o print do valor retornado pelo acesso do método `executa()` de cada um.
+## Conclusões
 
-Compilando e rodando, temos como saída:
+Aqui, na primeira parte, você aprendeu a respeito de modificadores de acesso e, logo em seguida, encapsulamento e API com getters/setters. Isso é de grande importância para suas habilidades de programação e é um recurso muito interessante da linguagem `C++`.
 
-```
-❯ ./main
-A RAPOSA ROUBA
-O CACHORRO TOMA
-O LOBO PEDE
-```
-
-Chegamos em um resultado muito parecido com o anterior! Só que, dessa vez, de maneira muito mais limpa e elegante.
-
-Talvez você ache um pouco complicado. Mas, acredite em mim, isso aqui só pode parecer complicado no começo. A verdadeira complicação aparece quando um projeto baseado na nossa primeira implementação com estruturas começa a crescer seguindo aquela lógica que fizemos.
-
-Com o uso da abstração, temos a liberdade para criar métodos exclusivos da nossa classe.
-
-**Exemplo 2: Crie pelo menos um método exclusivo para uma das novas classes**
-
-É possível fazer o seguinte aqui:
-
-```cpp
-class Lobo : public Canidae {
-public:
-  std::string executa() override { return "O LOBO PEDE"; }
-  std::string mimDe() { return "MIM DÊ PAPAI"; }
-  std::string uivo() { return "AAAAAUUUUUUU"; }
-};
-
-int main() {
-  Canidae *kyubi = new Raposa();
-  Canidae *snoopy = new Cachorro();
-  Lobo *pidao = new Lobo();
-
-  std::cout << kyubi->executa() << std::endl;
-  std::cout << snoopy->executa() << std::endl;
-
-  std::cout << pidao->executa() << std::endl;
-  std::cout << pidao->mimDe() << std::endl;
-  std::cout << pidao->uivo() << std::endl;
-
-  return 0;
-}
-```
-
-Perceba que, para que não tenhamos erro de compilação, temos que tornar o método `executa()` público neste caso em específico.
-
-Compilando e rodando, temos:
-
-```
-❯ ./main
-A RAPOSA ROUBA
-O CACHORRO TOMA
-O LOBO PEDE
-MIM DÊ PAPAI
-AAAAAUUUUUUU
-```
-
-<img src="../OOP-Cpp/imagens/01_lobopidao.jpg" width=200>
-
-Enfatizamos aqui que as implementações poderiam ser qualquer coisa, não necessariamente valores sendo retornados!
-
-Em suma: a classe `Canidae` funciona como um template de implementação, isso melhora a permanência/mantimento de código e mudanças internas podem ser realizadas sem afetar a parte externa do todo.
-
-A escolha a respeito do que iremos abstrair no código varia de implementação para implementação. Podemos ficar muito tempo aqui debatendo diferentes filosofias de vida, etc.
-
-Entretanto, indo direto ao ponto, e sendo até um pouco repetitivos, indicamos seguir basicamente o que fizemos no exemplo anterior!
-
-Vamos programar várias classes com características em comum, variando apenas em alguns métodos em específico? Seria bacana manter o mesmo nome para alguns métodos, mesmo que eles acabem variando na implementação?
-
-É viável, simplesmente, arquitetar uma classe mãe/pai que será utilizada como template para as demais e determinar esses métodos como sendo abstratos.
-
-## 1.5 Como criar uma boa interface (API) para sua classe
+Na próxima parte, falaremos de abstrações. Não deixe de conferir!
