@@ -433,7 +433,11 @@ public:
 }
 ```
 
-Pode parecer um pouco bobo, caso você esteja no seu primeiro contato com as ideias aqui apresentadas, mas a utilização dessa API e do encapsulamento é de suma importância para a construção de códigos mais robustos, escaláveis e limpos. Um bom projeto orientado a objetos leva esses pontos em consideração!
+Pode parecer um pouco bobo, caso você esteja no seu primeiro contato com as ideias aqui apresentadas, mas a utilização dessa API e do encapsulamento é de suma importância para a construção de códigos mais robustos, escaláveis e limpos.
+
+Setters podem restringir, filtrar e moldar a modificação de atributos, enquanto Getters podem também restringir ou formatar os dados requisitados pelo usuário.
+
+Um bom projeto orientado a objetos leva esses pontos em consideração!
 
 ## Conclusões
 
