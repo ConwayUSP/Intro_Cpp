@@ -83,6 +83,14 @@ public:
     void setNome(std::string novoNome){
         nome = novoNome;
     }
+
+    int getIdade(){
+        return idade;
+    }
+
+    void setIdade(int novaIdade){
+        idade = novaIdade;
+    }
 };
 ```
 

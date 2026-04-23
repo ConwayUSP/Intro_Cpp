@@ -401,62 +401,17 @@ public:
   void setListaDeMusicas(std::vector<std::string> listaDeMusicas) {
     this->listaDeMusicas = listaDeMusicas;
   }
-};
-```
 
-Então, precisamos atualizar o nosso método que imprime a lista de músicas, já aplicando o uso de `Getters`:
-
-```cpp
-class Banda {
-private:
-  std::string id;
-  std::string genero;
-  std::string nome;
-  int anoFundacao;
-  std::vector<std::string> listaDeMusicas;
-
-public:
-  Banda(std::string id, std::string nome, int anoFundacao,
-        std::vector<std::string> listaDeMusicas, std::string genero) {
-    this->id = id;
-    this->nome = nome;
-    this->anoFundacao = anoFundacao;
-    this->listaDeMusicas = listaDeMusicas;
-    this->genero = genero;
-  }
-
-  // Getters
-  std::string getId() { return id; }
-
-  std::string getGenero() { return genero; }
-
-  std::string getNome() { return nome; }
-
-  int getAnoFundacao() { return anoFundacao; }
-
-  std::vector<std::string> getListaDeMusicas() { return listaDeMusicas; }
-
-  //Setters
-  void setId(std::string id) { this->id = id; }
-
-  void setGenero(std::string genero) { this->genero = genero; }
-
-  void setNome(std::string nome) { this->nome = nome; }
-
-  void setAnoFundacao(int anoFundacao) { this->anoFundacao = anoFundacao; }
-
-  void setListaDeMusicas(std::vector<std::string> listaDeMusicas) {
-    this->listaDeMusicas = listaDeMusicas;
-  }
-
-  // Método antigo atualizado
+  // Método antigo
   void imprimeListaDeMusicas() {
     for (int i = 0; i < listaDeMusicas.size(); i++) {
-      std::cout << getListaDeMusicas()[i] << std::endl;
+      std::cout << listaDeMusicas[i] << std::endl;
     }
   }
 };
 ```
+
+Aproveitamos e já colocamos o método antigo também.
 
 E, voilá! Temos a nossa API bonitinha e funcional! Agora, sempre que quisermos alterar alguma coisa dos atributos, basta utilizar os nossos métodos novos.
 
