@@ -1,6 +1,291 @@
 # Capítulo 01: Abstração e Encapsulamento
 
-## 1.1 O que é abstração?
+## 1.1 Modificadores de acesso
+
+No que tange aos modificadores de acesso, certamente você já se deparou com algumas declarações adicionais em **atributos** e **métodos** em um código orientado a objetos. Estamos falando aqui daquelas palavras que aparecem antes dos tipos e dos nomes. Eles são os benditos **Modificadores de Acesso** e são bem importantes, diga-se de passagem.
+
+O nome passa uma boa intuição a respeito do que seria isso. É um estabelecimento a respeito do quão acessível um bloco de código será para o restante da estrutura de um projeto. Eles controlam a visibilidade dos membros de uma classe.
+
+No caso, em **C++**, temos três tipos diferentes:
+
+### Public
+
+Especificadores públicos fazem com que **atributos** e **métodos** sejam acessíveis em **toda a parte**. Ou seja, aqui não tem restrição nenhuma. Qualquer classe, função, em qualquer arquivo do projeto, pode acessar um atributo/método público de alguma classe em específico.
+
+A **sintaxe** funciona da seguinte maneira:
+
+```cpp
+#include <iostream>
+#include <string>
+
+class Banda {
+public:
+    std::string nome;
+};
+```
+
+Ou seja, digitamos `"public:"` na linha acima dos atributos/métodos que desejamos tornar públicos. Diferente de outras linguagens como `Java`, no `C++` precisamos declarar apenas uma vez e agrupá-los. Por exemplo:
+
+```cpp
+class Banda {
+public:
+  std::string nome;
+  int anoFundacao;
+  std::vector<std::string> listaDeMusicas;
+
+  void imprimeListaDeMusicas(std::vector<std::string> listaDeMusicas) {
+    for (int i = 0; i < listaDeMusicas.size(); i++) {
+      std::cout << listaDeMusicas[i] << std::endl;
+    }
+  }
+};
+```
+
+E se quiséssemos colocar a nossa classe em um arquivo separado e utilizar ela diretamente na `main.cpp`? O uso do `public` possibilita isso.
+
+Vamos criar um arquivo separado, chamado `Bandas.cpp` e colocar o nosso código acima nele (e aproveitar para adicionar um construtor para nossa classe):
+
+```
+Bandas.cpp
+```
+
+```cpp
+#include <iostream>
+#include <string>
+#include <vector>
+
+class Banda {
+public:
+  std::string nome;
+  int anoFundacao;
+  std::vector<std::string> listaDeMusicas;
+
+  Banda(std::string nome, int anoFundacao,
+        std::vector<std::string> listaDeMusicas) {
+    this->nome = nome;
+    this->anoFundacao = anoFundacao;
+    this->listaDeMusicas = listaDeMusicas;
+  }
+
+  void imprimeListaDeMusicas() {
+    for (int i = 0; i < listaDeMusicas.size(); i++) {
+      std::cout << listaDeMusicas[i] << std::endl;
+    }
+  }
+};
+```
+
+Agora, vamos incluir ele no nosso `Main.cpp` e brincar com a programação:
+
+```
+Main.cpp
+```
+
+```cpp
+#include "Bandas.cpp"
+#include <iostream>
+#include <string>
+#include <vector>
+
+int main() {
+  Banda RATM("Rage Against The Machine", 1995,
+             {"Bombtrack", "Killing in the Name", "Take the Power Back"});
+
+  RATM.imprimeListaDeMusicas();
+
+  return 0;
+}
+```
+
+O compilador, em nenhum momento, reclamará do que fizemos aqui (pelo menos, é o que esperamos).
+
+### Protected
+
+Aqui, começamos a colocar algumas restrições nas coisas. Diferentemente do `public`, o `protected` faz com que métodos/atributos sejam **acessíveis apenas na própria classe e nas suas classes derivadas**. O que são classes derivadas? Já já vamos mostrar!
+
+Na nossa classe `Banda`, vamos colocar um novo atributo, só que dessa vez ele não será público:
+
+```
+Bandas.cpp
+```
+
+```cpp
+class Banda {
+protected:
+  std::string genero;
+
+public:
+  std::string nome;
+  int anoFundacao;
+  std::vector<std::string> listaDeMusicas;
+
+  Banda(std::string nome, int anoFundacao,
+        std::vector<std::string> listaDeMusicas, std::string genero) {
+    this->nome = nome;
+    this->anoFundacao = anoFundacao;
+    this->listaDeMusicas = listaDeMusicas;
+    this->genero = genero;
+  }
+
+  void imprimeListaDeMusicas() {
+    for (int i = 0; i < listaDeMusicas.size(); i++) {
+      std::cout << listaDeMusicas[i] << std::endl;
+    }
+  }
+};
+```
+
+Colocamos um atributo protegido chamado de `genero`. Agora, vamos adicionar uma classe derivada:
+
+```
+Bandas.cpp
+```
+
+```cpp
+//Classe derivada
+class Metal : public Banda {
+public:
+  Metal(std::string nome, int anoFundacao,
+        std::vector<std::string> listaDeMusicas, std::string genero)
+      : Banda(nome, anoFundacao, listaDeMusicas, "METAL") {}
+
+  void info() {
+    std::cout << this->nome << std::endl;
+    std::cout << this->anoFundacao << std::endl;
+    std::cout << this->genero << std::endl;
+  }
+};
+```
+
+Explicaremos herança de um jeito melhor no próximo capítulo do curso. Mas, basicamente, criamos uma classe "filha" da classe "Banda". Ela herda as mesmas características da classe pai e, além disso, podemos adicionar novos atributos/métodos exclusivos da classe nova. Isso foi feito com a criação do método `info()` definido acima.
+
+Além disso, aquelas linhas meio esquisitas logo depois de `public` dizem respeito ao construtor da nossa classe, que é único e será baseado no original. De maneira simples, elas dizem mais ou menos: "Esta nova classe aceitará esses atributos aqui e eles vão no construtor da classe pai, no qual eu me baseio, da seguinte maneira".
+
+Prometemos que isso vai ser melhor explicado depois. Mas, achamos que, por ora, deu para entender.
+
+Enfim. Se tentarmos acessar o atributo `genero` diretamente na `main()`, que está em um arquivo separado, teremos um problema na compilação. Fique livre para testar.
+
+Porém, podemos realizar esse acesso através da nova classe, tendo em vista que ela tem uma função que imprime essa informação na tela.
+
+Por exemplo:
+
+```cpp
+#include "Bandas.cpp"
+#include <iostream>
+#include <string>
+#include <vector>
+
+int main() {
+  Metal RATM("Rage Against The Machine", 1995,
+             {"Bombtrack", "Killing in the Name", "Take the Power Back"},
+             "METAL");
+
+  RATM.imprimeListaDeMusicas();
+  RATM.info();
+
+  return 0;
+}
+```
+
+Compilando tudo, teremos a seguinte saída:
+
+```
+Bombtrack
+Killing in the Name
+Take the Power Back
+Rage Against The Machine
+1995
+METAL
+```
+
+Utilizamos como exemplo um atributo, mas o mesmo vale para métodos. Fique livre para testar na sua máquina!
+
+### Private
+
+O especificador `private` faz com que atributos/métodos da classe sejam acessíveis apenas dentro da própria classe em si. Frequentemente, isso é utilizado para ocultar dados da parte externa.
+
+Vamos adicionar um atributo privado na nossa classe `Banda`:
+
+```
+Banda.cpp
+```
+
+```cpp
+class Banda {
+private:
+  std::string id;
+
+protected:
+  std::string genero;
+
+public:
+  std::string nome;
+  int anoFundacao;
+  std::vector<std::string> listaDeMusicas;
+
+  Banda(std::string id, std::string nome, int anoFundacao,
+        std::vector<std::string> listaDeMusicas, std::string genero) {
+    this->id = id;
+    this->nome = nome;
+    this->anoFundacao = anoFundacao;
+    this->listaDeMusicas = listaDeMusicas;
+    this->genero = genero;
+  }
+
+  void imprimeListaDeMusicas() {
+    for (int i = 0; i < listaDeMusicas.size(); i++) {
+      std::cout << listaDeMusicas[i] << std::endl;
+    }
+  }
+};
+```
+
+Do jeito que o código está, o que acontece se tentarmos acessar `id` na nossa classe filha?
+
+```cpp
+class Metal : public Banda {
+public:
+  Metal(std::string id, std::string nome, int anoFundacao,
+        std::vector<std::string> listaDeMusicas, std::string genero)
+      : Banda(id, nome, anoFundacao, listaDeMusicas, "METAL") {}
+
+  void info() {
+    std::cout << this->nome << std::endl;
+    std::cout << this->anoFundacao << std::endl;
+    std::cout << this->genero << std::endl;
+    std::cout << this->id << std::endl; // Colocamos para printar aqui
+  }
+};
+```
+
+Teremos o seguinte erro de compilação:
+
+```
+Bandas.cpp: In member function ‘void Metal::info()’:
+Bandas.cpp:43:24: error: ‘std::string Banda::id’ is private within this context
+   43 |     std::cout << this->id << std::endl;
+      |                        ^~
+Bandas.cpp:7:15: note: declared private here
+    7 |   std::string id;
+      |               ^~
+Bandas.cpp: In member function ‘void Metal::info()’:
+Bandas.cpp:43:24: error: ‘std::string Banda::id’ is private within this context
+   43 |     std::cout << this->id << std::endl;
+      |                        ^~
+Bandas.cpp:7:15: note: declared private here
+    7 |   std::string id;
+      |               ^~
+```
+
+Ou seja, inacessível para o exterior. Isso melhora bastante o encapsulamento de informações.
+
+Pera, **encapsulamento**???
+
+## 1.2 O que é encapsulamento?
+
+## 1.3 Getters e Setters
+
+## 1.4 O que é abstração?
 
 No decorrer da nossa programação, muitas vezes podemos ter múltiplas classes que implementam os mesmos métodos. Porém, alguns deles, em específico, podem diferir a partir das características do que estamos projetando no nosso código.
 
@@ -210,12 +495,4 @@ Vamos programar várias classes com características em comum, variando apenas e
 
 É viável, simplesmente, arquitetar uma classe mãe/pai que será utilizada como template para as demais e determinar esses métodos como sendo abstratos.
 
-## 1.2 O que é encapsulamento?
-
-## 1.3 Modificadores de acesso
-
-## 1.4 Como escolher o que expor na sua classe
-
-## 1.5 Getters e Setters
-
-## 1.6 Como criar uma boa interface (API) para sua classe
+## 1.5 Como criar uma boa interface (API) para sua classe
