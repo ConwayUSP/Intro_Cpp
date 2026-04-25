@@ -13,9 +13,11 @@ Agora, vamos tratar a respeito dos headers.
 Para nos livrarmos, por exemplo, da amarra de ter que sempre fazer as declarações das funções no arquivo onde a **main()** está presente, a introdução desse tipo de arquivo na organização do projeto é de suma importância.
 
 Quando digitamos em qualquer arquivo **.cpp**, por exemplo,
+
 ```cpp
 #include <iostream>
 ```
+
 já estamos usufruindo dessa ferramenta.
 
 O que acontece aqui é, basicamente, uma comunicação do programador com uma das etapas anteriores ao proceso de compilação, que é o trabalho do **pré-processador**: a fase de pré-processamento.
@@ -33,6 +35,7 @@ Anteriormente, organizamos o nosso pequeno exemplo de projeto na forma de três 
 ```
 main.cpp
 ```
+
 ```cpp
 #include <iostream>
 
@@ -54,6 +57,7 @@ int main() {
 ```
 myFunctions.cpp
 ```
+
 ```cpp
 int calculaFatorial(int num){
     //Caso base: se o nosso número for igual a 1 ou 0, retorne 1
@@ -71,6 +75,7 @@ int maiorValor(int num1, int num2){
 ```
 myFunctions2.cpp
 ```
+
 ```cpp
 #include <iostream>
 
@@ -97,17 +102,21 @@ No nosso novo arquivo, vamos fazer as declarações das funções presentes em *
 ```
 myFunctions.h
 ```
+
 ```cpp
 //(Caso você já conheça os header guards, calma...)
 int calculaFatorial(int num);
 int maiorValor(int num1, int num2);
 int entradaDeValores();
 ```
+
 Aliás, uma "boa prática" a ser considerada na hora de criar arquivos header é, justamente, nomeá-lo com o mesmo nome utilizado pelo arquivo onde as definições das funções estão presentes.
 Neste caso, para fins didáticos, estamos com dois arquivos **.cpp**. Porém, é nítido que eles poderiam ser apenas um **myFunctions.cpp**.
+
 ```
 main.cpp
 ```
+
 ```cpp
 #include <iostream>
 
@@ -126,6 +135,7 @@ Como faremos para "ligar" o nosso arquivo **main.cpp** às funções anteriormen
 ```
 main.cpp
 ```
+
 ```cpp
 #include <iostream>
 /*Vamos incluir o nosso novo arquivo header */
@@ -142,6 +152,7 @@ int main() {
 ```
 myFunctions.cpp
 ```
+
 ```cpp
 /*Vamos incluir o nosso novo arquivo header */
 #include "myFunctions.h"
@@ -162,6 +173,7 @@ int maiorValor(int num1, int num2){
 ```
 myFunctions2.cpp
 ```
+
 ```cpp
 #include <iostream>
 /*Vamos incluir o nosso novo arquivo header */
@@ -176,6 +188,7 @@ int entradaDeValores(){
 ```
 
 E, agora, vamos compilar:
+
 ```
 g++ *.cpp -o nomeDoArquivo
 ```
@@ -185,13 +198,14 @@ Se tudo estiver correto, devemos obter o mesmo resultado da versão anterior do 
 Algumas coisas são importantes a serem destacadas sobre o que fizemos acima:
 
 **(1) Perceba a diferença entre o #include de iostream e o de myFunctions.h:**
+
 ```cpp
 #include <iostream> //Aqui, utilizamos <>
 #include "myFunctions.h" //Aqui, utilizamos ""
 ```
+
 Para incluir arquivos inerentes ao sistema ou ao compilador, usamos <>;
 Para incluir os novos arquivos que criamos, usamos "".
-
 
 **(2) É uma boa prática realizar o include do header em todos os arquivos nos quais definimos nossas funções**
 
@@ -273,7 +287,7 @@ Se, por algum motivo, esse mesmo header for incluído novamente durante a compil
 
 ### Boas Práticas:
 
-Por convenção, o nome da macro utilizada no header guard deve refletir o nome do arquivo em letras maiúsculas, substituindo o ponto da extensão por um underline (_). Por exemplo: calculadora.h se torna CALCULADORA_H.
+Por convenção, o nome da macro utilizada no header guard deve refletir o nome do arquivo em letras maiúsculas, substituindo o ponto da extensão por um underline (\_). Por exemplo: calculadora.h se torna CALCULADORA_H.
 
 > Nota: Muitos compiladores modernos suportam a diretiva #pragma once escrita na primeira linha do arquivo, que realiza exatamente a mesma proteção de forma mais enxuta. Contudo, o uso de #ifndef é o padrão histórico da linguagem C++ e funciona em absolutamente 100% dos compiladores, sendo fundamental que todo programador saiba reconhecê-lo e utilizá-lo
 
@@ -284,7 +298,7 @@ Por convenção, o nome da macro utilizada no header guard deve refletir o nome 
 1. Tenha código completo para um arquivo header chamado matematica.h contendo as declarações dessas duas funções.
 2. Escreva o início do arquivo main.cpp, demonstrando a sintaxe correta em C++ para incluir a biblioteca padrão de entrada e saída e, logo abaixo, o seu novo arquivo header matematica.h.
 
-### 2) Por que é má prática confiar que um .cpp receberá o <iostream> apenas porque o seu .h correspondente já o inclui?
+### 2) Por que é má prática confiar que um .cpp receberá o `<iostream>` apenas porque o seu .h correspondente já o inclui?
 
 ## Conclusões
 
