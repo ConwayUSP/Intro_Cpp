@@ -75,7 +75,7 @@ public:
 };
 ```
 
-Agora, vamos incluir ele no nosso `Main.cpp` e brincar com a programação:
+Agora, vamos incluir ele no nosso `Main.cpp` e brincar com a programação. Lembrando que, em projetos reais, separamos em arquivos de cabeçalho (.h ou .hpp). Mas, para fins didáticos, faremos o include direto:
 
 ```
 Main.cpp
@@ -204,7 +204,7 @@ Utilizamos como exemplo um atributo, mas o mesmo vale para métodos. Fique livre
 
 O especificador `private` faz com que atributos/métodos da classe sejam acessíveis apenas dentro da própria classe em si. Frequentemente, isso é utilizado para ocultar dados da parte externa.
 
-Inclusive, todos os membros de uma classe são privados caso nenhuma especificador seja mencionado.
+Inclusive, todos os membros de uma classe são privados caso nenhum especificador seja mencionado.
 
 Vamos adicionar um atributo privado na nossa classe `Banda`:
 
@@ -279,7 +279,19 @@ Bandas.cpp:7:15: note: declared private here
       |               ^~
 ```
 
-Ou seja, inacessível para o exterior. Isso melhora bastante o encapsulamento de informações.
+Ou seja, inacessível para o exterior.
+
+### Resumo de Visibilidade
+
+A tabela abaixo resume como cada modificador de acesso se comporta no C++:
+
+| Modificador     | Própria Classe | Classe Filha (Herança) | Resto do Projeto |
+| :-------------- | :------------: | :--------------------: | :--------------: |
+| **`public`**    |       ✅       |           ✅           |        ✅        |
+| **`protected`** |       ✅       |           ✅           |        ❌        |
+| **`private`**   |       ✅       |           ❌           |        ❌        |
+
+O uso do modificador de acesso `private` melhora bastante o encapsulamento de informações.
 
 Pera, **encapsulamento**???
 
@@ -322,7 +334,7 @@ private:
 
 Agora, como mencionamos anteriormente, para criar uma boa API, vamos definir `Getters/Setters` públicos! Isso aqui vai adicionar uma boa quantidade de linhas, mas a ideia é bem simples:
 
-(i) Os métodos `Getters` retornaram os valores guardados. Literalmente, é apenas um return com o tipo do atributo:
+(i) Os métodos `Getters` retornam os valores guardados. Literalmente, é apenas um return com o tipo do atributo:
 
 ```cpp
 class Banda {
@@ -439,8 +451,42 @@ Setters podem restringir, filtrar e moldar a modificação de atributos, enquant
 
 Um bom projeto orientado a objetos leva esses pontos em consideração!
 
+## Exercícios
+
+### 1) O Rig do Baixista
+
+Tarefa: Crie uma classe chamada Instrumento.
+
+Transforme os atributos modelo, marca e volume em privados
+
+Crie um construtor que inicialize esses valores
+
+Implemente Getters e Setters para todos os atributos
+
+Regra de Negócio (Setter): No método setVolume(int v), garanta que o volume nunca seja menor que 0 nem maior que 11 (afinal, rockeiros vão até o 11). Se o valor for fora desse intervalo, ignore a alteração ou ajuste para o limite.
+
+### 2) Refatoração de Acesso
+
+Observe o código abaixo que apresenta erros de visibilidade:
+
+```cpp
+class Pedal {
+    std::string nome;
+public:
+    Pedal(std::string n) : nome(n) {}
+};
+
+int main() {
+    Pedal overdrive("TS9");
+    overdrive.nome = "Big Muff";
+    return 0;
+}
+```
+
+Tarefa: Refatore a classe Pedal utilizando os conceitos de Getters e Setters para que o nome do pedal possa ser alterado e lido na função main() sem que o atributo precise ser público.
+
 ## Conclusões
 
-Aqui, na primeira parte, você aprendeu a respeito de modificadores de acesso e, logo em seguida, encapsulamento e API com getters/setters. Isso é de grande importância para suas habilidades de programação e é um recurso muito interessante da linguagem `C++`.
+Aqui, na primeira parte, você aprendeu a respeito de modificadores de acesso e, logo em seguida, encapsulamento e API com getters/setters. Isso é de grande importância para suas habilidades de programação e é um dos pilares da linguagem `C++`.
 
 Na próxima parte, falaremos de abstrações. Não deixe de conferir!

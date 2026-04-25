@@ -144,7 +144,7 @@ int main() {
 }
 ```
 
-Nas nossas novas declarações, colocamos poteiros para `Canidae`, os quais atribuimos alocações das novas classes com implementações do método abstrato.
+Nas nossas novas declarações, colocamos ponteiros para `Canidae`, os quais atribuímos alocações das novas classes com implementações do método abstrato.
 
 Depois, apenas realizamos o print do valor retornado pelo acesso do método `executa()` de cada um.
 
@@ -208,7 +208,7 @@ AAAAAUUUUUUU
 
 Enfatizamos aqui que as implementações poderiam ser qualquer coisa, não necessariamente valores sendo retornados!
 
-Em suma: a classe `Canidae` funciona como um template de implementação, isso melhora a permanência/mantimento de código e mudanças internas podem ser realizadas sem afetar a parte externa do todo.
+Em suma: a classe `Canidae` funciona como um template de implementação, isso melhora a permanência/manutenibilidade de código e mudanças internas podem ser realizadas sem afetar a parte externa do todo.
 
 A escolha a respeito do que iremos abstrair no código varia de implementação para implementação. Podemos ficar muito tempo aqui debatendo diferentes filosofias de vida, etc.
 
@@ -217,6 +217,36 @@ Entretanto, indo direto ao ponto, e sendo até um pouco repetitivos, indicamos s
 Vamos programar várias classes com características em comum, variando apenas em alguns métodos em específico? Seria bacana manter o mesmo nome para alguns métodos, mesmo que eles acabem variando na implementação?
 
 É viável, simplesmente, arquitetar uma classe mãe/pai que será utilizada como template para as demais e determinar esses métodos como sendo abstratos.
+
+## Exercícios
+
+### 1) A Orquestra de Distorções
+
+Tarefa: Crie uma classe abstrata (ou interface) chamada Efeito.
+
+Declare um método virtual puro chamado void aplicarSom().
+
+Crie duas classes derivadas: Distorsao e Delay.
+
+Implemente o método aplicarSom() em cada uma:
+
+Em Distorsao, deve printar: "Som sujo e agressivo!".
+
+Em Delay, deve printar: "Som com repetições ecoando...".
+
+Na main(), use ponteiros da classe base Efeito para instanciar os objetos e chamar os métodos.
+
+### 2) Membros Exclusivos no Reinado Canino
+
+Tarefa:
+
+Implemente a classe base Canidae com o método abstrato executa()
+
+Crie a classe Cachorro herdando de Canidae
+
+Adicione um método exclusivo na classe Cachorro chamado darA Patinha() que retorna uma string: "O cachorro estendeu a pata"
+
+No seu código main(), instancie um objeto do tipo Cachorro e demonstre que você consegue acessar tanto o método herdado/sobrescrito (executa) quanto o método exclusivo (darAPatinha).
 
 ## Conclusões
 
